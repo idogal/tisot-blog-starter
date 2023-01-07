@@ -8,7 +8,7 @@
     "tailwindcss-flip": "^1.0.0"
   },
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy"
+    "start": "npx tailwindcss -i ./src/assets/main.css -o ./dist/output.css && eleventy --serve",
+    "build": "npx tailwindcss -i ./src/assets/main.css -o ./dist/output.css && eleventy"
   }
 }
