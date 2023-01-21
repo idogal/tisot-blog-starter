@@ -6,6 +6,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "assets/img" });
   eleventyConfig.addPassthroughCopy({ "src/assets/favicon": "assets/favicon" });
 
+  eleventyConfig.addCollection("posts", function (collectionApi) {
+    return collectionApi    
+    .getFilteredByGlob('./src/posts/*.njk');
+  });
+
   // eleventyConfig.addNunjucksAsyncFilter('postcss', (cssCode, done) => {
   //   postcss([tailwindcss(require('./tailwind.config.js')), autoprefixer()])
   //     .process(cssCode)
@@ -26,7 +31,7 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: "src",
       output: "dist",
-      data: "_data"
+      data: "_data",
     },
   };
 };
