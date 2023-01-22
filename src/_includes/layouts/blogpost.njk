@@ -1,17 +1,13 @@
 ---
-title: Post 4
-subtitle: Post 1 Tristique et egestas quis ipsum suspendisse. Non arcu risus quis varius quam quisque id. Ac felis donec et odio pellentesque
-publish_date: 2022-01-01T10:00
-tags: post
-layout: "layouts/blogpost.njk"
+layout: "layouts/base.njk"
 ---
 
 <article class="container mx-auto py-6 px-24 bg-base-500">
     <div class="mb-14">
         <h1 class="text-3xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">
-            גנט - בלגיה - 2022
+            {{ title }}
         </h1>
-        <div class="text-center">Published on 24 December 2022 12:00 AM</div>
+        <div class="text-center">Published on {{ publish_date | formattedDate }}</div>
         <div class="mt-3 text-center">
             <span class="badge">#בלגיה</span>
         </div>

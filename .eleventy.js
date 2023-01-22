@@ -21,6 +21,8 @@ module.exports = function (eleventyConfig) {
   // });
   eleventyConfig.addWatchTarget("styles/**/*.css");
 
+  eleventyConfig.addFilter("formattedDate", require("./src/code/formattedDate"));
+
   return {
     passthroughFileCopy: true,
     htmlTemplateEngine: "njk",
