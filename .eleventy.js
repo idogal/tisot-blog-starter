@@ -29,7 +29,7 @@ module.exports = function (eleventyConfig) {
     dataTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
     templateFormats: ["md", "njk", "html", "liquid"],
-    pathPrefix: "",
+    pathPrefix: "/idog-blog-daisyui/",
     dir: {
       input: "src",
       output: "public",
