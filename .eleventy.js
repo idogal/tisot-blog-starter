@@ -32,7 +32,7 @@ module.exports = function (eleventyConfig) {
     pathPrefix: "",
     dir: {
       input: "src",
-      output: "dist",
+      output: "public",
       data: "_data",
     },
   };
