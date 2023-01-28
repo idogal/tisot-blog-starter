@@ -10,7 +10,7 @@
                 <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                     {% for item in navigation.items %}
                         <li>
-                            <a href="{{ item.url }}">{{ item.text }}</a>
+                            <a href="{{ item.url | url }}">{{ item.text }}</a>
                         </li>
                     {% endfor %}
                 </ul>
@@ -21,7 +21,7 @@
             <ul class="menu menu-horizontal px-1">
                 {% for item in navigation.items %}
                     <li>
-                        <a href="{{ item.url }}">{{ item.text }}</a>
+                        <a href="{{ item.url | url }}">{{ item.text }}</a>
                     </li>
                 {% endfor %}
             </ul>
