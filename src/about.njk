@@ -11,19 +11,32 @@ phone: +972-50-98765432
         <h1 class="text-3xl font-bold leading-normal mb-3">
             {{ title }}
         </h1>
-        <div class="avatar container place-content-center">
-            <div class="w-64 rounded">
-                <img src=" {{'/assets/img/andrii-leonov-P5nZwlbTngI-unsplash.jpg'| url }} " alt="This post thumbnail"/>
-            </div>
+        <div class="flex flex-auto justify-center">
+            <figure class="relative w-64">
+                <div class="avatar">
+                    <div class="rounded">
+                        <img src=" {{'/assets/img/andrii-leonov-P5nZwlbTngI-unsplash.jpg'| url }} " alt="This post thumbnail"/>
+                    </div>
+                    <p class="text-xs absolute bottom-0 px-1 py-1 text-neutral-50 bg-slate-500 mix-blend-normal opacity-80 rounded-bl
+                            rounded-tr">
+                        Photo by
+                        <a href="https://unsplash.com/es/@leoand1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+                            Andrii Leonov</a>
+                        on
+                        <a href="https://unsplash.com/photos/P5nZwlbTngI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+                            Unsplash</a>
+                    </p>
+                </div>
+            </figure>
         </div>
-        <h2 class="text-2xl leading-relaxed text-gray-800 italic mt-3">
+        <h2 class="text-2xl text-gray-800 italic mt-3">
             {{ about_name }}
         </h2>
         <div class="text-xl leading-relaxed text-gray-600">
             <p>{{ email }}</p>
             <p>{{ phone }}</p>
         </div>
-        <div class="text-lg lg:px-48 md:px-20 sm:px-12 px-6 py-4">
+        <div class="text-lg leading-relaxed lg:px-48 md:px-20 sm:px-12 px-6 py-4">
             <p>Facilisis gravida neque convallis a cras semper auctor neque. Pharetra sit amet aliquam id diam maecenas ultricies mi
                 eget. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Pulvinar sapien et ligula ullamcorper. Mi
                 eget mauris pharetra et. Morbi tristique senectus et netus et malesuada. Elementum curabitur vitae nunc sed velit
