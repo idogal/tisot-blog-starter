@@ -34,8 +34,11 @@
                     </div>
                     <select class="select select-bordered">
                         <option disabled selected>Language</option>
-                        <option>English</option>
-                        <option>עברית</option>
+                        {% for item in locales %}
+                            <option>
+                                {{ item.label }}
+                            </option>
+                        {% endfor %}
                     </select>
                 </div>
             </div>

@@ -1,5 +1,8 @@
-// const postcss = require('postcss');
 const tailwindcss = require("tailwindcss");
+const i18n = require("eleventy-plugin-i18n");
+const translations = require("./src/_data/translations");
+
+// const postcss = require('postcss');
 // const autoprefixer = require('autoprefixer');
 
 module.exports = function (eleventyConfig) {
@@ -7,8 +10,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/favicon": "assets/favicon" });
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
-    return collectionApi    
-    .getFilteredByGlob('./src/posts/*.njk');
+    return collectionApi.getFilteredByGlob("./src/posts/*.njk");
+  });
+
+  eleventyConfig.addPlugin(i18n, {
+    translations,
+    fallbackLocales: {
+      "*": "en-GB",
+    },
   });
 
   // eleventyConfig.addNunjucksAsyncFilter('postcss', (cssCode, done) => {
@@ -21,7 +30,10 @@ module.exports = function (eleventyConfig) {
   // });
   eleventyConfig.addWatchTarget("styles/**/*.css");
 
-  eleventyConfig.addFilter("formattedDate", require("./src/code/formattedDate"));
+  eleventyConfig.addFilter(
+    "formattedDate",
+    require("./src/code/formattedDate")
+  );
 
   return {
     passthroughFileCopy: true,
