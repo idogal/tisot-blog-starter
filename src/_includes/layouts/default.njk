@@ -1,22 +1,26 @@
 ---
 layout: "layouts/base.njk"
+pagination:
+  data: collections.posts
+  size: 4
+  alias: posts
 ---
 
 <div class="container mx-auto py-6 px-6 lg:px-24 bg-base-500">
     <div class="grid lg:grid-cols-2 grid-cols-1 gap-6">
-        {% for post in collections.posts %}
+        {% for post in posts %}
             <div class="card rounded-md lg:max-w-xl shadow-md">
                 <figure class="relative">
                     <a href="{{ post.url | url }}">
-                        <img class="" src="{{'assets/img/tangerine-chan-cjcD8rFvGHc-unsplash_resized.jpg'| url }}" alt="Bridge in China"/>
+                        <img class="" src="{{ '/assets/img/tangerine-chan-cjcD8rFvGHc-unsplash_resized.jpg'| url }}" alt="Bridge in China"/>
                     </a>
                     <p class="text-xs absolute bottom-0 left-0 px-1 py-1 text-neutral-50 bg-slate-500 mix-blend-normal opacity-80 rounded-tr">
                         Photo by
                         <a href="https://unsplash.com/@tangerine0206?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-                        Tangerine Chan</a>
+                            Tangerine Chan</a>
                         on
                         <a href="https://unsplash.com/photos/cjcD8rFvGHc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-                        Unsplash</a>
+                            Unsplash</a>
                     </p>
                 </figure>
                 <div class="card-body">
@@ -29,5 +33,13 @@ layout: "layouts/base.njk"
                 </div>
             </div>
         {% endfor %}
+    </div>
+    <div class="container mx-auto text-center mt-12"> 
+        {% if pagination.href.previous %}
+            <a href="{{ pagination.href.previous | url }}">Previous Page</a>
+        {% endif %}
+        {% if pagination.href.next %}
+            <a href="{{ pagination.href.next | url }}">Next Page</a>
+        {% endif %}
     </div>
 </div>
