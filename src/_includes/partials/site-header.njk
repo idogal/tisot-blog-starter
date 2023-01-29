@@ -15,7 +15,7 @@
                     {% endfor %}
                 </ul>
             </div>
-            <a class="btn btn-ghost normal-case text-xl">{{ site.name }}</a>
+            <a class="btn btn-ghost normal-case font-semibold antialiased font-serif text-xl">{{ site.name }}</a>
         </div>
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
@@ -26,6 +26,19 @@
                 {% endfor %}
             </ul>
         </div>
-        <div class="navbar-end"></div>
+        <div class="navbar-end md:px-32 sm:px-2">
+            <div class="hidden">
+                <div class="hidden lg:flex flex-auto flex-row justify-end gap-2">
+                    <div class="form-control">
+                        <input type="text" placeholder="Search" class="input rounded"/>
+                    </div>
+                    <select class="select select-bordered">
+                        <option disabled selected>Language</option>
+                        <option>English</option>
+                        <option>עברית</option>
+                    </select>
+                </div>
+            </div>
+        </div>
     </div>
 </header>
