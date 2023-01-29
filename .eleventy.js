@@ -30,10 +30,8 @@ module.exports = function (eleventyConfig) {
   // });
   eleventyConfig.addWatchTarget("styles/**/*.css");
 
-  eleventyConfig.addFilter(
-    "formattedDate",
-    require("./src/code/formattedDate")
-  );
+  eleventyConfig.addFilter("formattedDate", require("./src/code/filters/formattedDate"));
+  eleventyConfig.addFilter("search", require("./src/code/filters/searchFilter"));
 
   return {
     passthroughFileCopy: true,
