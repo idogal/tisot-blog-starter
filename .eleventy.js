@@ -8,7 +8,7 @@ const translations = require("./src/_data/translations");
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "assets/img" });
   eleventyConfig.addPassthroughCopy({ "src/assets/favicon": "assets/favicon" });
-  eleventyConfig.addPassthroughCopy({ "src/code/*": "assets/js" });
+  eleventyConfig.addPassthroughCopy({ "src//assets/code/public": "assets/js" });
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
     return collectionApi.getFilteredByGlob("./src/posts/*.njk");
@@ -31,8 +31,8 @@ module.exports = function (eleventyConfig) {
   // });
   eleventyConfig.addWatchTarget("styles/**/*.css");
 
-  eleventyConfig.addFilter("formattedDate", require("./src/code/filters/formattedDate"));
-  eleventyConfig.addFilter("search", require("./src/code/filters/searchFilter"));
+  eleventyConfig.addFilter("formattedDate", require("./src/assets/code/filters/formattedDate"));
+  eleventyConfig.addFilter("search", require("./src/assets/code/filters/searchFilter"));
 
   return {
     passthroughFileCopy: true,
