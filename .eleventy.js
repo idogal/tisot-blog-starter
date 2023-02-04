@@ -8,6 +8,7 @@ const translations = require("./src/_data/translations");
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "assets/img" });
   eleventyConfig.addPassthroughCopy({ "src/assets/favicon": "assets/favicon" });
+  eleventyConfig.addPassthroughCopy({ "src/code/*": "assets/js" });
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
     return collectionApi.getFilteredByGlob("./src/posts/*.njk");

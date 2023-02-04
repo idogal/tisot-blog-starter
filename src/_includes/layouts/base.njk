@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ locale }}" dir="{{ dir }}">
+<html lang="{{ locale }}" dir="{{ dir }}" data-theme="light">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,12 +11,13 @@
         <link rel="manifest" href="{{'assets/favicon/site.webmanifest' | url }}">
         <link rel="mask-icon" href="{{'assets/favicon/safari-pinned-tab.svg' | url }}" color="#5bbad5">
         <meta name="msapplication-TileColor" content="#da532c">
-        <meta
-        name="theme-color" content="#ffffff">
+        <meta name="theme-color" content="#ffffff">
         {# <link href="output.css" rel="stylesheet"> #}
+        
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://cdn.jsdelivr.net/npm/daisyui@2.46.0/dist/full.css" rel="stylesheet" type="text/css"/>
         <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+        <script src="assets/js/blog_custom.js" defer></script> 
     </head>
     {% include "partials/site-header.njk" %}
     <main id="main-content" role="main" tabindex="-1">

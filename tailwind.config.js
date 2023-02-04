@@ -4,8 +4,11 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [
-    require("daisyui"), 
-    require("tailwindcss-flip")
-  ],
+  daisyui: {
+    themes: [
+      "light",
+      "dark"
+    ],
+  },
+  plugins: [require("daisyui"), require("tailwindcss-flip")],
 };
