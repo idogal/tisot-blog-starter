@@ -6,8 +6,8 @@ module.exports = {
   },
   daisyui: {
     themes: [
-      "light",
-      "dark"
+      "business",
+      "corporate"
     ],
   },
   plugins: [require("daisyui"), require("tailwindcss-flip")],
