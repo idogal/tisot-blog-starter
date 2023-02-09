@@ -1,0 +1,35 @@
+backend:
+  # Use netlify identity as backend
+  # name: git-gateway
+  branch: main
+  ### enable below lines for github integration ###
+  name: gitlab
+  repo: ido.g/IdoG-Blog-DaisyUI
+  # site_domain: cms.netlify.com
+  # api_root: https://gitlab.com/ido.g/portfolio-design/api/v4
+  # base_url: https://gitlab.com/ido.g/portfolio-design/
+  # auth_endpoint: oauth/authorize
+  # cms_label_prefix:
+  auth_type: pkce
+  app_id: 
+
+media_folder: "src/assets/img/"
+public_folder: "/assets/img"
+
+# Please run "npx netlify-cms-proxy-server" for local backend
+local_backend: false
+# publish_mode: editorial_workflow
+
+collections:
+  - label: "Posts"
+    name: "posts"
+    folder: "src/posts"
+    media_folder: "/src/assets/img/posts/"
+    create: true
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subTitle", widget: "string" }
+      - { label: "Publish Date", name: "publish_date", widget: "date" }
+      - { label: "Body", name: "body", widget: "markdown" }
