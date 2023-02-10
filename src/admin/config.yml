@@ -18,6 +18,7 @@ public_folder: "/assets/img"
 publish_mode: editorial_workflow
 site_url: https://ido.g.gitlab.io/idog-blog-daisyui/
 display_url: https://ido.g.gitlab.io/idog-blog-daisyui/
+logo_url: https://your-site.com/assets/favicon/android-chrome-512x512.png
 
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: false
