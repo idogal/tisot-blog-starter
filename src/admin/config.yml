@@ -32,6 +32,7 @@ collections:
       preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Subtitle", name: "subTitle", widget: "string" }
+      - { label: "Published by", name: "published_by", widget: "string" }
       - { label: "Publish Date", name: "publish_date", widget: "date" }
+      - { label: "Main Image", name: "head_image", widget: "image" }      
       - { label: "Body", name: "body", widget: "markdown" }
