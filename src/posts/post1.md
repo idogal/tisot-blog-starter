@@ -3,7 +3,7 @@ title: Post 1
 subtitle: Post 1 Lorem ipsum dolor sit amet
 publish_date: 2014-08-06T13:07:04
 published_by: Ido Gal
-head_image: /assets/img/IMG_20221209_103718.jpg
+head_image: /assets/img/posts/IMG_20221209_103718.jpg
 tags: post
 layout: "layouts/blogpost.njk"
 ---
