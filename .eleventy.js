@@ -12,7 +12,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/admin/config.yml": "./admin/config.yml"});
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/posts/*.njk");
+    return collectionApi.getFilteredByGlob("./src/posts/*.md");
   });
 
   eleventyConfig.addPlugin(i18n, {
