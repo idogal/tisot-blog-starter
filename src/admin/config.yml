@@ -24,7 +24,8 @@ collections:
   - label: "Post"
     name: "post"
     folder: "src/posts"
-    extension: "njk"
+    extension: "md"
+    format: "frontmatter"
     media_folder: "/src/assets/img/posts/"
     create: true
     editor:
