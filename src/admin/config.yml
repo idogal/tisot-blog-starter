@@ -15,6 +15,9 @@ backend:
 
 media_folder: "src/assets/img/"
 public_folder: "/assets/img"
+publish_mode: editorial_workflow
+site_url: https://ido.g.gitlab.io/idog-blog-daisyui/
+display_url: https://ido.g.gitlab.io/idog-blog-daisyui/
 
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: false
@@ -28,6 +31,8 @@ collections:
     format: "frontmatter"
     media_folder: "/src/assets/img/posts/"
     create: true
+    slug: "{{slug}}"
+    preview_path: "{{slug}}"        
     editor:
       preview: true
     fields:
