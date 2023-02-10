@@ -13,7 +13,7 @@ publisher: I.G.
                 <div class="grid grid-cols-2 gap-2"></div>
                 <div class="text-lg text-center">
                     <div class="">Published on {{ publish_date | formattedDate }}</div>
-                    <div class="">Published by: {{ publisher }}</div>
+                    <div class="">Published by: {{ published_by }}</div>
                 </div>
                 <div class="m-2 text-center">
                     <span class="badge">#בלגיה</span>
@@ -21,7 +21,7 @@ publisher: I.G.
                 <div class="px-2 py-2 mb-6 lg:px-0">
                     <img
                         class="w-full max-w-2xl mx-auto"
-                        src=" {{'/assets/img/IMG_20221209_103718.jpg'| url }} "
+                        src="{{ head_image | url }}"
                         width="960"
                         height="500"
                         alt="This post thumbnail"/>
@@ -30,21 +30,7 @@ publisher: I.G.
                     id="content"
                     class="prose prose-lg lg:prose-xl prose-stone
                                                                  max-w-none px-6 lg:px-0">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Sit amet justo donec enim diam vulputate ut pharetra sit. Neque volutpat ac tincidunt vitae semper quis.
-                        Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada. Diam vulputate ut pharetra sit. Laoreet sit amet cursus
-                        sit amet dictum sit. Tincidunt ornare massa eget egestas purus viverra accumsan in. Sed faucibus turpis in eu. Elit eget
-                        gravida cum sociis natoque. Purus in mollis nunc sed id semper risus in hendrerit. Quis imperdiet massa tincidunt nunc
-                        pulvinar. Ullamcorper sit amet risus nullam eget felis eget nunc. Et netus et malesuada fames ac turpis egestas sed.
-                    </p>
-                    <p>
-                        Nunc pulvinar sapien et ligula ullamcorper malesuada. Commodo elit at imperdiet dui. Iaculis at erat pellentesque
-                        adipiscing commodo elit. Eget duis at tellus at urna condimentum mattis pellentesque. Amet nisl suscipit adipiscing
-                        bibendum est. Enim tortor at auctor urna nunc id cursus metus aliquam. Pharetra diam sit amet nisl suscipit adipiscing.
-                        Eget est lorem ipsum dolor sit amet consectetur adipiscing elit. Tristique et egestas quis ipsum suspendisse. Non arcu
-                        risus quis varius quam quisque id. Ac felis donec et odio pellentesque.
-                    </p>
+                        {{ layoutContent | safe }}
                 </div>
             </div>
         </article>
