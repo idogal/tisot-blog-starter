@@ -33,7 +33,7 @@ collections:
     media_folder: "/src/assets/img/posts/"
     create: true
     slug: "{{slug}}"
-    preview_path: "{{slug}}"        
+    preview_path: "posts/{{slug}}"        
     editor:
       preview: true
     fields:
