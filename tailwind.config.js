@@ -5,10 +5,9 @@ module.exports = {
     extend: {},
   },
   daisyui: {
-    themes: [
-      "business",
-      "corporate"
-    ],
+    themes: ["business", "corporate"],
+    rtl: false,
+    darkTheme: "business",
   },
   plugins: [require("daisyui"), require("tailwindcss-flip")],
 };
