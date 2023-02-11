@@ -9,12 +9,12 @@ title: Contact Us
             {{ title }}
         </h1>
         <div class="container mx-auto max-w-3xl px-6">
-            <form class="grid justify-items-center grid-rows-5 grid-flow-col">
+            <form target="_blank" action="https://formsubmit.co/63b0cb557e8bea939d06452bd7de6053" method="POST" class="grid justify-items-center grid-rows-5 grid-flow-col">
                 <div class="form-control w-full max-w-md">
                     <label class="label">
                         <span class="label-text font-semibold">What is your name?</span>
                     </label>
-                    <input type="text" placeholder="John Doe" class="input input-bordered input-md w-full max-w-md rounded bg-neutral-100" required/>
+                    <input type="text" placeholder="John Doe" name="name" class="input input-bordered input-md w-full max-w-md rounded bg-neutral-100" required/>
                 </div>
                 <div class="form-control w-full max-w-md">
                     <label class="label">
@@ -23,6 +23,7 @@ title: Contact Us
                     <input 
                         type="text"
                         placeholder="mail@mymail.com"
+                        name="email"
                         class="input input-bordered input-md w-full max-w-md rounded bg-neutral-100" required/>
                 </div>
                 <div class="form-control w-full max-w-md">
@@ -32,6 +33,7 @@ title: Contact Us
                     <input
                         type="text"
                         placeholder="Fill up the subject"
+                        name="subject"
                         class="input input-bordered input-md w-full max-w-md rounded bg-neutral-100" required/>
                 </div>
                 <div class="form-control w-full max-w-md">
@@ -40,6 +42,7 @@ title: Contact Us
                     </label>
                     <textarea
                         class="textarea textarea-bordered textarea-lg w-full max-w-md rounded bg-neutral-100"
+                        name="message"
                         placeholder="Leave a message..."></textarea>
                 </div>
                 <div class="container mx-auto max-w-md">
