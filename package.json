@@ -22,7 +22,7 @@
   "scripts": {
     "start": "npx tailwindcss -i ./src/assets/main.css -o ./public/output.css && eleventy --serve",
     "build": "npx tailwindcss -i ./src/assets/main.css -o ./public/output.css && eleventy",
-    "updatedep": "npm i -g npm-check-updates && ncu -u && npm install"    
+    "updatedep": "npm i -g npm-check-updates && ncu -u && npm install"
   },
   "name": "idog_blog_daisyui",
   "version": "1.0.0",

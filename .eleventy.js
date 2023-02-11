@@ -1,4 +1,5 @@
 const tailwindcss = require("tailwindcss");
+const { EleventyI18nPlugin } = require("@11ty/eleventy");
 const i18n = require("eleventy-plugin-i18n");
 const translations = require("./src/_data/translations");
 
@@ -10,7 +11,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/favicon": "assets/favicon" });
   eleventyConfig.addPassthroughCopy({ "src//assets/code/js": "assets/js" });
   eleventyConfig.addPassthroughCopy({ "src//assets/code/css": "assets/css" });
-  eleventyConfig.addPassthroughCopy({ "src/admin/config.yml": "./admin/config.yml"});
+  eleventyConfig.addPassthroughCopy({
+    "src/admin/config.yml": "./admin/config.yml",
+  });
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
     return collectionApi.getFilteredByGlob("./src/posts/*.md");
@@ -19,8 +22,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(i18n, {
     translations,
     fallbackLocales: {
-      "*": "en-GB",
+      "*": "en",
     },
+  });
+
+  eleventyConfig.addPlugin(EleventyI18nPlugin, {
+    defaultLanguage: "en",
   });
 
   // eleventyConfig.addNunjucksAsyncFilter('postcss', (cssCode, done) => {
@@ -33,8 +40,14 @@ module.exports = function (eleventyConfig) {
   // });
   eleventyConfig.addWatchTarget("styles/**/*.css");
 
-  eleventyConfig.addFilter("formattedDate", require("./src/assets/code/filters/formattedDate"));
-  eleventyConfig.addFilter("search", require("./src/assets/code/filters/searchFilter"));
+  eleventyConfig.addFilter(
+    "formattedDate",
+    require("./src/assets/code/filters/formattedDate")
+  );
+  eleventyConfig.addFilter(
+    "search",
+    require("./src/assets/code/filters/searchFilter")
+  );
 
   return {
     passthroughFileCopy: true,

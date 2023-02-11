@@ -6,7 +6,7 @@ module.exports = {
   },
   daisyui: {
     themes: ["business", "corporate"],
-    rtl: false,
+    rtl: true,
     darkTheme: "business",
   },
   plugins: [require("daisyui"), require("tailwindcss-flip")],

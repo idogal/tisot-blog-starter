@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ locale | default("en", true) }}" dir="{{ dir | default("ltr", true) }}" data-theme="corporate">
+<html lang="{{ page.lang | default("en-GB", true) }}" dir="{{ locales[page.lang].dir | default("ltr", true) }}" data-theme="corporate">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
