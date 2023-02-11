@@ -9,21 +9,21 @@ title: Contact Us
             {{ title }}
         </h1>
         <div class="container mx-auto max-w-3xl px-6">
-            <div class="grid justify-items-center grid-rows-5 grid-flow-col">
+            <form class="grid justify-items-center grid-rows-5 grid-flow-col">
                 <div class="form-control w-full max-w-md">
                     <label class="label">
                         <span class="label-text font-semibold">What is your name?</span>
                     </label>
-                    <input type="text" placeholder="John Doe" class="input input-bordered input-md w-full max-w-md rounded bg-neutral-100"/>
+                    <input type="text" placeholder="John Doe" class="input input-bordered input-md w-full max-w-md rounded bg-neutral-100" required/>
                 </div>
                 <div class="form-control w-full max-w-md">
                     <label class="label">
                         <span class="label-text font-semibold">What is your email address?</span>
                     </label>
-                    <input
+                    <input 
                         type="text"
                         placeholder="mail@mymail.com"
-                        class="input input-bordered input-md w-full max-w-md rounded bg-neutral-100"/>
+                        class="input input-bordered input-md w-full max-w-md rounded bg-neutral-100" required/>
                 </div>
                 <div class="form-control w-full max-w-md">
                     <label class="label">
@@ -32,7 +32,7 @@ title: Contact Us
                     <input
                         type="text"
                         placeholder="Fill up the subject"
-                        class="input input-bordered input-md w-full max-w-md rounded bg-neutral-100"/>
+                        class="input input-bordered input-md w-full max-w-md rounded bg-neutral-100" required/>
                 </div>
                 <div class="form-control w-full max-w-md">
                     <label class="label">
@@ -44,9 +44,9 @@ title: Contact Us
                 </div>
                 <div class="container mx-auto max-w-md">
                     <div class="float-left">
-                        <button class="btn mt-6">Submit</button>
+                        <button class="btn mt-6 btn-outline" type="submit">Submit</button>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </section>
