@@ -9,6 +9,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "assets/img" });
   eleventyConfig.addPassthroughCopy({ "src/assets/favicon": "assets/favicon" });
   eleventyConfig.addPassthroughCopy({ "src//assets/code/js": "assets/js" });
+  eleventyConfig.addPassthroughCopy({ "src//assets/code/css": "assets/css" });
   eleventyConfig.addPassthroughCopy({ "src/admin/config.yml": "./admin/config.yml"});
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
