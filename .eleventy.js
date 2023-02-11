@@ -22,12 +22,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(i18n, {
     translations,
     fallbackLocales: {
-      "*": "en",
+      "*": "he",
     },
   });
 
   eleventyConfig.addPlugin(EleventyI18nPlugin, {
-    defaultLanguage: "en",
+    defaultLanguage: "he",
   });
 
   // eleventyConfig.addNunjucksAsyncFilter('postcss', (cssCode, done) => {
