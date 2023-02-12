@@ -1,6 +1,8 @@
 {
   "name": "Tisot",
-  "footerBuiltBy": "footer_built_by",
-  "repoUrl": "https://gitlab.com/ido.g/idog-blog-daisyui",
-  "repoMessage": "repo_message"
+  "footer": {
+    "BuiltBy": "footer_built_by",
+    "repoUrl": "https://gitlab.com/ido.g/idog-blog-daisyui",
+    "repoMessage": "repo_message"
+  }
 }

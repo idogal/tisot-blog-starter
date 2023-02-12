@@ -19,6 +19,22 @@ module.exports = {
     "he": "טיסות",
     "en": "Tisot"  
   },
+  "Using": {
+    "he": "באמצעות שימוש ב",
+    "en": "Using"  
+  },
+  "Using the": {
+    "he": "באמצעות שימוש ב",
+    "en": "Using the"  
+  },
+  "forms endpoint": {
+    "he": "מערכת טפסים",
+    "en": "forms endpoint"  
+  },
+  "and": {
+    "he": "ו",
+    "en": "and"  
+  },
   "footer_built_by": {
     "he": "נבנה על ידי עדוא גל, 2023",
     "en": "Built by Ido Gal, 2023" 

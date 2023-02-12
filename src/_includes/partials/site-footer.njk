@@ -1,18 +1,18 @@
 <footer class="footer footer-center p-4 bg-base-300 text-base-content">
     <div>
-        <p>{{ site.footerBuiltBy | i18n }}.
-            <a class="footerlink" href="{{ site.repoUrl }}">{{ site.repoMessage | i18n }}</a>.
+        <p>{{ site.footer.BuiltBy | i18n }}.
+            <a class="footerlink" href="{{ site.footer.repoUrl }}">{{ site.footer.repoMessage | i18n }}</a>.
         </p>
         <p>
-            Using
+            {{ 'Using' | i18n }}
             <a class="footerlink" href="https://www.11ty.dev/">Eleventy</a>,
             <a class="footerlink" href="https://tailwindcss.com/">Tailwind CSS</a>
-            and
+            {{ 'and' | i18n }}
             <a class="footerlink" href="https://daisyui.com/">daisyUI</a>.
             <br>
-                Using the
+                {{ 'Using the' | i18n }}
                 <a class="footerlink" href="https://formsubmit.co/">FormSubmit</a>
-                forms endpoint.
+                {{ 'forms endpoint' | i18n }}.
             </p>
         </div>
     </footer>
