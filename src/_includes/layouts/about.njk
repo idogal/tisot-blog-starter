@@ -18,8 +18,7 @@ layout: "layouts/base.njk"
                         {{ 'Photo by' | i18n }}
                         <a href="https://unsplash.com/es/@leoand1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
                             Andrii Leonov</a>
-                        on
-                        {% if 'he' in locales[page.lang] %}על ידי{% else %}By{% endif %}
+                        {{ site.image.imageByMessage | i18n }}
                         <a href="https://unsplash.com/photos/P5nZwlbTngI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
                             Unsplash</a>
                     </p>
@@ -29,7 +28,7 @@ layout: "layouts/base.njk"
         <h2 class="text-2xl italic mt-3">
             {{ about_name }}
         </h2>
-        <div class="text-xl leading-relaxed">
+        <div dir="ltr" class="text-xl leading-relaxed">
             <p>{{ email }}</p>
             <p>{{ phone }}</p>
         </div>
