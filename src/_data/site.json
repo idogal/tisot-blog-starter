@@ -4,5 +4,13 @@
     "BuiltBy": "footer_built_by",
     "repoUrl": "https://gitlab.com/ido.g/idog-blog-daisyui",
     "repoMessage": "repo_message"
+  }, 
+  "contact": {
+    "nameMessage": "your_name_question",
+    "emailMessage": "your_email_question",
+    "subjectMessage": "subject_question",
+    "subjectMessagePlaceholder": "subject_question_placeholder",
+    "msgMessage": "msg_question",
+    "msgMessagePlaceholder": "msg_question_placeholder"
   }
 }
