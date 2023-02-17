@@ -11,9 +11,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/favicon": "assets/favicon" });
   eleventyConfig.addPassthroughCopy({ "src//assets/code/js": "assets/js" });
   eleventyConfig.addPassthroughCopy({ "src//assets/code/css": "assets/css" });
-  eleventyConfig.addPassthroughCopy({
-    "src/admin/config.yml": "./admin/config.yml",
-  });
+  eleventyConfig.addPassthroughCopy({ "src/admin/config.yml": "./admin/config.yml" });
+  eleventyConfig.addWatchTarget("styles/**/*.css");
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
     return collectionApi.getFilteredByGlob("./src/posts/*.md");
@@ -30,20 +29,7 @@ module.exports = function (eleventyConfig) {
     defaultLanguage: "he",
   });
 
-  eleventyConfig.addShortcode(
-    "photoCredit",
-    (photoBy, subtitle) =>
-      `<p class="text-xs absolute bottom-0 px-1 py-1 text-neutral-50 bg-slate-500 mix-blend-normal opacity-80 rounded-bl rounded-tr">
-        ${photoBy}
-        <a href="https://unsplash.com/es/@leoand1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-        Andrii Leonov
-        </a>
-        ${subtitle}
-        <a href="https://unsplash.com/photos/P5nZwlbTngI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-        Unsplash
-        </a>
-    </p>`
-  );
+  eleventyConfig.addShortcode("photoCredit", require("./src/_includes/components/photoCredit.js"));
 
   // eleventyConfig.addNunjucksAsyncFilter('postcss', (cssCode, done) => {
   //   postcss([tailwindcss(require('./tailwind.config.js')), autoprefixer()])
@@ -53,12 +39,12 @@ module.exports = function (eleventyConfig) {
   //       (e) => done(e, null)
   //     );
   // });
-  eleventyConfig.addWatchTarget("styles/**/*.css");
 
   eleventyConfig.addFilter(
     "formattedDate",
     require("./src/assets/code/filters/formattedDate")
   );
+
   eleventyConfig.addFilter(
     "search",
     require("./src/assets/code/filters/searchFilter")
