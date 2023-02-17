@@ -1,9 +1,5 @@
 ---
-layout: "layouts/about.njk"
-title: About
-about_name: John Doe
-email: ig@mymail.com
-phone: +972-50-98765432
+layout: "layouts/base.njk"
 ---
 
 <section>
@@ -15,18 +11,24 @@ phone: +972-50-98765432
             <figure class="relative w-64">
                 <div class="avatar">
                     <div class="rounded">
-                        <img src=" {{'/assets/img/andrii-leonov-P5nZwlbTngI-unsplash.jpg'| url }} " alt="This post thumbnail"/>
+                        <img src=" {{ '/assets/img/andrii-leonov-P5nZwlbTngI-unsplash.jpg'| url }} " alt="This post thumbnail"/>
                     </div>
-                    {% set photoByi18n = 'Photo by' | i18n  %}
-                    {% if page.lang == 'he' %} {% set oni18n = 'באמצעות' %} {% else %} {% set oni18n = 'on' %} {% endif %}
-                    {% photoCredit photoByi18n, oni18n %}
+                    <p class="text-xs absolute bottom-0 px-1 py-1 text-neutral-50 bg-slate-500 mix-blend-normal opacity-80 rounded-bl
+                            rounded-tr">
+                        {{ 'Photo by' | i18n }}
+                        <a href="https://unsplash.com/es/@leoand1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+                            Andrii Leonov</a>
+                        {{ site.image.imageByMessage | i18n }}
+                        <a href="https://unsplash.com/photos/P5nZwlbTngI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+                            Unsplash</a>
+                    </p>
                 </div>
             </figure>
         </div>
         <h2 class="text-2xl italic mt-3">
             {{ about_name }}
         </h2>
-        <div class="text-xl leading-relaxed">
+        <div dir="ltr" class="text-xl leading-relaxed">
             <p>{{ email }}</p>
             <p>{{ phone }}</p>
         </div>
@@ -37,4 +39,5 @@ phone: +972-50-98765432
                 dignissim sodales ut. Adipiscing commodo elit at imperdiet dui accumsan. Scelerisque in dictum non consectetur a erat
                 nam at. Quis commodo odio aenean sed adipiscing diam donec</p>
         </div>
-    </section>
+    </div>
+</section>

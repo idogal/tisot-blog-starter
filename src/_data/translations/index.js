@@ -15,6 +15,10 @@ module.exports = {
     he: "צור קשר",
     en: "Contact",
   },
+  "Contact Us": {
+    he: "צור קשר",
+    en: "Contact Us",
+  },
   Tisot: {
     he: "טיסות",
     en: "Tisot",
@@ -27,13 +31,25 @@ module.exports = {
     he: "באמצעות שימוש ב",
     en: "Using the",
   },
+  "John Doe": {
+    he: "ישראל ישראלי",
+    en: "John Doe",
+  },
   "Photo by": {
-    he: "תמונה על ידי",
+    he: "תמונתו של",
     en: "Photo by",
   },
   Photo: {
     he: "תמונה",
     en: "Photo",
+  },
+  Subject: {
+    he: "נושא",
+    en: "Subject",
+  },
+  Submit: {
+    he: "שלח",
+    en: "Submit",
   },
   by: {
     he: "על ידי",
@@ -47,12 +63,40 @@ module.exports = {
     he: "ו",
     en: "and",
   },
-  footer_built_by: {
+  footer_built_by_i18n: {
     he: "נבנה על ידי עדוא גל, 2023",
     en: "Built by Ido Gal, 2023",
   },
-  repo_message: {
+  repo_message_i18n: {
     he: "פרויקט גיטלאב",
     en: "GitLab repo",
   },
+  your_name_question_i18n: {
+    he: "מהו שמך?",
+    en: "What is your name?",
+  }, 
+  your_email_question_i18n: {
+    he: "מהי כתובת הדואר האלקטרוני שלך?",
+    en: "What is your email address?",
+  }, 
+  subject_question_i18n: {
+    he: "נושא",
+    en: "Subject",
+  }, 
+  subject_question_placeholder_i18n: {
+    he: "אנא מלא את נושא ההודעה",
+    en: "Fill up the subject",
+  }, 
+  msg_question_i18n: {
+    he: "ההודעה שלך",
+    en: "Your Message",
+  }, 
+  msg_question_placeholder_i18n: {
+    he: "גוף הודעה...",
+    en: "Leave a message...",
+  }, 
+  image_by_i18n: {
+    he: "באמצעות",
+    en: "by",
+  } 
 };

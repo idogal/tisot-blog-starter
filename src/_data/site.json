@@ -1,8 +1,19 @@
 {
   "name": "Tisot",
   "footer": {
-    "BuiltBy": "footer_built_by",
+    "BuiltBy": "footer_built_by_i18n",
     "repoUrl": "https://gitlab.com/ido.g/idog-blog-daisyui",
-    "repoMessage": "repo_message"
+    "repoMessage": "repo_message_i18n"
+  }, 
+  "contact": {
+    "nameMessage": "your_name_question_i18n",
+    "emailMessage": "your_email_question_i18n",
+    "subjectMessage": "subject_question_i18n",
+    "subjectMessagePlaceholder": "subject_question_placeholder_i18n",
+    "msgMessage": "msg_question_i18n",
+    "msgMessagePlaceholder": "msg_question_placeholder_i18n"
+  },
+  "image": {
+    "imageByMessage": "image_by_i18n"
   }
 }
