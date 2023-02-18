@@ -1,0 +1,41 @@
+---
+layout: "layouts/base.njk"
+pagination:
+  data: collections.posts
+  size: 4
+  alias: posts
+---
+
+<div class="container mx-auto py-6 px-6 lg:px-24">
+    <div class="grid lg:grid-cols-2 grid-cols-1 gap-6">
+        {% for post in posts %}
+            <div class="card rounded-md mx-1 md:mx-4 my-1 md:my-2 shadow-md">
+                <figure class="relative">
+                    <a href="{{ post.url | url }}">
+                        <img class="" src="{{ '/assets/img/tangerine-chan-cjcD8rFvGHc-unsplash_resized.jpg'| url }}" alt="Bridge in China"/>
+                    </a>                    
+                    {% set photoByi18n = 'Photo by' | i18n  %}
+                    {% if page.lang == 'he' %} {% set oni18n = 'באמצעות' %} {% else %} {% set oni18n = 'on' %} {% endif %}
+                    {% set dir = locales[page.lang].dir %}
+                    {% photoCredit photoByi18n, oni18n, 'Tangerine Chan', true, dir %}
+                </figure>
+                <div class="card-body bg-base-200">
+                    <h2 class="card-title">
+                        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+                    </h2>
+                    <p>
+                        {{ post.data.subtitle }}
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="container mx-auto text-center mt-12"> 
+        {% if pagination.href.previous %}
+            <a href="{{ pagination.href.previous | url }}">Previous Page</a>
+        {% endif %}
+        {% if pagination.href.next %}
+            <a href="{{ pagination.href.next | url }}">Next Page</a>
+        {% endif %}
+    </div>
+</div>
