@@ -3,6 +3,8 @@ const { EleventyI18nPlugin } = require("@11ty/eleventy");
 const i18n = require("eleventy-plugin-i18n");
 const translations = require("./src/_data/translations");
 
+const debug = require("debug")("blog-idog");
+
 // const postcss = require('postcss');
 // const autoprefixer = require('autoprefixer');
 
