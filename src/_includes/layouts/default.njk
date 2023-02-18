@@ -13,15 +13,11 @@ pagination:
                 <figure class="relative">
                     <a href="{{ post.url | url }}">
                         <img class="" src="{{ '/assets/img/tangerine-chan-cjcD8rFvGHc-unsplash_resized.jpg'| url }}" alt="Bridge in China"/>
-                    </a>
-                    <p class="text-xs absolute bottom-0 left-0 px-1 py-1 text-neutral-50 bg-slate-500 mix-blend-normal opacity-80 rounded-tr">
-                        Photo by
-                        <a href="https://unsplash.com/@tangerine0206?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-                            Tangerine Chan</a>
-                        on
-                        <a href="https://unsplash.com/photos/cjcD8rFvGHc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-                            Unsplash</a>
-                    </p>
+                    </a>                    
+                    {% set photoByi18n = 'Photo by' | i18n  %}
+                    {% if page.lang == 'he' %} {% set oni18n = 'באמצעות' %} {% else %} {% set oni18n = 'on' %} {% endif %}
+                    {% set dir = locales[page.lang].dir %}
+                    {% photoCredit photoByi18n, oni18n, 'Tangerine Chan', true, dir %}
                 </figure>
                 <div class="card-body bg-base-200">
                     <h2 class="card-title">

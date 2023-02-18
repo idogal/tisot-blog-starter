@@ -15,7 +15,8 @@ layout: "layouts/base.njk"
                     </div>
                     {% set photoByi18n = 'Photo by' | i18n  %}
                     {% if page.lang == 'he' %} {% set oni18n = 'באמצעות' %} {% else %} {% set oni18n = 'on' %} {% endif %}
-                    {% photoCredit photoByi18n, oni18n %}
+                    {% set dir = locales[page.lang].dir %}
+                    {% photoCredit photoByi18n, oni18n, 'Andrii Leonov', false, dir %}
                 </div>
             </figure>
         </div>

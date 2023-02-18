@@ -3,6 +3,10 @@ module.exports = {
     he: "אודות",
     en: "About",
   },
+  אודות: {
+    he: "אודות",
+    en: "About",
+  },  
   Home: {
     he: "דף הבית",
     en: "Home",
@@ -16,6 +20,10 @@ module.exports = {
     en: "Contact",
   },
   "Contact Us": {
+    he: "צור קשר",
+    en: "Contact Us",
+  },
+  "צור קשר": {
     he: "צור קשר",
     en: "Contact Us",
   },
