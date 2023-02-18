@@ -55,7 +55,7 @@ module.exports = function (eleventyConfig) {
     require("./src/assets/code/filters/searchFilter")
   );
 
-  async function imageShortcode(src, alt, sizes) {
+  async function imageShortcode(src, alt, sizes, cls) {
     let metadata = await Image(src, {
       widths: [600, 1200],
       formats: ['webp', 'jpeg'],
@@ -74,6 +74,7 @@ module.exports = function (eleventyConfig) {
     let imageAttributes = {
       alt,
       sizes,
+      class: cls,
       loading: "lazy",
       decoding: "async",
     };
