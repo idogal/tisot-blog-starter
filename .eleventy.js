@@ -1,9 +1,12 @@
 const tailwindcss = require("tailwindcss");
 const { EleventyI18nPlugin } = require("@11ty/eleventy");
+const Image = require("@11ty/eleventy-img");
 const i18n = require("eleventy-plugin-i18n");
 const translations = require("./src/_data/translations");
 
 const debug = require("debug")("blog-idog");
+
+const sitePath = "/idog-blog-daisyui/"
 
 // const postcss = require('postcss');
 // const autoprefixer = require('autoprefixer');
@@ -52,13 +55,44 @@ module.exports = function (eleventyConfig) {
     require("./src/assets/code/filters/searchFilter")
   );
 
+  async function imageShortcode(src, alt, sizes) {
+    let metadata = await Image(src, {
+      widths: [600, 1200],
+      formats: ['webp', 'jpeg'],
+      outputDir: "./public/assets/img/",
+      urlPath: `${sitePath}/assets/img/`,
+      filenameFormat: function (id, src, width, format, options) {    
+        return `${id}-${width}.${format}`;
+      }
+      // ,sharpOptions: {
+      //   options: {
+      //     quality: 1
+      //   }
+      // }
+    });
+  
+    let imageAttributes = {
+      alt,
+      sizes,
+      loading: "lazy",
+      decoding: "async",
+    };
+
+    console.log(metadata);
+  
+    // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+    return Image.generateHTML(metadata, imageAttributes);
+  }
+
+  eleventyConfig.addAsyncShortcode("headImage", imageShortcode);
+
   return {
     passthroughFileCopy: true,
     htmlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
     templateFormats: ["md", "njk", "html", "liquid"],
-    pathPrefix: "/idog-blog-daisyui/",
+    pathPrefix: sitePath,
     dir: {
       input: "src",
       output: "public",
