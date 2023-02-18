@@ -16,7 +16,9 @@ publisher: I.G.
                     <div class="">Published by: {{ published_by }}</div>
                 </div>
                 <div class="m-2 text-center">
-                    <span class="badge">#בלגיה</span>
+                    {% for tag in tags %}
+                        <span class="badge">{{ tag }}</span>
+                    {% endfor %}
                 </div>
                 <div class="px-2 py-2 mb-6 lg:px-0">
                     <img
