@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* @font-face {
+  font-family: "Alef";
+  src: url("../public/assets/fonts/Alef/Alef-Regular.ttf");
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Alef&display=swap");
