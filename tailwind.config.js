@@ -1,11 +1,14 @@
+const daisyuiPlugin = require("daisyui");
+const tailwindFlipPlugin = require("tailwindcss-flip");
+const typographyPlugin = require("@tailwindcss/typography");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,js,njk,md}"],
   theme: {
     fontFamily: {
-      //sans: ['Helvetica', 'Arial', 'sans-serif'],
-      alef: ['Alef', 'sans'],
-      poppins: ['Poppins', 'sans-serif']
+      sans: ["Alef", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif", 
+             "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
     },
     extend: {},
   },
@@ -14,5 +17,9 @@ module.exports = {
     rtl: true,
     darkTheme: "business",
   },
-  plugins: [require("daisyui"), require("tailwindcss-flip")],
+  plugins: [
+    daisyuiPlugin, 
+    tailwindFlipPlugin, 
+    typographyPlugin
+  ],
 };
