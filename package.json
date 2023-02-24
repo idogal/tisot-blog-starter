@@ -26,7 +26,7 @@
   },
   "scripts": {
     "start": "tailwindcss -i ./src/assets/main.css -o ./public/assets/css/output.css --postcss && eleventy --serve",
-    "build": "tailwindcss -i ./src/assets/main.css -o ./public/assets/css/output.css --postcss && eleventy",
+    "build": "tailwindcss -i ./src/assets/main.css -o ./public/assets/css/output.css --postcss --minify && eleventy",
     "updatedep": "npm i -g npm-check-updates && ncu -u && npm install",
     "debugall": "set DEBUG=Eleventy* && npx @11ty/eleventy --dryrun",
     "debug": "set DEBUG=*blog-idog* && npx @11ty/eleventy --dryrun"
@@ -45,5 +45,5 @@
     "url": "https://gitlab.com/ido.g/idog-blog-daisyui/issues"
   },
   "homepage": "https://gitlab.com/ido.g/idog-blog-daisyui#readme",
-  "description": ""
+  "description": "A blog starter kit."
 }
