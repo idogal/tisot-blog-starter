@@ -12,18 +12,15 @@
         <link rel="mask-icon" href="{{'/assets/favicon/safari-pinned-tab.svg' | url }}" color="#5bbad5">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
-        {# <link href='https://fonts.googleapis.com/css2?family=Poppins&display=swap' rel='stylesheet' type='text/css'> #}
+
         <link href="{{ '/assets/css/custom.css' | url }}" rel="stylesheet"  type="text/css">
         <link href="{{ '/assets/css/output.css' | url }}" rel="stylesheet" type="text/css">
-        
-        {# <script src="https://cdn.tailwindcss.com"></script> #}
-        {# <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.0/dist/full.css" rel="stylesheet" type="text/css"/> #}
-        {# <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script> #}
-        <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+        <script type="module" src="{{ '/assets/js/blog_custom.js' | url }}"></script>
+
     </head>
     {% include "partials/site-header.njk" %}
     <main id="main-content" role="main" tabindex="-1">
-        <body class="">
+        <body class="text-base">
             <div class="py-6">
                 {% block content %}
                     {{ content | safe }}
