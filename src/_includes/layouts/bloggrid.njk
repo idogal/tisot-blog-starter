@@ -12,7 +12,7 @@ pagination:
             <div class="card rounded-md mx-1 md:mx-4 my-1 md:my-2 shadow-md">
                 <figure class="relative">
                     <a href="{{ post.url | url }}">
-                        <img class="" src="{{ '/assets/img/tangerine-chan-cjcD8rFvGHc-unsplash_resized.jpg'| url }}" alt="Bridge in China"/>
+                        <img class="" src="{{ post.data.thumbnail | url }}" alt="Bridge in China"/>
                     </a>                    
                     {% set photoByi18n = 'Photo by' | i18n  %}
                     {% if page.lang == 'he' %} {% set oni18n = 'באמצעות' %} {% else %} {% set oni18n = 'on' %} {% endif %}

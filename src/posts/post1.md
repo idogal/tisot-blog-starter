@@ -3,6 +3,7 @@ title: Post 1
 subtitle: Post 1 Lorem ipsum dolor sit amet
 publish_date: 2014-08-06T13:07:04
 published_by: Ido Gal
+thumbnail: /assets/img/tangerine-chan-cjcD8rFvGHc-unsplash_resized.jpg
 head_image: /assets/img/posts/IMG_20221209_103718.jpg
 tags: 
     - tips
