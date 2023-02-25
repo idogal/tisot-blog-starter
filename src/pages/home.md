@@ -1,5 +1,5 @@
 ---
-layout: layouts/default.njk
+layout: layouts/home.njk
 permalink: /
 title: Home Page
 main_heading: My Site Main Header - Dignissim suspendisse in est ante in nibh mauris.
