@@ -6,7 +6,7 @@ const tailwindTextSizes = {
     { className: "text-lg", sizeRank: 4 },
     { className: "text-xl", sizeRank: 5 },
     { className: "text-2xl", sizeRank: 6 },
-    { className: "text-3xl", sizeRank: 7 }
+    { className: "text-3xl", sizeRank: 7 },
   ],
 };
 
@@ -100,6 +100,7 @@ function decreaseTailwindTextSize() {
 
 var increaseTextSizeButton = document.getElementById("increasetextsize");
 var decreaseTextSizeButton = document.getElementById("decreasetextsize");
+var checkbox = document.getElementById("checkbox");
 
 const increaseTextSize = function () {
   increaseTailwindTextSize();
@@ -109,15 +110,13 @@ const decreaseTextSize = function () {
   decreaseTailwindTextSize();
 };
 
+const toggleDarkMode = function () {
+  const html = document.querySelector("html");
+  checkbox.checked
+    ? html.setAttribute("data-theme", "dark")
+    : html.setAttribute("data-theme", "light");
+};
+
 increaseTextSizeButton.addEventListener("click", increaseTextSize);
 decreaseTextSizeButton.addEventListener("click", decreaseTextSize);
-
-
-// var checkbox = document.querySelector("#checkbox");
-// const toggleDarkMode = function () {
-//   const html = document.querySelector("html");
-//   checkbox.checked
-//     ? html.setAttribute("data-theme", "dark")
-//     : html.setAttribute("data-theme", "light");
-// };
-// checkbox.addEventListener("click", toggleDarkMode);
+checkbox.addEventListener("click", toggleDarkMode);
