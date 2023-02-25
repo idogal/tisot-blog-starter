@@ -113,10 +113,10 @@ const decreaseTextSize = function () {
 const toggleDarkMode = function () {
   const html = document.querySelector("html");
   checkbox.checked
-    ? html.setAttribute("data-theme", "dark")
-    : html.setAttribute("data-theme", "light");
+    ? html.setAttribute("data-theme", "business")
+    : html.setAttribute("data-theme", "corporate");
 };
 
-increaseTextSizeButton.addEventListener("click", increaseTextSize);
-decreaseTextSizeButton.addEventListener("click", decreaseTextSize);
+// increaseTextSizeButton.addEventListener("click", increaseTextSize);
+// decreaseTextSizeButton.addEventListener("click", decreaseTextSize);
 checkbox.addEventListener("click", toggleDarkMode);
