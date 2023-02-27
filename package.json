@@ -31,19 +31,19 @@
     "debugall": "set DEBUG=Eleventy* && npx @11ty/eleventy --dryrun",
     "debug": "set DEBUG=*blog-idog* && npx @11ty/eleventy --dryrun"
   },
-  "name": "idog_blog_daisyui",
+  "name": "idog-blog-tisot",
   "version": "1.0.0",
   "main": ".eleventy.js",
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/ido.g/idog-blog-daisyui.git"
+    "url": "git+https://gitlab.com/ido.g/idog-blog-tisot.git"
   },
   "keywords": [],
   "author": "Ido Gal",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/ido.g/idog-blog-daisyui/issues"
+    "url": "https://gitlab.com/ido.g/idog-blog-tisot/issues"
   },
-  "homepage": "https://gitlab.com/ido.g/idog-blog-daisyui#readme",
+  "homepage": "https://gitlab.com/ido.g/idog-blog-tisot#readme",
   "description": "A blog starter kit."
 }

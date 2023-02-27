@@ -6,7 +6,7 @@ const translations = require("./src/_data/translations");
 
 const debug = require("debug")("blog-idog");
 
-const sitePath = "/idog-blog-daisyui/"
+const sitePath = "/idog-blog-tisot/"
 
 // const postcss = require('postcss');
 // const autoprefixer = require('autoprefixer');
