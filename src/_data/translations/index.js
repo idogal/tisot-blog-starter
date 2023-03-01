@@ -3,6 +3,14 @@ module.exports = {
     he: "אודות",
     en: "About",
   },
+  "Published on": {
+    he: "פורסם ב",
+    en: "Published on",
+  },
+  "Published by": {
+    he: "פורסם על ידי",
+    en: "Published by",
+  },    
   אודות: {
     he: "אודות",
     en: "About",
