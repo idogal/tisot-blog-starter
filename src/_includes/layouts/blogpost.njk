@@ -11,9 +11,9 @@ publisher: I.G.
                     {{ title }}
                 </h1>
                 <div class="grid grid-cols-2 gap-2"></div>
-                <div class="text-lg text-center">
-                    <div class="">Published on {{ publish_date | formattedDate }}</div>
-                    <div class="">Published by: {{ published_by }}</div>
+                <div class="text-md text-center">
+                    <div class="">{{'Published on' | i18n}}: {{ publish_date | formattedDate }}</div>
+                    <div class="">{{'Published by' | i18n}}: {{ published_by }}</div>
                 </div>
                 <div class="m-2 text-center">
                     {% for tag in tags %}
@@ -21,17 +21,15 @@ publisher: I.G.
                     {% endfor %}
                 </div>
                 <div class="px-2 py-2 mb-6 lg:px-0">
-                    <img
-                        class="w-full max-w-2xl mx-auto"
+                    {# <img
+                        class="w-full mx-auto"
                         src="{{ head_image | url }}"
-                        width="960"
-                        height="500"
-                        alt="This post thumbnail"/>
+                        alt="This post thumbnail"/> #}
                 </div>
                 <div
                     id="content"
-                    class="prose prose-lg lg:prose-xl prose-stone
-                           max-w-none px-6 lg:px-0">
+                    class="prose prose-lg lg:prose-lg
+                           max-w-none px-3 lg:px-0">
                         {{ layoutContent | safe }}
                 </div>
             </div>
