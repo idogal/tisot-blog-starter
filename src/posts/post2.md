@@ -1,12 +1,12 @@
 ---
 published_by: עדוא גל
 layout: layouts/blogpost.njk
-thumbnail: /src/assets/img/posts/IMG_20221209_103718.jpg
+thumbnail: /assets/img/posts/IMG_20221209_103718.jpg
 subtitle: Post 2 sapien et ligula ullamcorper
 title: " בלגיה - גנט - דצמבר 2022"
 tags: post
 publish_date: 2022-03-01T08:00:00.000Z
-head_image: /src/assets/img/posts/IMG_20221209_103718.jpg
+head_image: /assets/img/posts/IMG_20221209_103718.jpg
 ---
 גנט היא העיר השלישית בגודלה בבלגיה, ועיר שנמצאת פחות על "מפת הטיולים" מערים אחרות כמו בריסל (Brussels) או כמו ברוז' ([Bruges](https://en.wikipedia.org/wiki/Bruges)). זו עיר יפה, סטודנטיאלית, וקטנה למדי. מרכז העיר ההיסטורי יפה ומעניין, גם אם קטן יותר ומרשים פחות מאשר המרכז בשכנה הידועה - ברוז'. הוא מלא בסמטאות ורחובות להולכי רגל בלבד, בהם ניתן למצוא בוטיקים יוקרתיים, מסעדות, כנסיות וקתדרלות מרשימות, וכמובן - ברים שמגישים בירה בלגית משובחת וחזקה.
 

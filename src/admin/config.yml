@@ -27,10 +27,10 @@ local_backend: false
 collections:
   - label: "Post"
     name: "post"
-    folder: "src/posts"
+    folder: "/posts"
     extension: "md"
     format: "frontmatter"
-    media_folder: "/src/assets/img/posts/"
+    media_folder: "/assets/img/posts/"
     create: true
     slug: "{{slug}}"
     preview_path: "posts/{{slug}}"        
@@ -45,7 +45,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
   - label: "Page"
     name: "pages"
-    folder: "src/pages"
+    folder: "/pages"
     create: false
     slug: "{{slug}}"
     preview_path: "{{slug}}"
