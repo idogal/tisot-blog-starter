@@ -31,7 +31,7 @@ collections:
     folder: "/src/posts"
     extension: "md"
     format: "frontmatter"
-    media_folder: "/assets/img/posts/"
+    media_folder: "/src/assets/img/posts/"
     create: true
     slug: "{{slug}}"
     preview_path: "/posts/{{slug}}"        
