@@ -18,7 +18,7 @@ public_folder: "/assets/img"
 publish_mode: editorial_workflow
 site_url: https://ido.g.gitlab.io/idog-blog-daisyui/
 display_url: https://ido.g.gitlab.io/idog-blog-daisyui/
-logo_url: https://your-site.com/assets/favicon/android-chrome-512x512.png
+logo_url: https://ido.g.gitlab.io/idog-blog-daisyui/assets/favicon/android-chrome-512x512.png
 
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: false
@@ -42,6 +42,7 @@ collections:
       - { label: "Publish Date", name: "publish_date", widget: "date" }
       - { label: "Main Image", name: "head_image", widget: "image" }
       - { label: "Thumbnail Image", name: "thumbnail", widget: "image" }
+      - { label: "Tags", name: "tags", widget: "list", default: [] }
       - { label: "Body", name: "body", widget: "markdown" }
   - label: "Page"
     name: "pages"
