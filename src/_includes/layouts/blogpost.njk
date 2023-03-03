@@ -16,6 +16,12 @@ publisher: I.G.
                 {{ 'by' | i18n }}
                 <b>{{ published_by }}</b>
             </div>
+            <div>
+                {{ 'Trip date' | i18n }};
+                <b>{{ publish_date | formattedDate }}</b>
+                {{ 'Trip type' | i18n }}
+                <b>{{ trip_type }}</b>
+            </div>            
             <div class="py-2">
                 {% for tag in tags %}
                     <span class="badge">{{ tag }}</span>
