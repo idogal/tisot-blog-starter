@@ -4,35 +4,29 @@ publisher: I.G.
 ---
 
 <section>
-    <div class="container mx-auto max-w-5xl">
-        <article class="">
-            <div class="">
-                <h1 class="text-3xl text-center font-bold leading-normal mt-0 mb-3">
-                    {{ title }}
-                </h1>
-                <div class="grid grid-cols-2 gap-2"></div>
-                <div class="text-md text-center">
-                    <div class="">{{'Published on' | i18n}}: {{ publish_date | formattedDate }}</div>
-                    <div class="">{{'Published by' | i18n}}: {{ published_by }}</div>
-                </div>
-                <div class="m-2 text-center">
-                    {% for tag in tags %}
-                        <span class="badge">{{ tag }}</span>
-                    {% endfor %}
-                </div>
-                <div class="px-2 py-2 mb-6 lg:px-0">
-                    <img
-                        class="w-full mx-auto"
-                        src="{{ head_image | url }}"
-                        alt="This post thumbnail"/>
-                </div>
-                <div
-                    id="content"
-                    class="prose prose-lg lg:prose-lg
-                           max-w-none px-3 lg:px-0">
-                        {{ layoutContent | safe }}
-                </div>
+    <article class="container mx-auto px-3 lg:px-0
+                    prose lg:prose-lg prose-base">
+        <div class="text-center">
+            <h1 class="">
+                {{ title }}
+            </h1>
+            <div>
+                {{ 'Published on' | i18n }}
+                <b>{{ publish_date | formattedDate }}</b>
+                {{ 'by' | i18n }}
+                <b>{{ published_by }}</b>
             </div>
-        </article>
-    </div>
+            <div class="py-2">
+                {% for tag in tags %}
+                    <span class="badge">{{ tag }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="px-2 lg:px-0">
+            <img class="w-full" src="{{ head_image | url }}" alt="This post thumbnail"/>
+        </div>
+        <div id="content" class="">
+            {{ content | safe }}
+        </div>
+    </article>
 </section>
