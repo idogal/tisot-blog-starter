@@ -1,6 +1,8 @@
 ---
 published_by: עדוא גל
+trip_date: 2022-12-08T20:26:14.315Z
 layout: layouts/blogpost.njk
+trip_type: זוגי
 thumbnail: /assets/img/posts/IMG_20221209_103718.jpg
 subtitle: Post 2 sapien et ligula ullamcorper
 title: " בלגיה - גנט - דצמבר 2022"
