@@ -10,7 +10,15 @@ module.exports = {
   "Published by": {
     he: "פורסם על ידי",
     en: "Published by",
-  },    
+  },
+  "Trip date": {
+    he: "תאריך הטיול",
+    en: "Trip date",
+  },
+  "Trip type": {
+    he: "אופי הטיול",
+    en: "Trip type",
+  },  
   אודות: {
     he: "אודות",
     en: "About",
