@@ -4,7 +4,8 @@ layout: layouts/blogpost.njk
 thumbnail: /assets/img/posts/IMG_20221209_103718.jpg
 subtitle: Post 2 sapien et ligula ullamcorper
 title: " בלגיה - גנט - דצמבר 2022"
-tags: post
+tags: 
+    - post
 publish_date: 2022-03-01T08:00:00.000Z
 head_image: /assets/img/posts/IMG_20221209_103718.jpg
 ---
