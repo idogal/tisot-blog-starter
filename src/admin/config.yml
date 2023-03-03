@@ -40,7 +40,9 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Published by", name: "published_by", widget: "string" }
-      - { label: "Publish Date", name: "publish_date", widget: "date" }
+      - { label: "Publish Date", name: "publish_date", widget: "datetime" }
+      - { label: "Trip Date", name: "trip_date", widget: "datetime" }
+      - { label: "Trip Type", name: "trip_type", widget: "string" }
       - { label: "Main Image", name: "head_image", widget: "image" }
       - { label: "Thumbnail Image", name: "thumbnail", widget: "image" }
       - { label: "Tags", name: "tags", widget: "list", default: [], allow_add: true, field: {label: Tag, name: tag, widget: string} }
