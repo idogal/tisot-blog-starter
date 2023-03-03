@@ -12,13 +12,14 @@ backend:
   # cms_label_prefix:
   auth_type: pkce
   app_id: d2015d598c23d422e2c9c1e20a0ed07fd9e1c5c4ef796a4734e522bce34ad681
+  locale: 'he'
 
-media_folder: "src/assets/img/"
+media_folder: "/src/assets/img/"
 public_folder: "/assets/img"
 publish_mode: editorial_workflow
 site_url: https://ido.g.gitlab.io/idog-blog-tisot/
 display_url: https://ido.g.gitlab.io/idog-blog-tisot/
-logo_url: https://your-site.com/assets/favicon/android-chrome-512x512.png
+logo_url: https://ido.g.gitlab.io/idog-blog-tisot/assets/favicon/android-chrome-512x512.png
 
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: false
@@ -27,13 +28,13 @@ local_backend: false
 collections:
   - label: "Post"
     name: "post"
-    folder: "/posts"
+    folder: "/src/posts"
     extension: "md"
     format: "frontmatter"
-    media_folder: "/assets/img/posts/"
+    media_folder: "/src/assets/img/posts/"
     create: true
     slug: "{{slug}}"
-    preview_path: "posts/{{slug}}"        
+    preview_path: "/posts/{{slug}}"        
     editor:
       preview: true
     fields:
@@ -42,10 +43,11 @@ collections:
       - { label: "Publish Date", name: "publish_date", widget: "date" }
       - { label: "Main Image", name: "head_image", widget: "image" }
       - { label: "Thumbnail Image", name: "thumbnail", widget: "image" }
+      - { label: "Tags", name: "tags", widget: "list", default: [], allow_add: true, field: {label: Tag, name: tag, widget: string} }
       - { label: "Body", name: "body", widget: "markdown" }
   - label: "Page"
     name: "pages"
-    folder: "/pages"
+    folder: "/src/pages"
     create: false
     slug: "{{slug}}"
     preview_path: "{{slug}}"
