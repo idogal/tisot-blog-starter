@@ -12,7 +12,7 @@ backend:
   # cms_label_prefix:
   auth_type: pkce
   app_id: d2015d598c23d422e2c9c1e20a0ed07fd9e1c5c4ef796a4734e522bce34ad681
-  locale: 'he'
+  # locale: 'he'
 
 media_folder: "/src/assets/img/"
 public_folder: "/assets/img"
