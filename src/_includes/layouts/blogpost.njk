@@ -11,16 +11,24 @@ publisher: I.G.
                 {{ title }}
             </h1>
             <div>
-                {{ 'Published on' | i18n }}
-                <b>{{ publish_date | formattedDate }}</b>
-                {{ 'by' | i18n }}
-                <b>{{ published_by }}</b>
+                {% if publish_date %}
+                    {{ 'Published on' | i18n }}
+                    <b>{{ publish_date | formattedDate }}</b>
+                {% endif %}
+                {% if published_by %}
+                    {{ 'by' | i18n }}
+                    <b>{{ published_by }}</b>
+                {% endif %}
             </div>
             <div>
-                {{ 'Trip date' | i18n }}
-                <b>{{ publish_date | formattedDate }}</b>,
-                {{ 'Trip type' | i18n }}
-                <b>{{ trip_type }}</b>
+                {% if trip_date %}
+                    {{ 'Trip date' | i18n }}
+                    <b>{{ trip_date | formattedDate }}</b>,
+                {% endif %}
+                {% if trip_type %}
+                    {{ 'Trip type' | i18n }}
+                    <b>{{ trip_type }}</b>
+                {% endif %}
             </div>            
             <div class="py-2">
                 {% for tag in tags %}
