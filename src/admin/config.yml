@@ -29,11 +29,13 @@ collections:
   - label: "Post"
     name: "post"
     folder: "/src/posts"
+    folder: "/src/posts"
     extension: "md"
     format: "frontmatter"
     media_folder: "/src/assets/img/posts/"
     create: true
     slug: "{{slug}}"
+    preview_path: "/posts/{{slug}}"        
     preview_path: "/posts/{{slug}}"        
     editor:
       preview: true
@@ -43,12 +45,17 @@ collections:
       - { label: "Publish Date", name: "publish_date", widget: "datetime" }
       - { label: "Trip Date", name: "trip_date", widget: "datetime" }
       - { label: "Trip Type", name: "trip_type", widget: "string" }
+      - { label: "Publish Date", name: "publish_date", widget: "datetime" }
+      - { label: "Trip Date", name: "trip_date", widget: "datetime" }
+      - { label: "Trip Type", name: "trip_type", widget: "string" }
       - { label: "Main Image", name: "head_image", widget: "image" }
       - { label: "Thumbnail Image", name: "thumbnail", widget: "image" }
+      - { label: "Tags", name: "tags", widget: "list", default: [], allow_add: true, field: {label: Tag, name: tag, widget: string} }
       - { label: "Tags", name: "tags", widget: "list", default: [], allow_add: true, field: {label: Tag, name: tag, widget: string} }
       - { label: "Body", name: "body", widget: "markdown" }
   - label: "Page"
     name: "pages"
+    folder: "/src/pages"
     folder: "/src/pages"
     create: false
     slug: "{{slug}}"
