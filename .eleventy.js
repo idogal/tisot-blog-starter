@@ -55,6 +55,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addShortcode("photoCredit", require("./src/_includes/components/photoCredit.js"));
+  eleventyConfig.addShortcode("photoCaption", require("./src/_includes/components/photoCaption.js"));
 
   // eleventyConfig.addNunjucksAsyncFilter('postcss', (cssCode, done) => {
   //   postcss([tailwindcss(require('./tailwind.config.js')), autoprefixer()])
