@@ -10,7 +10,17 @@ module.exports = {
       sans: ["Alef", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "sans-serif", 
              "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
     },
-    extend: {},
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            div: {
+              "line-height": "1.75rem",
+            },
+          },
+        },
+      },
+    },
   },
   daisyui: {
     themes: ["business", "corporate"],
