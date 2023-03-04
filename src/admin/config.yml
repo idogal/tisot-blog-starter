@@ -16,7 +16,7 @@ backend:
 
 media_folder: "/src/assets/img/"
 public_folder: "/assets/img"
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 site_url: https://ido.g.gitlab.io/idog-blog-tisot/
 display_url: https://ido.g.gitlab.io/idog-blog-tisot/
 logo_url: https://ido.g.gitlab.io/idog-blog-tisot/assets/favicon/android-chrome-512x512.png
