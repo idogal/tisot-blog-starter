@@ -1,17 +1,23 @@
 ---
-layout: "layouts/about.njk"
+layout: layouts/about.njk
+avatar_show_caption: false
 permalink: /about/index.html
 title: About
-avatar: /assets/img/andrii-leonov-P5nZwlbTngI-unsplash.jpg
-avatar_show_caption: true
-avatar_caption_text:
-about_name: John Doe
-email: ig@mymail.com
-phone: +972-50-98765432
+avatar: /assets/img/profile_1.jpg
+about_name: עדוא גל
+email: idogaltech@gmail.com
+phone: " "
+avatar_caption_text: " "
 ---
+שלום, 
 
-Facilisis gravida neque convallis a cras semper auctor neque. Pharetra sit amet aliquam id diam maecenas ultricies mi
-eget. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Pulvinar sapien et ligula ullamcorper. Mi
-eget mauris pharetra et. Morbi tristique senectus et netus et malesuada. Elementum curabitur vitae nunc sed velit
-dignissim sodales ut. Adipiscing commodo elit at imperdiet dui accumsan. Scelerisque in dictum non consectetur a erat
-nam at. Quis commodo odio aenean sed adipiscing diam donec
+שמי הוא עדוא גל (Ido Gal). הקמתי את האתר בעקבות שתי שאיפות שהיו לי: 
+
+* שיתוף הידע שצברתי במהלך עשרות הטיולים שעשיתי ברחבי העולם (בעיקר אירופה ואסיה).
+* צבירת ידע ופיתוח הידע הטכנולוגי-הנדסי שיש לי בבניית אתרי אינטרנט.
+
+אני בעל תואר מוסמך בהנדסת תעשיה וניהול (M.Sc). כיום אני עובד כמפתח תכנה.
+
+טיילתי עשרות רבות של פעמים. בילדותי המאוחרת נסעתי לטיולים עם אמי. לאחר מכן טיילתי עם חברים. בגיל 32 טסתי לדרום מזרח אסיה לבד, ל"טיול שאחרי הצבא". בשנים האחרונות אני מטייל בעיקר עם בת הזוג שלי. כאשר אני מטייל, זה בדר"כ בצורה יותר "תקציבית". מבחינתי - כיום - עדיף לטייל כמה שיותר, ולכן אני משתדל לא להוציא סכומים גבוהים ממה שצריך בשביל לטייל. כמובן שכמו לרובנו - חשוב לי לשים את הראש בלילה במקום נעים ונקי. כאן אנסה לשתף אותכם בתובנות שלי לגבי כך.
+
+במידה שתרצו ליצור קשר, אתם יותר ממוזמנים לעשות כן באמצעות פניה ישירה אל כתובת הדוא"ל בעמוד זה, או באמצעות עמוד "צור קשר".
