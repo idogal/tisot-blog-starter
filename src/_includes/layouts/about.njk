@@ -11,12 +11,19 @@ layout: "layouts/base.njk"
             <figure class="relative w-64">
                 <div class="avatar">
                     <div class="rounded">
-                        <img src="/assets/img/andrii-leonov-P5nZwlbTngI-unsplash.jpg" alt="This post thumbnail"/>
+                        <img src="{{ avatar }}" alt="This post thumbnail"/>
                     </div>
-                    {% set photoByi18n = 'Photo by' | i18n  %}
-                    {% if page.lang == 'he' %} {% set oni18n = 'באמצעות' %} {% else %} {% set oni18n = 'on' %} {% endif %}
-                    {% set dir = locales[page.lang].dir %}
-                    {% photoCredit photoByi18n, oni18n, 'Andrii Leonov', false, dir %}
+                    {% if avatar_show_caption %}
+                        {% set dir = locales[page.lang].dir %}
+                        
+                        {% if avatar_caption_text %}
+                            {% photoCaption avatar_caption_text, false, dir %}
+                        {% else %}
+                            {% set photoByi18n = 'Photo by' | i18n  %}
+                            {% if page.lang == 'he' %} {% set oni18n = 'באמצעות' %} {% else %} {% set oni18n = 'on' %} {% endif %}                            
+                            {% photoCredit photoByi18n, oni18n, 'Andrii Leonov', false, dir %}
+                        {% endif %}    
+                    {% endif %}
                 </div>
             </figure>
         </div>
@@ -28,11 +35,7 @@ layout: "layouts/base.njk"
             <p>{{ phone }}</p>
         </div>
         <div class="text-lg leading-relaxed lg:px-48 md:px-20 sm:px-12 px-6 py-4">
-            <p>Facilisis gravida neque convallis a cras semper auctor neque. Pharetra sit amet aliquam id diam maecenas ultricies mi
-                eget. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Pulvinar sapien et ligula ullamcorper. Mi
-                eget mauris pharetra et. Morbi tristique senectus et netus et malesuada. Elementum curabitur vitae nunc sed velit
-                dignissim sodales ut. Adipiscing commodo elit at imperdiet dui accumsan. Scelerisque in dictum non consectetur a erat
-                nam at. Quis commodo odio aenean sed adipiscing diam donec</p>
+            {{ content  | safe }}
         </div>
     </div>
 </section>
