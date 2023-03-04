@@ -1,8 +1,9 @@
 const tailwindcss = require("tailwindcss");
-const { EleventyI18nPlugin } = require("@11ty/eleventy");
 const Image = require("@11ty/eleventy-img");
 const i18n = require("eleventy-plugin-i18n");
 const translations = require("./src/_data/translations");
+const { EleventyI18nPlugin } = require("@11ty/eleventy");
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 const debug = require("debug")("blog-idog");
 
@@ -33,6 +34,24 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(EleventyI18nPlugin, {
     defaultLanguage: "he",
+  });
+
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin, {
+    // The base URL: defaults to Path Prefix
+    baseHref: sitePath,
+    // But you could use a full URL here too:
+    // baseHref: "http://example.com/"
+
+    // Comma separated list of output file extensions to apply
+    // our transform to. Use `false` to opt-out of the transform.
+    extensions: "html",
+
+    // // Rename the filters
+    // filters: {
+    //   base: "htmlBaseUrl",
+    //   html: "transformWithHtmlBase",
+    //   pathPrefix: "addPathPrefixToUrl",
+    // },    
   });
 
   eleventyConfig.addShortcode("photoCredit", require("./src/_includes/components/photoCredit.js"));
