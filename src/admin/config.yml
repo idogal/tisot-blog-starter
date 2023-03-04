@@ -22,7 +22,7 @@ display_url: https://ido.g.gitlab.io/idog-blog-tisot/
 logo_url: https://ido.g.gitlab.io/idog-blog-tisot/assets/favicon/android-chrome-512x512.png
 
 # Please run "npx netlify-cms-proxy-server" for local backend
-local_backend: false
+local_backend: true
 # publish_mode: editorial_workflow
 
 collections:
@@ -33,6 +33,7 @@ collections:
     extension: "md"
     format: "frontmatter"
     media_folder: "/src/assets/img/posts/"
+    public_folder: "/assets/img/posts/"
     create: true
     slug: "{{slug}}"
     preview_path: "/posts/{{slug}}"        
