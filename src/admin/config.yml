@@ -47,14 +47,12 @@ collections:
       - { label: "Thumbnail Image", name: "thumbnail", widget: "image" }
       - { label: "Tags", name: "tags", widget: "list", default: [], allow_add: true, field: {label: Tag, name: tag, widget: string} }
       - { label: "Body", name: "body", widget: "markdown" }
-  - label: "Page"
-    name: "pages"
-    folder: "/src/pages"
+  - label: "Home Page"
+    name: "home_page"
+    folder: "/src/home_page"
     create: false
-    slug: "{{slug}}"
-    preview_path: "{{slug}}"
+    # slug: "{{slug}}"
+    # preview_path: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Permalink", name: "permalink", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Main Heading", name: "main_heading", widget: "string" }
+      - { label: "Secondary Heading", name: "secondary_heading", widget: "string" }
