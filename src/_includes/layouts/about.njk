@@ -40,7 +40,9 @@ layout: "layouts/base.njk"
             </div>
         </div>
         <div class="prose prose-lg mx-auto text-center py-4">
-            {{ content  | safe }}
+            <div id="content" class="">
+                {{ content  | safe }}
+            </div>
         </div>
     </div>
 </section>

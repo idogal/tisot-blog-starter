@@ -15,7 +15,8 @@ module.exports = {
         DEFAULT: {
           css: {
             div: {
-              "line-height": "1.75rem",
+              "line-height": "1.75rem;",
+              "text-align": "justify;"
             },
           },
         },
