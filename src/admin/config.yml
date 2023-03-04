@@ -56,3 +56,4 @@ collections:
     fields:
       - { label: "Main Heading", name: "main_heading", widget: "string" }
       - { label: "Secondary Heading", name: "secondary_heading", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
