@@ -58,17 +58,17 @@ collections:
       - { label: "Secondary Heading", name: "secondary_heading", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
   - label: "About Page"
-      name: "about_page"
-      folder: "/src/pages/about"
-      create: false
-      # slug: "{{slug}}"
-      # preview_path: "{{slug}}"
-      fields:        
-        - { label: "Title", name: "title", widget: "string" }
-        - { label: "Avatar", name: "avatar", widget: "image" }
-        - { label: "Writer's name", name: "about_name", widget: "string" }
-        - { label: "Writer's email", name: "email", widget: "string" }
-        - { label: "Writer's phone", name: "phone", widget: "string" }
-        - { label: "Show avatar caption", name: "avatar_show_caption", widget: "boolean", default: true }
-        - { label: "Avatar caption text", name: "avatar_caption_text", widget: "string", default: "" }
-        - { label: "Body", name: "body", widget: "markdown" }
+    name: "about_page"
+    folder: "/src/pages/about"
+    create: false
+    # slug: "{{slug}}"
+    # preview_path: "{{slug}}"
+    fields:        
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Avatar", name: "avatar", widget: "image" }
+      - { label: "Writer's name", name: "about_name", widget: "string" }
+      - { label: "Writer's email", name: "email", widget: "string" }
+      - { label: "Writer's phone", name: "phone", widget: "string" }
+      - { label: "Show avatar caption", name: "avatar_show_caption", widget: "boolean", default: true }
+      - { label: "Avatar caption text", name: "avatar_caption_text", widget: "string", default: "" }
+      - { label: "Body", name: "body", widget: "markdown" }
