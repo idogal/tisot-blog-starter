@@ -79,6 +79,14 @@ module.exports = {
     he: "על ידי",
     en: "by",
   },
+  "Previous Page": {
+    he: "העמוד הקודם",
+    en: "Previous Page",
+  },
+  "Next Page": {
+    he: "העמוד הבא",
+    en: "Next Page",
+  },
   "forms endpoint": {
     he: "מערכת טפסים",
     en: "forms endpoint",
