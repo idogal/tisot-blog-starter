@@ -1,5 +1,9 @@
 {
   "name": "Tisot",
+  "siteUrl": "http://localhost",
+  "sitePath": "/idog-blog-daisyui/",
+  "disqusShortname" : "",
+  "disqusEnabled" : false,  
   "footer": {
     "BuiltBy": "footer_built_by_i18n",
     "repoUrl": "https://gitlab.com/ido.g/idog-blog-daisyui",
