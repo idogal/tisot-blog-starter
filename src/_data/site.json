@@ -19,5 +19,9 @@
   },
   "image": {
     "imageByMessage": "image_by_i18n"
+  },
+  "notFound": {
+    "notFoundMessage1": "not_found_1_i18n",
+    "notFoundMessage2": "not_found_2_i18n"
   }
 }

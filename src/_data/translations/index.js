@@ -122,5 +122,13 @@ module.exports = {
   image_by_i18n: {
     he: "באמצעות",
     en: "by",
-  } 
+  },
+  not_found_1_i18n: {
+    he: "לא ניתן למצוא את הדף המבוקש",
+    en: "Failed to find the requested page",
+  },
+  not_found_2_i18n: {
+    he: "חזור לדף הבית",
+    en: "get back to home page",
+  }     
 };
