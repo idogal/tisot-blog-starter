@@ -2,12 +2,13 @@ const tailwindcss = require("tailwindcss");
 const Image = require("@11ty/eleventy-img");
 const i18n = require("eleventy-plugin-i18n");
 const translations = require("./src/_data/translations");
+const siteConfig = require("./src/_data/site.json");
 const { EleventyI18nPlugin } = require("@11ty/eleventy");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 const debug = require("debug")("blog-idog");
 
-const sitePath = "/idog-blog-tisot/"
+const sitePath = siteConfig.sitePath;
 
 // const postcss = require('postcss');
 // const autoprefixer = require('autoprefixer');
