@@ -5,42 +5,39 @@ publisher: I.G.
 
 <section>
     <article class="container mx-auto
-                    prose prose-lg ">
+                                            prose prose-lg ">
         <div class="text-center">
-            <h1 class="">
+            <h1>
                 {{ title }}
             </h1>
-            <div>
-                {% if publish_date %}
-                    {{ 'Published on' | i18n }}
-                    <b>{{ publish_date | formattedDate }}</b>
-                {% endif %}
-                {% if published_by %}
-                    {{ 'by' | i18n }}
-                    <b>{{ published_by }}</b>
-                {% endif %}
-            </div>
-            <div>
-                {% if trip_date %}
-                    {{ 'Trip date' | i18n }}
-                    <b>{{ trip_date | formattedDate }}</b>,
-                {% endif %}
-                {% if trip_type %}
-                    {{ 'Trip type' | i18n }}
-                    <b>{{ trip_type }}</b>
-                {% endif %}
-            </div>            
-            <div class="py-2">
+            {% if publish_date %}
+                {{ 'Published on' | i18n }}
+                <b>{{ publish_date | formattedDate }}</b>
+            {% endif %}
+            {% if published_by %}
+                {{ 'by' | i18n }}
+                <b>{{ published_by }}</b>
+            {% endif %}
+            <br/>
+            {% if trip_date %}
+                {{ 'Trip date' | i18n }}
+                <b>{{ trip_date | formattedDate }}</b>,
+            {% endif %}
+            {% if trip_type %}
+                {{ 'Trip type' | i18n }}
+                <b>{{ trip_type }}</b>
+            {% endif %}
+            <div class="py-2 text-center">
                 {% for tag in tags %}
                     <span class="badge">{{ tag }}</span>
                 {% endfor %}
             </div>
-        </div>
-        <div class="px-2 lg:px-0">
-            <img class="w-full" src="{{ head_image }}" alt="This post thumbnail"/>
-        </div>
-        <div id="content" class="">
-            {{ content | safe }}
+            <div class="px-2 lg:px-0">
+                <img class="w-full" src="{{ head_image }}" alt="This post thumbnail"/>
+            </div>
+            <div id="content" class="">
+                {{ content | safe }}
+            </div>
         </div>
     </article>
 </section>
