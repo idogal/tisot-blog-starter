@@ -1,0 +1,12 @@
+---
+layout: layouts/base.njk
+title: Oops! Not Found
+permalink: /404.html
+---
+
+<div class="container mx-auto py-6 px-6 lg:px-24">
+    <p class="text-3xl">
+        {{ site.notFound.notFoundMessage1 | i18n }}!<br><br>
+        <b><a href="/">{{ site.notFound.notFoundMessage2 | i18n }}</a>.</b>
+    </p>
+</div>
