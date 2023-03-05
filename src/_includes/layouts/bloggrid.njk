@@ -32,10 +32,10 @@ pagination:
     </div>
     <div class="container mx-auto text-center mt-12"> 
         {% if pagination.href.previous %}
-            <a href="{{ pagination.href.previous }}">Previous Page</a>
+            <a href="{{ pagination.href.previous }}">{{ 'Previous Page' | i18n }}</a>
         {% endif %}
         {% if pagination.href.next %}
-            <a href="{{ pagination.href.next }}">Next Page</a>
+            <a href="{{ pagination.href.next }}">{{ 'Next Page' | i18n }}</a>
         {% endif %}
     </div>
 </div>
