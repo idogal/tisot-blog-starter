@@ -34,7 +34,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addPlugin(EleventyI18nPlugin, {
-    defaultLanguage: "he",
+    defaultLanguage: "en",
   });
 
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin, {
