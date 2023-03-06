@@ -29,7 +29,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(i18n, {
     translations,
     fallbackLocales: {
-      "*": "he",
+      "*": "en",
     },
   });
 
