@@ -41,8 +41,8 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Published by", name: "published_by", widget: "string" }
       - { label: "Publish Date", name: "publish_date", widget: "datetime" }
-      - { label: "Trip Date", name: "trip_date", widget: "datetime" }
-      - { label: "Trip Type", name: "trip_type", widget: "string" }
+      - { label: "Trip Date", name: "trip_date", widget: "datetime", required: false }
+      - { label: "Trip Type", name: "trip_type", widget: "string", required: false }
       - { label: "Main Image", name: "head_image", widget: "image" }
       - { label: "Thumbnail Image", name: "thumbnail", widget: "image" }
       - { label: "Tags", name: "tags", widget: "list", default: [], allow_add: true, field: {label: Tag, name: tag, widget: string} }
@@ -55,8 +55,8 @@ collections:
     # preview_path: "{{slug}}"
     fields:
       - { label: "Main Heading", name: "main_heading", widget: "string" }
-      - { label: "Secondary Heading", name: "secondary_heading", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Secondary Heading", name: "secondary_heading", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
   - label: "About Page"
     name: "about_page"
     folder: "/src/pages/about"
@@ -65,10 +65,10 @@ collections:
     # preview_path: "{{slug}}"
     fields:        
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Avatar", name: "avatar", widget: "image" }
-      - { label: "Writer's name", name: "about_name", widget: "string" }
-      - { label: "Writer's email", name: "email", widget: "string" }
-      - { label: "Writer's phone", name: "phone", widget: "string" }
+      - { label: "Avatar", name: "avatar", widget: "image", required: false }
+      - { label: "Writer's name", name: "about_name", widget: "string", required: false }
+      - { label: "Writer's email", name: "email", widget: "string", required: false }
+      - { label: "Writer's phone", name: "phone", widget: "string", required: false }
       - { label: "Show avatar caption", name: "avatar_show_caption", widget: "boolean", default: true }
       - { label: "Avatar caption text", name: "avatar_caption_text", widget: "string", default: "" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
