@@ -54,8 +54,9 @@ collections:
     # slug: "{{slug}}"
     # preview_path: "{{slug}}"
     fields:
+      - { label: "Main Image", name: "main_image", widget: "image" }
       - { label: "Main Heading", name: "main_heading", widget: "string" }
-      - { label: "Secondary Heading", name: "secondary_heading", widget: "string", required: false }
+      - { label: "Secondary Heading", name: "secondary_heading", widget: "string", required: false }      
       - { label: "Body", name: "body", widget: "markdown", required: false }
   - label: "About Page"
     name: "about_page"
