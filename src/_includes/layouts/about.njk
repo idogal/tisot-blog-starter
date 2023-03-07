@@ -4,45 +4,44 @@ layout: "layouts/base.njk"
 
 <section>
     <div class="container mx-auto">
-        <div class="text-center">
-            <h1 class="text-3xl font-bold leading-normal mb-3">
-                {{ title | i18n }}
-            </h1>
-            <div class="flex flex-auto justify-center">
-                <figure class="relative w-64">
-                    <div class="avatar">
-                        <div class="rounded">
-                            <img src="{{ avatar }}" alt="This post thumbnail"/>
-                        </div>
-                        {% if avatar_show_caption %}
-                            {% set dir = locales[page.lang].dir %}
-                            {% if avatar_caption_text %}
-                                {% photoCaption avatar_caption_text, false, dir %}
-                            {% else %}
-                                {% set photoByi18n = 'Photo by' | i18n %}
-                                {% if page.lang == 'he' %}
-                                    {% set oni18n = 'באמצעות' %}
-                                {% else %}
-                                    {% set oni18n = 'on' %}
-                                {% endif %}
-                                {% photoCredit photoByi18n, oni18n, 'Andrii Leonov', false, dir %}
-                            {% endif %}
-                        {% endif %}
+        <h1 class="text-3xl font-bold leading-normal mb-3 text-center">
+            {{ title | i18n }}
+        </h1>
+        <div class="flex flex-row space-x-20 justify-center py-4">
+            <div class="w-64">
+                <figure class="avatar">
+                    <div class="rounded">
+                        <img src="{{ avatar }}" alt="This post thumbnail"/>
                     </div>
+                    {% if avatar_show_caption %}
+                        {% set dir = locales[page.lang].dir %}
+                        {% if avatar_caption_text %}
+                            {% photoCaption avatar_caption_text, false, dir %}
+                        {% else %}
+                            {% set photoByi18n = 'Photo by' | i18n %}
+                            {% if page.lang == 'he' %}
+                                {% set oni18n = 'באמצעות' %}
+                            {% else %}
+                                {% set oni18n = 'on' %}
+                            {% endif %}
+                            {% photoCredit photoByi18n, oni18n, 'Andrii Leonov', false, dir %}
+                        {% endif %}
+                    {% endif %}
                 </figure>
             </div>
-            <h2 class="text-2xl italic mt-3">
-                {{ about_name }}
-            </h2>
-            <div dir="ltr" class="text-xl leading-relaxed">
-                <p>{{ email }}</p>
-                <p>{{ phone }}</p>
+            <div class="flex flex-col justify-center">
+                <h2 class="text-2xl italic leading-relaxed">
+                    {{ about_name }}
+                </h2>
+                <div dir="ltr" class="text-xl">
+                    <p>{{ email }}<br>{{ phone }}</p>
+                </div>
             </div>
         </div>
-        <div class="prose prose-lg mx-auto text-center py-4">
-            <div id="content" class="">
-                {{ content  | safe }}
-            </div>
+    </div>
+    <div class="prose prose-lg mx-auto text-center">
+        <div id="content" class="">
+            {{ content  | safe }}
         </div>
     </div>
 </section>
