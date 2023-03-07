@@ -26,6 +26,18 @@ module.exports = function (eleventyConfig) {
     return collectionApi.getFilteredByGlob("./src/posts/*.md");
   });
 
+	eleventyConfig.addFilter("getTop", (array, n) => {
+    if (!Array.isArray(array) || array.length === 0) {
+      return [];
+    }
+
+    if (n < 0) {
+      return array.slice(n);
+    }
+
+    return array.slice(0, n);
+  });
+
   eleventyConfig.addPlugin(i18n, {
     translations,
     fallbackLocales: {
