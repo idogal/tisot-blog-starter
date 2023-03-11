@@ -3,12 +3,12 @@ published_by: עדוא גל
 trip_date: 2023-01-10T09:53:32.526Z
 layout: layouts/blogpost.njk
 thumbnail: /assets/img/posts/img_20230111_230851_b.jpg
-thumbnail_show_caption: true
+thumbnail_show_caption: false
 thumbnail_caption_text: 
 date: Last Modified
 trip_type: חברים
 title: קטניה, סיציליה - ינואר 2023
-subtitle: Post 1 Lorem ipsum dolor sit amet
+subtitle: קטניה וסיציליה, חלופה טובה וברת-השגה לצפון איטליה ולאירופה עבור חודשי החורף.
 publish_date: 2023-03-07T09:52:51.373Z
 head_image: /assets/img/posts/IMG_20221209_103718.jpg
 tags:
