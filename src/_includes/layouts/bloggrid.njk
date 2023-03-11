@@ -8,12 +8,19 @@ pagination:
 
 <div class="container mx-auto py-6 px-6 lg:px-24">
     {% include "partials/posts-grid.njk" %}
-    <div class="container mx-auto text-center mt-12"> 
-        {% if pagination.href.previous %}
-            <a href="{{ pagination.href.previous }}">{{ 'Previous Page' | i18n }}</a>
-        {% endif %}
-        {% if pagination.href.next %}
-            <a href="{{ pagination.href.next }}">{{ 'Next Page' | i18n }}</a>
-        {% endif %}
+    <div class="container mx-auto text-center max-w-md mt-12">
+        <div class="btn-group grid grid-cols-2">
+            {% if pagination.href.previous %}
+            <a href="{{ pagination.href.previous }}" class="btn btn-outline">{{ 'Previous Page' | i18n }}</a>
+            {% else %}
+            <a href="{{ pagination.href.previous }}" class="btn btn-outline btn-disabled">{{ 'Previous Page' | i18n }}</a>
+            {% endif %}
+
+            {% if pagination.href.next %}
+            <a href="{{ pagination.href.next }}" class="btn btn-outline">{{ 'Next Page' | i18n }}</a>
+            {% else %}            
+            <a href="{{ pagination.href.next }}" class="btn btn-outline btn-disabled">{{ 'Next Page' | i18n }}</a>
+            {% endif %}
+        </div>
     </div>
 </div>
