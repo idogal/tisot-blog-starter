@@ -10,6 +10,6 @@ permalink: false
     {% endif %}
     {{ content | safe }}
     <hr class="mt-3"/>
-    {% set blogPosts = collections.posts | getTop(2) %}
+    {% set blogPosts = collections.posts | getTop(3) %}
     {% include "partials/posts-grid.njk" %}
 </div>

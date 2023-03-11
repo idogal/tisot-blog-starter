@@ -1,6 +1,6 @@
-<div class="grid lg:grid-cols-2 grid-cols-1 gap-6">
+<div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
     {% for post in blogPosts %}
-        <div class="card rounded-md mx-1 md:mx-4 my-1 md:my-2 shadow-md">
+        <div class="card rounded-md my-1 md:my-2 shadow-md">
             <figure class="relative">
                 <a href="{{ post.url }}">
                     <img class="" src="{{ post.data.thumbnail }}" alt="Bridge in China"/>
