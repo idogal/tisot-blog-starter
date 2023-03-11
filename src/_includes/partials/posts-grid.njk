@@ -5,14 +5,21 @@
                 <a href="{{ post.url }}">
                     <img class="" src="{{ post.data.thumbnail }}" alt="Bridge in China"/>
                 </a>
-                {% set photoByi18n = 'Photo by' | i18n %}
-                {% if page.lang == 'he' %}
-                    {% set oni18n = 'באמצעות' %}
-                {% else %}
-                    {% set oni18n = 'on' %}
+                {% if post.data.thumbnail_show_caption %}
+                    {% set dir = locales[page.lang].dir %}
+
+                    {% if post.data.thumbnail_caption_text %}
+                        {% photoCaption post.data.thumbnail_caption_text, true, dir %}
+                    {% else %}
+                        {% set photoByi18n = 'Photo by' | i18n %}
+                        {% if page.lang == 'he' %}
+                            {% set oni18n = 'באמצעות' %}
+                        {% else %}
+                            {% set oni18n = 'on' %}
+                        {% endif %}
+                        {% photoCredit photoByi18n, oni18n, 'Tangerine Chan', true, dir %}
+                    {% endif %}
                 {% endif %}
-                {% set dir = locales[page.lang].dir %}
-                {% photoCredit photoByi18n, oni18n, 'Tangerine Chan', true, dir %}
             </figure>
             <div class="card-body bg-base-200">
                 <h2 class="card-title">

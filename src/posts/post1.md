@@ -7,6 +7,8 @@ trip_date: 2014-08-06T13:07:04
 published_by: Ido Gal
 trip_type: 
 thumbnail: /assets/img/posts/tangerine-chan-cjcD8rFvGHc-unsplash_resized.jpg
+thumbnail_show_caption: true
+thumbnail_caption_text: 
 head_image: /assets/img/posts/IMG_20221209_103718.jpg
 tags: 
     - tips
