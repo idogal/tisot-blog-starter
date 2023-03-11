@@ -4,6 +4,8 @@ trip_date: 2022-12-08T20:26:14.315Z
 layout: layouts/blogpost.njk
 trip_type: זוגי
 thumbnail: /assets/img/posts/img_20221210_181327_b.jpg
+thumbnail_show_caption: true
+thumbnail_caption_text:
 subtitle: Post 2 sapien et ligula ullamcorper
 title: " בלגיה - גנט - דצמבר 2022"
 publish_date: 2022-03-01T08:00:00.000Z
@@ -16,12 +18,6 @@ tags:
   - חג המולד
   - שווקי חג המולד
 date: Last Modified
-publish_date: 2022-01-01T10:00
-thumbnail: /assets/img/tangerine-chan-cjcD8rFvGHc-unsplash_resized.jpg
-thumbnail_show_caption: true
-thumbnail_caption_text:
-tags: post
-layout: "layouts/blogpost.njk"
 ---
 ## על גנט
 

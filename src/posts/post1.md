@@ -3,22 +3,19 @@ published_by: עדוא גל
 trip_date: 2023-01-10T09:53:32.526Z
 layout: layouts/blogpost.njk
 thumbnail: /assets/img/posts/img_20230111_230851_b.jpg
-date: Last Modified
-trip_type: חברים
-subtitle: Post 1 Lorem ipsum dolor sit amet
-date: Last Modified
-publish_date: 2014-08-06T13:07:04
-trip_date: 2014-08-06T13:07:04
-published_by: Ido Gal
-trip_type: 
-thumbnail: /assets/img/posts/tangerine-chan-cjcD8rFvGHc-unsplash_resized.jpg
 thumbnail_show_caption: true
 thumbnail_caption_text: 
+date: Last Modified
+trip_type: חברים
+title: קטניה, סיציליה - ינואר 2023
+subtitle: Post 1 Lorem ipsum dolor sit amet
+publish_date: 2023-03-07T09:52:51.373Z
 head_image: /assets/img/posts/IMG_20221209_103718.jpg
-tags: 
-    - tips
-    - business
-layout: "layouts/blogpost.njk"
+tags:
+  - איטליה
+  - סיציליה
+  - אירופה בחורף
+  - ויז אייר
 ---
 ## רקע
 
