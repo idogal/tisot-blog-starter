@@ -1,5 +1,6 @@
 const daisyuiPlugin = require("daisyui");
 const tailwindFlipPlugin = require("tailwindcss-flip");
+const prosePlugin = require("./prose-plugin");
 const typographyPlugin = require("@tailwindcss/typography");
 
 /** @type {import('tailwindcss').Config} */
@@ -29,8 +30,9 @@ module.exports = {
     darkTheme: "business",
   },
   plugins: [
-    daisyuiPlugin, 
-    tailwindFlipPlugin, 
+    daisyuiPlugin,
+    tailwindFlipPlugin,
+    prosePlugin,
     typographyPlugin
   ],
 };
