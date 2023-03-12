@@ -5,6 +5,8 @@ const translations = require("./src/_data/translations");
 const siteConfig = require("./src/_data/site.json");
 const { EleventyI18nPlugin } = require("@11ty/eleventy");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+const markdownIt = require("markdown-it");
+const markdownItImgFigures = require("markdown-it-image-figures");
 
 const debug = require("debug")("blog-idog");
 
@@ -19,14 +21,16 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/code/js": "assets/js" });
   eleventyConfig.addPassthroughCopy({ "src/assets/fonts": "assets/fonts" });
   eleventyConfig.addPassthroughCopy({ "src/assets/code/css": "assets/css" });
-  eleventyConfig.addPassthroughCopy({ "src/admin/config.yml": "./admin/config.yml" });
+  eleventyConfig.addPassthroughCopy({
+    "src/admin/config.yml": "./admin/config.yml",
+  });
   eleventyConfig.addWatchTarget("styles/**/*.css");
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
     return collectionApi.getFilteredByGlob("./src/posts/*.md");
   });
 
-	eleventyConfig.addFilter("getTop", (array, n) => {
+  eleventyConfig.addFilter("getTop", (array, n) => {
     if (!Array.isArray(array) || array.length === 0) {
       return [];
     }
@@ -64,11 +68,17 @@ module.exports = function (eleventyConfig) {
     //   base: "htmlBaseUrl",
     //   html: "transformWithHtmlBase",
     //   pathPrefix: "addPathPrefixToUrl",
-    // },    
+    // },
   });
 
-  eleventyConfig.addShortcode("photoCredit", require("./src/_includes/components/photoCredit.js"));
-  eleventyConfig.addShortcode("photoCaption", require("./src/_includes/components/photoCaption.js"));
+  eleventyConfig.addShortcode(
+    "photoCredit",
+    require("./src/_includes/components/photoCredit.js")
+  );
+  eleventyConfig.addShortcode(
+    "photoCaption",
+    require("./src/_includes/components/photoCaption.js")
+  );
 
   // eleventyConfig.addNunjucksAsyncFilter('postcss', (cssCode, done) => {
   //   postcss([tailwindcss(require('./tailwind.config.js')), autoprefixer()])
@@ -92,19 +102,19 @@ module.exports = function (eleventyConfig) {
   async function imageShortcode(src, alt, sizes, cls) {
     let metadata = await Image(src, {
       widths: [600, 1200],
-      formats: ['webp', 'jpeg'],
+      formats: ["webp", "jpeg"],
       outputDir: "./public/assets/img/",
       urlPath: `${sitePath}/assets/img/`,
-      filenameFormat: function (id, src, width, format, options) {    
+      filenameFormat: function (id, src, width, format, options) {
         return `${id}-${width}.${format}`;
-      }
+      },
       // ,sharpOptions: {
       //   options: {
       //     quality: 1
       //   }
       // }
     });
-  
+
     let imageAttributes = {
       alt,
       sizes,
@@ -114,13 +124,16 @@ module.exports = function (eleventyConfig) {
     };
 
     console.log(metadata);
-  
+
     // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
     return Image.generateHTML(metadata, imageAttributes);
   }
 
   eleventyConfig.addAsyncShortcode("headImage", imageShortcode);
 
+  const mdLib = markdownIt({}).use(markdownItImgFigures, { figcaption: true, });
+  eleventyConfig.setLibrary("md", mdLib);
+  
   return {
     passthroughFileCopy: true,
     htmlTemplateEngine: "njk",

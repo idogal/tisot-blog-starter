@@ -23,6 +23,8 @@ sit amet dictum sit. Tincidunt ornare massa eget egestas purus viverra accumsan 
 gravida cum sociis natoque. Purus in mollis nunc sed id semper risus in hendrerit. Quis imperdiet massa tincidunt nunc
 pulvinar. Ullamcorper sit amet risus nullam eget felis eget nunc. Et netus et malesuada fames ac turpis egestas sed.
 
+![img_alt_text](/assets/img/posts/IMG_20221209_103718.jpg "img_caption")
+
 Nunc pulvinar sapien et ligula ullamcorper malesuada. Commodo elit at imperdiet dui. Iaculis at erat pellentesque
 adipiscing commodo elit. Eget duis at tellus at urna condimentum mattis pellentesque. Amet nisl suscipit adipiscing
 bibendum est. Enim tortor at auctor urna nunc id cursus metus aliquam. Pharetra diam sit amet nisl suscipit adipiscing.
