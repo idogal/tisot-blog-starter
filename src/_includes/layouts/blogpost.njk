@@ -22,6 +22,10 @@ publisher:
                 {{ 'Trip date' | i18n }}
                 <b>{{ trip_date | formattedDate }}</b>,
             {% endif %}
+            {% if trip_length_days %}
+                {{ 'Trip length' | i18n }}
+                <b>{{ trip_length_days }} days</b>,
+            {% endif %}
             {% if trip_type %}
                 {{ 'Trip type' | i18n }}
                 <b>{{ trip_type }}</b>
@@ -39,10 +43,10 @@ publisher:
             </div>
         </div>
         {% if site.disqusEnabled %}
-        <hr>
-        <div name="comments">
-            {% include "partials/disqus.njk" %}
-        </div>
+            <hr/>
+            <div name="comments">
+                {% include "partials/disqus.njk" %}
+            </div>
         {% endif %}
     </article>
 </section>

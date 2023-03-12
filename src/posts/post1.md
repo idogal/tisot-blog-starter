@@ -4,8 +4,9 @@ subtitle: Post 1 Lorem ipsum dolor sit amet
 date: Last Modified
 publish_date: 2014-08-06T13:07:04
 trip_date: 2014-08-06T13:07:04
+trip_type: Couple
+trip_length_days: 6
 published_by: Ido Gal
-trip_type: 
 thumbnail: /assets/img/posts/tangerine-chan-cjcD8rFvGHc-unsplash_resized.jpg
 thumbnail_show_caption: true
 thumbnail_caption_text: 
