@@ -18,6 +18,10 @@ module.exports = {
   "Trip type": {
     he: "אופי הטיול",
     en: "Trip type",
+  },
+  "Trip length": {
+    he: "משך הטיול",
+    en: "Trip length",
   },  
   אודות: {
     he: "אודות",
