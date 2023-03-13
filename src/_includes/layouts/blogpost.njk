@@ -35,6 +35,7 @@ publisher:
                     <span class="badge">{{ tag }}</span>
                 {% endfor %}
             </div>
+            {% include "partials/social_share_bar.njk" %}
             <div class="px-2 lg:px-0">
                 <img class="w-full" src="{{ head_image }}" alt="This post thumbnail"/>
             </div>
@@ -43,7 +44,8 @@ publisher:
             </div>
         </div>
         {% if site.disqusEnabled %}
-            <hr/>
+            {# <hr/> #}
+            <div class="divider"></div>
             <div name="comments">
                 {% include "partials/disqus.njk" %}
             </div>
