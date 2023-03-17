@@ -1,0 +1,14 @@
+<div class="flex flex-row justify-center space-x-1">
+    {% for social_icon in collections.social_icons %}
+        {% set fullPath = site.siteUrl + (site.sitePath + page.url).replace("//", "/") %}
+        {% set socialTitle = title %}
+        <a target="_blank" href="{% buildShareUrl social_icon.data.share_url, fullPath, socialTitle %}">
+            {% set colour = "#374151" %}
+            {% if site.social.useColourForIcons %}
+                {% set colour = social_icon.data.icon_colour %}
+            {% endif %}
+            
+            {% include social_icon.data.icon_partial %}
+        </a>
+    {% endfor %}
+</div>

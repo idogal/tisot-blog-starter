@@ -9,6 +9,9 @@ publisher:
             <h1>
                 {{ title }}
             </h1>
+            <div class="mb-3">
+                {% include "partials/social_share_bar.njk" %}
+            </div>
             {% if publish_date %}
                 {{ 'Published on' | i18n }}
                 <b>{{ publish_date | formattedDate }}</b>
@@ -30,12 +33,11 @@ publisher:
                 {{ 'Trip type' | i18n }}
                 <b>{{ trip_type }}</b>
             {% endif %}
-            <div class="py-2 text-center">
+            <div class="pt-2 text-center">
                 {% for tag in tags %}
                     <span class="badge">{{ tag }}</span>
                 {% endfor %}
-            </div>
-            {# {% include "partials/social_share_bar.njk" %} #}
+            </div>            
             <div class="px-2 lg:px-0">
                 <img class="w-full" src="{{ head_image }}" alt="This post thumbnail"/>
             </div>

@@ -14,6 +14,10 @@ head_image: /assets/img/posts/IMG_20221209_103718.jpg
 tags: 
     - tips
     - business
+    - tag 1
+    - my special tag
+    - my very long tag
+    - tag 4
 layout: "layouts/blogpost.njk"
 ---
 
