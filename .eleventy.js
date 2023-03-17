@@ -28,6 +28,10 @@ module.exports = function (eleventyConfig) {
     return collectionApi.getFilteredByGlob("./src/posts/*.md");
   });
 
+  eleventyConfig.addCollection("social_icons", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("./src/social/*.md");
+  });  
+
   eleventyConfig.addFilter("getTop", (array, n) => {
     if (!Array.isArray(array) || array.length === 0) {
       return [];
@@ -71,6 +75,11 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addShortcode("photoCredit", require("./src/_includes/components/photoCredit.js"));
   eleventyConfig.addShortcode("photoCaption", require("./src/_includes/components/photoCaption.js"));
+
+  eleventyConfig.addShortcode(
+    "buildShareUrl",
+    require("./src/_includes/components/buildShareUrl.js")
+  );
 
   // eleventyConfig.addNunjucksAsyncFilter('postcss', (cssCode, done) => {
   //   postcss([tailwindcss(require('./tailwind.config.js')), autoprefixer()])
