@@ -4,6 +4,7 @@
   "description": "A blog starter kit",
   "siteUrl": "https://www.idogaldev.xyz",
   "sitePath": "/idog-blog-tisot/",
+  "keywords": "טיולים, טיסות, טיסות תקציביות, חוץ לארץ, חול",
   "disqusShortname" : "idog-blog",
   "disqusEnabled" : true,  
   "defaultLang": "he",
