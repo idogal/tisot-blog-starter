@@ -7,6 +7,7 @@ const { EleventyI18nPlugin } = require("@11ty/eleventy");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const markdownIt = require("markdown-it");
 const markdownItImgFigures = require("markdown-it-image-figures");
+const htmlmin = require("html-minifier");
 
 const debug = require("debug")("blog-idog");
 
@@ -30,7 +31,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addCollection("social_icons", function (collectionApi) {
     return collectionApi.getFilteredByGlob("./src/social/*.md");
-  });  
+  });
 
   eleventyConfig.addFilter("getTop", (array, n) => {
     if (!Array.isArray(array) || array.length === 0) {
@@ -73,8 +74,14 @@ module.exports = function (eleventyConfig) {
     // },
   });
 
-  eleventyConfig.addShortcode("photoCredit", require("./src/_includes/components/photoCredit.js"));
-  eleventyConfig.addShortcode("photoCaption", require("./src/_includes/components/photoCaption.js"));
+  eleventyConfig.addShortcode(
+    "photoCredit",
+    require("./src/_includes/components/photoCredit.js")
+  );
+  eleventyConfig.addShortcode(
+    "photoCaption",
+    require("./src/_includes/components/photoCaption.js")
+  );
 
   eleventyConfig.addShortcode(
     "buildShareUrl",
@@ -132,9 +139,22 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addAsyncShortcode("headImage", imageShortcode);
 
-  const mdLib = markdownIt({}).use(markdownItImgFigures, { figcaption: true, });
+  const mdLib = markdownIt({}).use(markdownItImgFigures, { figcaption: true });
   eleventyConfig.setLibrary("md", mdLib);
-  
+
+  eleventyConfig.addTransform("htmlmin", function (content) {
+    if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true,
+      });
+      return minified;
+    }
+
+    return content;
+  });
+
   return {
     passthroughFileCopy: true,
     htmlTemplateEngine: "njk",
