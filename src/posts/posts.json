@@ -1,0 +1,4 @@
+{
+  "layout":"layouts/blogpost.njk",
+  "permalink": "/posts/{% if slug_title %}{{ slug_title }}{% else %}{{ title | slugifyi18n }}{% endif %}/"
+}

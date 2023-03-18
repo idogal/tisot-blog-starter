@@ -1,18 +1,22 @@
-const tailwindcss = require("tailwindcss");
-const Image = require("@11ty/eleventy-img");
-const i18n = require("eleventy-plugin-i18n");
 const translations = require("./src/_data/translations");
 const siteConfig = require("./src/_data/site.json");
 const envConfig = require("./src/_data/env.js");
+
+const tailwindcss = require("tailwindcss");
 const { EleventyI18nPlugin } = require("@11ty/eleventy");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+const Image = require("@11ty/eleventy-img");
+const i18n = require("eleventy-plugin-i18n");
+
 const markdownIt = require("markdown-it");
 const markdownItImgFigures = require("markdown-it-image-figures");
 const htmlmin = require("html-minifier");
+const slugLimax = require("limax");
 
 const debug = require("debug")("blog-idog");
 
-const sitePath = (!envConfig.customUrlMode || envConfig.devMode) ? siteConfig.sitePath : "";
+const sitePath =
+  !envConfig.customUrlMode || envConfig.devMode ? siteConfig.sitePath : "";
 
 // const postcss = require('postcss');
 // const autoprefixer = require('autoprefixer');
@@ -36,6 +40,19 @@ module.exports = function (eleventyConfig) {
     return collectionApi.getFilteredByGlob("./src/social/*.md");
   });
 
+  eleventyConfig.addFilter("slugifyi18n", (val) => {
+    if (siteConfig.defaultLang === "he") {
+      throw new Error(
+        'The value "' +
+          val +
+          '" cannot be sluggified, "' +
+          siteConfig.defaultLang +
+          '" is not supported for slugs. Please provide a custom "slug_title" value for the post.'
+      );
+    }
+    return slugLimax(val, { lang: siteConfig.defaultLang });
+  });
+
   eleventyConfig.addFilter("getTop", (array, n) => {
     if (!Array.isArray(array) || array.length === 0) {
       return [];
@@ -51,12 +68,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(i18n, {
     translations,
     fallbackLocales: {
-      "*": "en",
+      "*": siteConfig.defaultLang,
     },
   });
 
   eleventyConfig.addPlugin(EleventyI18nPlugin, {
-    defaultLanguage: "en",
+    defaultLanguage: siteConfig.defaultLang,
   });
 
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin, {

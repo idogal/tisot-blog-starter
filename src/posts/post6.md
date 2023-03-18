@@ -7,7 +7,6 @@ thumbnail: /assets/img/posts/tangerine-chan-cjcD8rFvGHc-unsplash_resized.jpg
 thumbnail_show_caption: true
 thumbnail_caption_text:
 tags: post
-layout: "layouts/blogpost.njk"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl condimentum id venenatis a. Eget arcu dictum varius duis at consectetur lorem donec. Metus dictum at tempor commodo ullamcorper a lacus vestibulum sed. Vitae suscipit tellus mauris a diam maecenas sed enim ut. Integer eget aliquet nibh praesent tristique. Aliquam sem fringilla ut morbi tincidunt augue. Pellentesque elit eget gravida cum sociis natoque penatibus et. Nisl nunc mi ipsum faucibus vitae. Magna fringilla urna porttitor rhoncus dolor purus non enim praesent. Nec nam aliquam sem et tortor. Arcu dictum varius duis at consectetur lorem donec massa. Diam in arcu cursus euismod. Adipiscing enim eu turpis egestas pretium aenean pharetra magna. Quis vel eros donec ac odio tempor. Eget sit amet tellus cras. Vehicula ipsum a arcu cursus vitae congue. Morbi tristique senectus et netus et malesuada fames. Mattis pellentesque id nibh tortor id aliquet lectus.
