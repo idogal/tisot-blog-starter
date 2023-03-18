@@ -104,8 +104,8 @@ module.exports = {
     en: "Built by Ido Gal, 2023",
   },
   repo_message_i18n: {
-    he: "פרויקט גיטלאב",
-    en: "GitLab repo",
+    he: "מבוסס על פרויקט הגיטלאב 'IdoG-Blog-DaisyUI'",
+    en: "Based on the GitLab repo 'IdoG-Blog-DaisyUI'",
   },
   your_name_question_i18n: {
     he: "מהו שמך?",

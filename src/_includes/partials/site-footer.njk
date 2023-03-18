@@ -1,19 +1,9 @@
 <footer class="footer footer-center p-4 bg-base-300 text-base">
-    <div>
-        <p>{{ site.footer.BuiltBy | i18n }}.
-            <a class="footerlink" href="{{ site.footer.repoUrl }}">{{ site.footer.repoMessage | i18n }}</a>.
-        </p>
-        <p>
-            {{ 'Using' | i18n }}
-            <a class="footerlink" href="https://www.11ty.dev/">Eleventy</a>,
-            <a class="footerlink" href="https://tailwindcss.com/">Tailwind CSS</a>
-            {{ 'and' | i18n }}
-            <a class="footerlink" href="https://daisyui.com/">daisyUI</a>.
-            <br>
-                {{ 'Using the' | i18n }}
-                <a class="footerlink" href="https://formsubmit.co/">FormSubmit</a>
-                {{ 'forms endpoint' | i18n }}.
-            </p>
-        </div>
+    <div class="leading-tight">
+        <div class="font-bold tracking-wide">{{ site.footer.BuiltBy | i18n }}.</div>
+        <div class="font-bold tracking-wide" dir="ltr">Built by Ido Gal, 2023.</div>
+        <a dir="ltr" class="footerlink font-normal tracking-normal" href="{{ site.footer.repoUrl }}">Based on the GitLab repo 'IdoG-Blog-DaisyUI'</a>
+        <br>
+        <a class="" target="_blank" href="mailto:idogaltech@gmail.com">idogaltech@gmail.com</a>        
     </div>
 </footer>
