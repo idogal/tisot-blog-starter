@@ -3,6 +3,7 @@ const Image = require("@11ty/eleventy-img");
 const i18n = require("eleventy-plugin-i18n");
 const translations = require("./src/_data/translations");
 const siteConfig = require("./src/_data/site.json");
+const envConfig = require("./src/_data/env.js");
 const { EleventyI18nPlugin } = require("@11ty/eleventy");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const markdownIt = require("markdown-it");
@@ -11,7 +12,7 @@ const htmlmin = require("html-minifier");
 
 const debug = require("debug")("blog-idog");
 
-const sitePath = siteConfig.sitePath;
+const sitePath = (!customUrlMode && !envConfig.devMode) ? siteConfig.sitePath : "";
 
 // const postcss = require('postcss');
 // const autoprefixer = require('autoprefixer');
