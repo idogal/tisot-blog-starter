@@ -2,7 +2,7 @@
   "name": "Tisot",
   "subtitle": "A blog starter kit",
   "description": "A blog starter kit",
-  "siteUrl": "http://localhost",
+  "siteUrl": "https://www.idogaldev.xyz/",
   "sitePath": "/idog-blog-tisot/",
   "disqusShortname" : "idog-blog",
   "disqusEnabled" : true,  
