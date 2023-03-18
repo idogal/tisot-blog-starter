@@ -12,7 +12,7 @@ const htmlmin = require("html-minifier");
 
 const debug = require("debug")("blog-idog");
 
-const sitePath = (!customUrlMode && !envConfig.devMode) ? siteConfig.sitePath : "";
+const sitePath = (!envConfig.customUrlMode && !envConfig.devMode) ? siteConfig.sitePath : "";
 
 // const postcss = require('postcss');
 // const autoprefixer = require('autoprefixer');
