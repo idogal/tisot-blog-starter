@@ -3,7 +3,7 @@
     {% for social_icon in collections.social_icons %}
         {% set fullPath = site.siteUrl + (site.sitePath + page.url).replace("//", "/") %}
         {% set socialTitle = title %}
-        <a target="_blank" class="px-1" href="{% buildShareUrl social_icon.data.share_url, fullPath, socialTitle %}">
+        <a target="_blank" data-action="{{ social_icon.data.data_action }}" class="px-1" href="{% buildShareUrl social_icon.data.share_url, fullPath, socialTitle %}">
             {% set colour = "#374151" %}
             {% if site.social.useColourForIcons %}
                 {% set colour = social_icon.data.icon_colour %}
