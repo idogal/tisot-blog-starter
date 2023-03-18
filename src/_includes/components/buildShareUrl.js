@@ -60,7 +60,8 @@ function buildShareUrl(urlString, pageUrl, pageName) {
         v = v + v2;
     }
 
-    //console.log("Input:  " + urlString + ",\nOutput: "+ v + "\n");
+    v = encodeURI(v);
+    // console.log("Input:  " + urlString + ",\nOutput: "+ v + "\n");
     return v;
 }
 
@@ -70,6 +71,6 @@ function buildShareUrl(urlString, pageUrl, pageName) {
 // buildShareUrl("https://telegram.me/share/url?url={url}&text={text}", "myUrl", "myPageName");
 // buildShareUrl("https://telegram.me/share/url?text={text}&url={url}", "myUrl", "myPageName");
 // buildShareUrl("https://www.facebook.com/sharer.php?u={url}", "myUrl", "myPageName");
-// buildShareUrl("whatsapp://send/?text={text}%20{url}", "myUrl", "myPageName");
+// buildShareUrl("whatsapp://send/?text={text} {url}", "myUrl", "myPageName");
 
 module.exports = buildShareUrl;
