@@ -4,7 +4,7 @@ publisher:
 ---
 
 <section>
-    <article class="container mx-auto prose prose-lg ">
+    <article class="container mx-auto prose lg:prose-lg prose-base lg:prose-h1:text-5xl prose-h1:text-4xl ">
         <div name="main_text" class="text-center">
             <h1>
                 {{ title }}
@@ -12,32 +12,34 @@ publisher:
             <div class="mb-3">
                 {% include "partials/social_share_bar.njk" %}
             </div>
-            {% if publish_date %}
-                {{ 'Published on' | i18n }}
-                <b>{{ publish_date | formattedDate }}</b>
-            {% endif %}
-            {% if published_by %}
-                {{ 'by' | i18n }}
-                <b>{{ published_by }}</b>
-            {% endif %}
-            <br/>
-            {% if trip_date %}
-                {{ 'Trip date' | i18n }}
-                <b>{{ trip_date | formattedDate }}</b>,
-            {% endif %}
-            {% if trip_length_days %}
-                {{ 'Trip length' | i18n }}
-                <b>{{ trip_length_days }} days</b>,
-            {% endif %}
-            {% if trip_type %}
-                {{ 'Trip type' | i18n }}
-                <b>{{ trip_type }}</b>
-            {% endif %}
+            <div class="text-center">
+                {% if publish_date %}
+                    {{ 'Published on' | i18n }}
+                    <b>{{ publish_date | formattedDate }}</b>
+                {% endif %}
+                {% if published_by %}
+                    {{ 'by' | i18n }}
+                    <b>{{ published_by }}</b>
+                {% endif %}
+                <br/>
+                {% if trip_date %}
+                    {{ 'Trip date' | i18n }}
+                    <b>{{ trip_date | formattedDate }}</b>,
+                {% endif %}
+                {% if trip_length_days %}
+                    {{ 'Trip length' | i18n }}
+                    <b>{{ trip_length_days }} days</b>,
+                {% endif %}
+                {% if trip_type %}
+                    {{ 'Trip type' | i18n }}
+                    <b>{{ trip_type }}</b>
+                {% endif %}
+            </div>
             <div class="pt-2 text-center">
                 {% for tag in tags %}
                     <span class="badge">{{ tag }}</span>
                 {% endfor %}
-            </div>            
+            </div>
             <div class="px-2 lg:px-0">
                 <img class="w-full" src="{{ head_image }}" alt="This post thumbnail"/>
             </div>
