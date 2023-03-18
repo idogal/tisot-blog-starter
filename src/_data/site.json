@@ -27,7 +27,7 @@
     "notFoundMessage2": "not_found_2_i18n"
   },
   "social": {
-    "showSocialIcons": true,
-    "useColourForIcons": false
+    "useColourForIcons": false,
+    "showSocialIcons": true
   }
 }
