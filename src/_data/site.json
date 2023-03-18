@@ -4,6 +4,7 @@
   "description": "A blog starter kit",
   "siteUrl": "http://localhost",
   "sitePath": "/idog-blog-daisyui/",
+  "keywords": "",
   "disqusShortname" : "",
   "disqusEnabled" : false,  
   "defaultLang": "en",
