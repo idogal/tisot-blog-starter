@@ -1,3 +1,4 @@
+{% if site.social.showSocialIcons %}
 <div class="flex flex-row justify-center">
     {% for social_icon in collections.social_icons %}
         {% set fullPath = site.siteUrl + (site.sitePath + page.url).replace("//", "/") %}
@@ -12,3 +13,4 @@
         </a>
     {% endfor %}
 </div>
+{% endif %}
