@@ -7,8 +7,8 @@ layout: "layouts/base.njk"
         <h1 class="text-3xl font-bold leading-normal mb-3 text-center">
             {{ title | i18n }}
         </h1>
-        <div dir="ltr" class="flex md:flex-row flex-col space-y-10 md:space-x-20 md:justify-evenly pt-4 px-2 md:px-0">
-            <div class="md:w-64 md:max-h-64 justify-self-center">
+        <div dir="ltr" class="flex md:flex-row md:space-x-20 md:px-0 md:justify-center sm:items-center flex-col px-2 pt-4">
+            <div class="md:w-64 md:max-h-64">
                 <figure class="avatar">
                     <div class="rounded">
                         <img src="{{ avatar }}" alt="This post thumbnail"/>
@@ -29,7 +29,7 @@ layout: "layouts/base.njk"
                     {% endif %}
                 </figure>
             </div>
-            <div class="md:w-64 md:max-h-64">
+            <div class="md:w-64 md:max-h-64 md:my-0 my-5">
                 <div class="flex flex-row items-center justify-center min-h-full">
                     <div class="flex flex-col justify-center text-center leading-relaxed">
                         <h2 class="text-2xl font-bold mb-2">

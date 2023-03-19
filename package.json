@@ -30,7 +30,7 @@
     "tailwindcss-flip": "^1.0.0"
   },
   "scripts": {
-    "start": "tailwindcss -i ./src/assets/main.css -o ./public/assets/css/output.css --postcss && eleventy --serve",
+    "start": "tailwindcss -i ./src/assets/main.css -o ./public/assets/css/output.css && eleventy --serve",
     "build": "tailwindcss -i ./src/assets/main.css -o ./public/assets/css/output.css --postcss --minify && eleventy",
     "updatedep": "npm i -g npm-check-updates && ncu -u && npm install",
     "debugall": "set DEBUG=Eleventy* && npx @11ty/eleventy --dryrun",
