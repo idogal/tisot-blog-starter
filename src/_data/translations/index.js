@@ -47,6 +47,14 @@ module.exports = {
     he: "צור קשר",
     en: "Contact Us",
   },
+  "Send Email": {
+    he: "שלח דואר אלקטרוני",
+    en: "Send Email",
+  },  
+  "e-mail address": {
+    he: "כתובת דואר אלקטרוני",
+    en: "e-mail address",
+  },    
   Tisot: {
     he: "טיסות",
     en: "Tisot",

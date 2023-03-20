@@ -76,3 +76,10 @@ collections:
       - { label: "Show avatar caption", name: "avatar_show_caption", widget: "boolean", default: true }
       - { label: "Avatar caption text", name: "avatar_caption_text", widget: "string", default: "" }
       - { label: "Body", name: "body", widget: "markdown", required: false }
+- label: "Contact Page"
+    name: "contact_page"
+    folder: "/src/pages/contact"
+    create: false
+    fields:        
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }      
