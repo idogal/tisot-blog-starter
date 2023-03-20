@@ -52,7 +52,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
   - label: "Home Page"
     name: "home_page"
-    folder: "/src/home_page"
+    folder: "/src/pages"
     create: false
     # slug: "{{slug}}"
     # preview_path: "{{slug}}"
