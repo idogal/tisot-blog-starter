@@ -4,4 +4,4 @@ permalink: /contact/index.html
 title: Contact
 ---
 
-Please contact me via an e-mail by clicking on the link below. 
+אנא צרו עמי קשר דרך דואר אלקטרוני באמצעות הכפתור בדף זה.

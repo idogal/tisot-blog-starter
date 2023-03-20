@@ -15,8 +15,8 @@
   }, 
   "contact": {
     "enableContactForm": false,
-    "submitPostActionUrl": "https://formsubmit.co/1234567890",
-    "emailAddress": "test@mymail.com",
+    "submitPostActionUrl": "https://formsubmit.co/63b0cb557e8bea939d06452bd7de6053",
+    "emailAddress": "idogaltech@gmail.com",
     "nameMessage": "your_name_question_i18n",
     "emailMessage": "your_email_question_i18n",
     "subjectMessage": "subject_question_i18n",
