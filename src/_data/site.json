@@ -14,6 +14,8 @@
     "repoMessage": "repo_message_i18n"
   }, 
   "contact": {
+    "enableContactForm": true,
+    "submitPostActionUrl": "https://formsubmit.co/1234567890",
     "nameMessage": "your_name_question_i18n",
     "emailMessage": "your_email_question_i18n",
     "subjectMessage": "subject_question_i18n",

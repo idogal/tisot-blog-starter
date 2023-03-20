@@ -7,10 +7,12 @@ layout: "layouts/base.njk"
         <h1 class="text-3xl font-bold leading-normal mb-3">
             {{ title | i18n }}
         </h1>
+
+        {% if site.contact.enableContactForm %}
         <div class="container mx-auto max-w-3xl px-6">
             <form
                 target="_blank"
-                action="https://formsubmit.co/63b0cb557e8bea939d06452bd7de6053"
+                action="{{ site.contact.submitPostActionUrl }}"
                 method="POST"
                 class="grid justify-items-center grid-rows-5 grid-flow-col">
                 <div class="form-control w-full max-w-md">
@@ -50,5 +52,7 @@ layout: "layouts/base.njk"
                 </div>
             </form>
         </div>
+        {% endif %}
+
     </div>
 </section>
