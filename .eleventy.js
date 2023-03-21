@@ -34,7 +34,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("styles/**/*.css");
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/posts/*.md");
+    const posts = collectionApi.getFilteredByGlob("./src/posts/*.md");
+    var filteredPosts = posts.filter(post => !post.data.isDraft);
+    return filteredPosts;
   });
 
   eleventyConfig.addCollection("social_icons", function (collectionApi) {

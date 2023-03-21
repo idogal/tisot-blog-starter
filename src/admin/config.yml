@@ -49,6 +49,7 @@ collections:
       - { label: "Show thumbnail caption", name: "thumbnail_show_caption", widget: "boolean", default: true }
       - { label: "Thumbnail caption text", name: "thumbnail_caption_text", widget: "string", default: "", required: false}
       - { label: "Tags", name: "tags", widget: "list", default: [], allow_add: true, field: {label: Tag, name: tag, widget: string} }
+      - { label: "In Draft Mode", name: "isDraft", widget: "boolean", default: true }
       - { label: "Body", name: "body", widget: "markdown" }
   - label: "Home Page"
     name: "home_page"
