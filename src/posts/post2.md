@@ -18,6 +18,7 @@ tags:
   - חג המולד
   - שווקי חג המולד
 date: Last Modified
+isDraft: false
 ---
 ## על גנט
 

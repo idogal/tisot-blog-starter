@@ -10,12 +10,13 @@ title: קטניה, סיציליה - ינואר 2023
 slug_title: קטניה-סיציליה-2023
 publish_date: 2023-03-07T09:52:51.373Z
 head_image: /assets/img/posts/IMG_20221209_103718.jpg
-thumbnail_caption_text: " "
+thumbnail_caption_text: ""
 tags:
   - איטליה
   - סיציליה
   - אירופה בחורף
   - ויז אייר
+isDraft: false
 ---
 ## רקע
 
