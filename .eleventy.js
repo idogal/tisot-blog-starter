@@ -5,6 +5,7 @@ const envConfig = require("./src/_data/env.js");
 const tailwindcss = require("tailwindcss");
 const { EleventyI18nPlugin } = require("@11ty/eleventy");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const Image = require("@11ty/eleventy-img");
 const i18n = require("eleventy-plugin-i18n");
 
@@ -75,6 +76,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyI18nPlugin, {
     defaultLanguage: siteConfig.defaultLang,
   });
+
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
 
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin, {
     // The base URL: defaults to Path Prefix

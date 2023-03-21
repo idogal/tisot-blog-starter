@@ -1,0 +1,29 @@
+---
+layout: "layouts/base.njk"
+title: privacy_policy
+---
+
+<section>
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold leading-normal mb-3 text-center">
+            {{ title | i18n }}
+        </h1>
+        <div class="mx-auto text-center">
+            <div id="content" class="">
+                {% if locales[page.lang].dir === "rtl" %}
+                    {% renderFile "src/_includes/partials/privacy/privacy_policy_rtl.njk" %}
+                {% else %}
+                    {% renderFile "src/_includes/partials/privacy/privacy_policy_ltr.njk" %}
+                {% endif %}
+            </div>
+            <div class="divider"></div>
+            <div id="content" class="">
+                {% if locales[page.lang].dir === "rtl" %}
+                    {% renderFile "src/_includes/partials/privacy/privacy_policy_ltr.njk" %}
+                {% else %}
+                    {% renderFile "src/_includes/partials/privacy/privacy_policy_rtl.njk" %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
