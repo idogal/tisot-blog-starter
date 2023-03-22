@@ -107,6 +107,10 @@ module.exports = {
     he: "מערכת טפסים",
     en: "forms endpoint",
   },
+  "Open consent manager": {
+    he: "התאם גישה לשירותים",
+    en: "Open consent manager",
+  },
   and: {
     he: "ו",
     en: "and",

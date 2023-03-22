@@ -5,3 +5,7 @@
 .footerlink:hover {
     background-color: hsl(var(--af));
 }
+
+.klaro .cookie-modal {
+    direction: rtl;
+}
