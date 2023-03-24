@@ -189,8 +189,10 @@ var klaroConfig = {
       },
       
       cookies: [
-        [/^__qca.*$/, "/", "tisot.info"],
-        [/^__qca.*$/, "/", "localhost"],
+        [/^__jid.*$/, "/", "www.tisot.info"],
+        [/^__jid.*$/, "/", "localhost"],
+        [/^disqus_unique.*$/, "/", "www.tisot.info"],
+        [/^disqus_unique.*$/, "/", "localhost"],        
         // "__qca",
       ],
 
