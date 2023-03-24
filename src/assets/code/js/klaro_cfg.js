@@ -60,6 +60,8 @@ var klaroConfig = {
     */
   hideLearnMore: false,
 
+  noAutoLoad: false,
+
   /*
     You can overwrite existing translations and add translations for your service
     descriptions and purposes. See `src/translations/` for a full list of
@@ -188,9 +190,10 @@ var klaroConfig = {
         },
       },
       
-      cookies: [    
-        "__jid",
-        "disqus_unique",
+      cookies: [
+        [/^__jid.*$/, "/", "disqus.com"],
+        [/^disqus_unique.*$/, "/", ".disqus.com"],
+        // [/^disqus_unique.*$/, "/", "localhost"],
       ],
 
       /*
