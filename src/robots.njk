@@ -2,7 +2,7 @@
 permalink: /robots.txt
 eleventyExcludeFromCollections: true
 ---
-{% if (env.devMode != false and site.productionMode == true) %}
+{% if (env.devMode == false and site.productionMode == true) %}
 User-agent: *
 Allow: /
 Disallow: /admin/
