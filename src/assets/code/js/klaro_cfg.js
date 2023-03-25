@@ -162,6 +162,9 @@ var klaroConfig = {
         comments: {
           title: "Comments",
         },
+        Analytics: {
+          title: "ניתוח תעבורת רשת",
+        },        
       },
     },
   },
@@ -173,8 +176,8 @@ var klaroConfig = {
     {
       purposes: ["comments"],
       name: "disqus-comments",
-      // default: true,
-      // contextualConsentOnly: false,
+      default: true,
+      contextualConsentOnly: false,
       // required: false,
       // optOut: false,
       // onlyOnce: false,      
@@ -208,6 +211,25 @@ var klaroConfig = {
         );
       },
     },
+
+    {
+      purposes: ["analytics"],
+      name: "tiny-analytics",
+      default: true,
+      contextualConsentOnly: false,
+      onlyOnce: true,
+      translations: {
+        zz: {
+          title: "TinyAnalytics",
+        },
+        en: {
+          description: "TinyAnalytics - website analytics",
+        },
+        he: {
+          description: '"TinyAnalytics" ניתוח תעבורת רשת',
+        },
+      },      
+    }
   ],
 
   callback: function (consent, service) {
