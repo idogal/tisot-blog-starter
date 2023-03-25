@@ -165,7 +165,7 @@ var klaroConfig = {
         Analytics: {
           title: "ניתוח תעבורת רשת",
         },
-        'privacy-policy': {
+        'Privacy Policy': {
           title: "מדניות־פרטיות"
         }
       },
