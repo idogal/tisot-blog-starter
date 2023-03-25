@@ -8,6 +8,7 @@
   "disqusShortname" : "tisot-blog",
   "disqusEnabled" : true,  
   "defaultLang": "he",
+  "productionMode": true,
   "footer": {
     "BuiltBy": "footer_built_by_i18n",
     "repoUrl": "https://gitlab.com/ido.g/idog-blog-daisyui",
