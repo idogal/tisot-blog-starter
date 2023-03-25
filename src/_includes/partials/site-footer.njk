@@ -8,4 +8,27 @@
         </div>        
     </div>
     <button class="btn btn-outline" onClick="return klaro.show(klaroConfig, false);">{{ 'Open consent manager' | i18n }}</button>
+    <div>
+    <a
+        href="https://www.iubenda.com/privacy-policy/20857231"
+        class="iubenda-nostyle no-brand iubenda-noiframe iubenda-embed iub-legal-only iubenda-noiframe "
+        title="Privacy Policy ">{{ Privacy Policy | i18n }}</a>
+    <script type="text/javascript">
+        (function (w, d) {
+            var loader = function () {
+                var s = d.createElement("script"),
+                    tag = d.getElementsByTagName("script")[0];
+                s.src = "https://cdn.iubenda.com/iubenda.js";
+                tag.parentNode.insertBefore(s, tag);
+            };
+            if (w.addEventListener) {
+                w.addEventListener("load", loader, false);
+            } else if (w.attachEvent) {
+                w.attachEvent("onload", loader);
+            } else {
+                w.onload = loader;
+            }
+        })(window, document);
+    </script>        
+    </div>
 </footer>
