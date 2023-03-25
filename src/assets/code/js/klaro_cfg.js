@@ -164,7 +164,10 @@ var klaroConfig = {
         },
         Analytics: {
           title: "ניתוח תעבורת רשת",
-        },        
+        },
+        'privacy-policy': {
+          title: "מדניות־פרטיות"
+        }
       },
     },
   },
@@ -211,7 +214,6 @@ var klaroConfig = {
         );
       },
     },
-
     {
       purposes: ["analytics"],
       name: "tiny-analytics",
@@ -227,6 +229,25 @@ var klaroConfig = {
         },
         he: {
           description: '"TinyAnalytics" ניתוח תעבורת רשת',
+        },
+      },      
+    },
+    {
+      purposes: ["privacy-policy"],
+      name: "iubenda",
+      default: true,
+      contextualConsentOnly: false,
+      onlyOnce: true,
+      optOut: true,
+      translations: {
+        zz: {
+          title: "iubenda",
+        },
+        en: {
+          description: "'iubenda' - privacy policy provider",
+        },
+        he: {
+          description: '"iubenda" ספק מדיניות פרטניות',
         },
       },      
     }
