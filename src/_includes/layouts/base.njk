@@ -8,7 +8,7 @@
         <title>{{ site.name }} - {{ site.subtitle }}</title>
         <meta name="title" content="{{ site.name }}: {% if title %}{{ title }}{% else %}{{ site.name }} - {{ site.subtitle }}{% endif %}">
         <meta name="description" content="{% if subtitle %}{{ subtitle }}{% else %}{{ site.description }}{% endif %}">
-        <meta name="keywords" content="{% if tags %}{{ tags }}{% else %}{{ site.keywords }}{% endif %}">
+        <meta name="keywords" content="{% if tags %}{{ tags }}{% else %}{{ site.keywords }}{% endif %}{% if keywords %},{{ keywords }}{% endif %}">
         <meta name="description" content="{{ site.description }}">
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
