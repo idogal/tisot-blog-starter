@@ -18,6 +18,8 @@ tags:
     - my special tag
     - my very long tag
     - tag 4
+keywords:
+    - 
 isDraft: false
 ---
 
