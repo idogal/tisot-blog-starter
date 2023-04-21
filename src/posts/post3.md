@@ -5,17 +5,19 @@ trip_type:
 thumbnail: /assets/img/posts/Metz_20l_blue_amazon_3_2023_2048x2048.jpg
 thumbnail_show_caption: false
 thumbnail_caption_text:
-subtitle: העצות שלי לגבי איך לארוז בצורה שתמזער תשלום לחברות התעופה, ותפחית את המשקל שאתם סוחבים בטיול.
+subtitle: איך לארוז בצורה שתמזער תשלום לחברות התעופה, ותפחית את המשקל שאתם סוחבים בטיול.
 title: "איך לארוז לטיול באופן מצומצם?"
-slug_title: איך-לארוז-באמצעות-תיק-גב-או-טרולי
+slug_title: איך-לארוז-תיק-גב-או-טרולי
 publish_date: 2023-04-05T08:00:00.000Z
 head_image: /assets/img/posts/Metz_20l_blue_amazon_3_2023_2048x2048.jpg
 tags:
   - אריזה לטיול
   - Low Cost
-  - תיק גב
   - תרמיל
-  - טרולי
+keywords:
+  - קאבין מקס
+  - איך לארוז
+  - מה לארוז
 date: Last Modified
 isDraft: false
 ---
