@@ -58,14 +58,14 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("getTop", (postsArray, n) => {
     function compare( a, b ) {
-      if ( a.date < b.date ){
-        return 1;
-      }
-
-      if ( a.date > b.date ){
+      if ( a.data.publish_date > b.data.publish_date ){
         return -1;
       }
 
+      if ( a.data.publish_date < b.data.publish_date ){
+        return 1;
+      }
+      
       return 0;
     }
 
