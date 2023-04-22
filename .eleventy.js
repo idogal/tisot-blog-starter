@@ -54,16 +54,32 @@ module.exports = function (eleventyConfig) {
     return slugLimax(val, { lang: siteConfig.defaultLang });
   });
 
-  eleventyConfig.addFilter("getTop", (array, n) => {
-    if (!Array.isArray(array) || array.length === 0) {
+  eleventyConfig.addFilter("getTop", (postsArray, n) => {
+    function compare( a, b ) {
+      if ( a.date < b.date ){
+        return 1;
+      }
+
+      if ( a.date > b.date ){
+        return -1;
+      }
+
+      return 0;
+    }
+
+    if (!Array.isArray(postsArray) || postsArray.length === 0) {
       return [];
     }
 
+    postsArray.sort(compare);
+
     if (n < 0) {
-      return array.slice(n);
+      return postsArray.slice(n);
     }
 
-    return array.slice(0, n);
+    let x = postsArray.slice(0, n);
+
+    return x;
   });
 
   eleventyConfig.addPlugin(i18n, {
