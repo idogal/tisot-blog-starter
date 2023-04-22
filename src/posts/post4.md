@@ -1,5 +1,6 @@
 ---
 title: יום בדובאי
+slug_title: עצירת-ביניים-ליום-בדובאי
 published_by: עדוא גל
 publish_date: 2023-04-22T15:33:43.234Z
 trip_date: 2023-03-27T15:33:43.250Z
