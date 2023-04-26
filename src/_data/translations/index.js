@@ -26,11 +26,11 @@ module.exports = {
   "Trip length": {
     he: "משך הטיול",
     en: "Trip length",
-  },  
+  },
   אודות: {
     he: "אודות",
     en: "About",
-  },  
+  },
   Home: {
     he: "דף הבית",
     en: "Home",
@@ -46,7 +46,7 @@ module.exports = {
   Tags: {
     he: "תגיות",
     en: "Tags",
-  },  
+  },
   "Contact Us": {
     he: "צור קשר",
     en: "Contact Us",
@@ -58,11 +58,11 @@ module.exports = {
   "Send Email": {
     he: "שלח דואר אלקטרוני",
     en: "Send Email",
-  },  
+  },
   "e-mail address": {
     he: "כתובת דואר אלקטרוני",
     en: "e-mail address",
-  },    
+  },
   Tisot: {
     he: "טיסות",
     en: "Tisot",
@@ -119,6 +119,10 @@ module.exports = {
     he: "נבנה על ידי עדוא גל, 2023",
     en: "Built by Ido Gal, 2023",
   },
+  footer_copyright_i18n: {
+    he: "כל הזכויות שמורות.",
+    en: "All rights reverved",
+  },
   repo_message_i18n: {
     he: "פרויקט גיטלאב",
     en: "GitLab repo",
@@ -126,27 +130,27 @@ module.exports = {
   your_name_question_i18n: {
     he: "מהו שמך?",
     en: "What is your name?",
-  }, 
+  },
   your_email_question_i18n: {
     he: "מהי כתובת הדואר האלקטרוני שלך?",
     en: "What is your email address?",
-  }, 
+  },
   subject_question_i18n: {
     he: "נושא",
     en: "Subject",
-  }, 
+  },
   subject_question_placeholder_i18n: {
     he: "אנא מלא את נושא ההודעה",
     en: "Fill up the subject",
-  }, 
+  },
   msg_question_i18n: {
     he: "ההודעה שלך",
     en: "Your Message",
-  }, 
+  },
   msg_question_placeholder_i18n: {
     he: "גוף הודעה...",
     en: "Leave a message...",
-  }, 
+  },
   image_by_i18n: {
     he: "באמצעות",
     en: "by",
@@ -158,5 +162,5 @@ module.exports = {
   not_found_2_i18n: {
     he: "חזור לדף הבית",
     en: "get back to home page",
-  }     
+  },
 };
