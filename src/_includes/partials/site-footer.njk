@@ -1,4 +1,13 @@
 <footer class="footer footer-center p-4 bg-base-300 text-base">
+    {# <div class="grid grid-flow-col gap-4"> #}
+    <div>
+        {# <span class="footer-title">Blog Information</span> #}
+        {% for item in navigation_footer.items %}
+            <a class="link link-hover tracking-wide" href="{{ item.url }}">{{ item.text | i18n }}</a>
+        {% endfor %}
+    </div>
+</footer>
+<footer class="footer footer-center px-10 py-4 bg-base-300 text-base border-t border-neutral-400">
     <div>
         <p>{{ site.footer.BuiltBy | i18n }}.
             <a class="footerlink" href="{{ site.footer.repoUrl }}">{{ site.footer.repoMessage | i18n }}</a>.
