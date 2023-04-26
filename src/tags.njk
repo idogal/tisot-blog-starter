@@ -1,0 +1,18 @@
+---
+layout: layouts/default.njk
+title: Tags
+---
+
+{# <div class="container mx-auto text-center"> #}
+<h1 class="text-3xl font-bold leading-normal mb-3 text-center">
+    {{ title | i18n }}
+</h1>
+<ul>
+    {% for tag in collections.all | getAllTags | filterTagList %}
+        {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+        <li>
+            <a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{# </div> #}
