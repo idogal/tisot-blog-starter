@@ -3,14 +3,12 @@ layout: layouts/default.njk
 permalink: false
 ---
 
-<div class="container mx-auto px-6 lg:px-24">
-    {% include "partials/home-heading.njk" %}
-    {% if content %}
+{% include "partials/home-heading.njk" %}
+{% if content %}
     <hr class="mt-3"/>
-    {% endif %}
-    {{ content | safe }}
-    {# <hr class="mt-3 mb-1"/> #}
-    <div class="divider"></div>
-    {% set blogPosts = collections.posts | getTop(3) | reverse %}
-    {% include "partials/posts-grid.njk" %}
-</div>
+{% endif %}
+{{ content | safe }}
+{# <hr class="mt-3 mb-1"/> #}
+<div class="divider"></div>
+{% set blogPosts = collections.posts | getTop(3) | reverse %}
+{% include "partials/posts-grid.njk" %}

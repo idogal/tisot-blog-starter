@@ -43,6 +43,10 @@ module.exports = {
     he: "צור קשר",
     en: "Contact",
   },
+  Tags: {
+    he: "תגיות",
+    en: "Tags",
+  },  
   "Contact Us": {
     he: "צור קשר",
     en: "Contact Us",
