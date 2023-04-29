@@ -38,15 +38,16 @@ collections:
     editor:
       preview: true
     fields:
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
       - { label: "Post Slug", name: "slug_title", widget: "string", required: true }
       - { label: "Published by", name: "published_by", widget: "string" }
       - { label: "Publish Date", name: "publish_date", widget: "datetime" }
       - { label: "Trip Date", name: "trip_date", widget: "datetime", required: false }
       - { label: "Trip Type", name: "trip_type", widget: "string", required: false }
       - { label: "Trip Length", name: "trip_length", widget: "number", required: false }
-      - { label: "Main Image", name: "head_image", widget: "image" }
-      - { label: "Thumbnail Image", name: "thumbnail", widget: "image" }
+      - { label: "Main Image", name: "head_image", widget: "image", required: false }
+      - { label: "Thumbnail Image", name: "thumbnail", widget: "image", required: true }
       - { label: "Show thumbnail caption", name: "thumbnail_show_caption", widget: "boolean", default: true }
       - { label: "Thumbnail caption text", name: "thumbnail_caption_text", widget: "string", default: "", required: false}
       - { label: "Tags", name: "tags", widget: "list", default: [], allow_add: true, field: {label: Tag, name: tag, widget: string} }
