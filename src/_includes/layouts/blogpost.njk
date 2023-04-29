@@ -41,7 +41,23 @@ publisher:
                 {% endfor %}
             </div>
             <div class="px-2 lg:px-0">
-                <img class="w-full" src="{{ head_image }}" alt="This post thumbnail"/>
+                <figure class="relative">
+                    <img class="w-full" src="{{ head_image }}" alt="This post thumbnail"/>
+                    {% if head_image_show_caption %}
+                        {% set dir = locales[page.lang].dir %}
+                        {% if head_image_caption_text %}
+                            {% photoCaption head_image_caption_text, false, dir %}
+                        {% else %}
+                            {% set photoByi18n = 'Photo by' | i18n %}
+                            {% if page.lang == 'he' %}
+                                {% set oni18n = 'באמצעות' %}
+                            {% else %}
+                                {% set oni18n = 'on' %}
+                            {% endif %}
+                            {% photoCredit photoByi18n, oni18n, 'Tangerine Chan', false, dir %}
+                        {% endif %}
+                    {% endif %}
+                </figure>
             </div>
             <div id="content" class="prose-lg">
                 {{ content | safe }}
