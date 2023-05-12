@@ -59,6 +59,21 @@ publisher:
                     {% endif %}
                 </figure>
             </div>
+            {% if content | toc %}
+            <aside class="bg-base-200 text-left py-0.5 
+                            prose-a:no-underline hover:prose-a:underline 
+                            prose-ol:indent-0 prose-ol:list-none prose-ol:pl-0
+                            prose-li:pl-2
+                            border border-gray-400">
+                <div class="indent-2" x-data="{ open: false, buttonText: '[show]' }">
+                    <span class="prose-xl font-bold base-content">Table of Content</span>
+                    <button class="hover:underline" x-on:click="open = !open" x-text="buttonText"></button>
+                    <span class="indent-0.5" x-show="open" x-transition>
+                        {{ content | toc | safe }}
+                    </span>
+                </div>
+            </aside>
+            {% endif %}
             <div id="content" class="prose-lg">
                 {{ content | safe }}
             </div>

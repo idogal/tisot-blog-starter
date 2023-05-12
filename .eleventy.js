@@ -8,6 +8,7 @@ const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const Image = require("@11ty/eleventy-img");
 const i18n = require("eleventy-plugin-i18n");
+const pluginTOC = require('eleventy-plugin-toc')
 
 const markdownIt = require("markdown-it");
 const markdownItImgFigures = require("markdown-it-image-figures");
@@ -97,6 +98,8 @@ module.exports = function (eleventyConfig) {
 
     return x;
   });
+
+  eleventyConfig.addPlugin(pluginTOC);
 
   eleventyConfig.addPlugin(i18n, {
     translations,
@@ -194,7 +197,10 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addAsyncShortcode("headImage", imageShortcode);
 
-  const mdLib = markdownIt({}).use(markdownItImgFigures, { figcaption: true });
+  const mdLib = markdownIt({})
+    .use(markdownItImgFigures, { figcaption: true })
+    .use(require('markdown-it-anchor'), {});
+
   eleventyConfig.setLibrary("md", mdLib);
 
   eleventyConfig.addTransform("htmlmin", function (content) {
