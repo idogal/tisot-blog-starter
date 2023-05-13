@@ -60,10 +60,10 @@ publisher:
                 </figure>
             </div>
             {% if (content | toc) and (not (showshow_tocToc == false)) %}
-            <aside class="bg-base-200 text-left py-0.5 
+            <aside class="bg-base-200 text-left py-0.5 lg:mb-0 mb-2
                             prose-a:no-underline hover:prose-a:underline 
                             prose-ol:indent-0 prose-ol:list-none prose-ol:pl-0
-                            prose-li:pl-2
+                            prose-li:px-2
                             border border-gray-400">
                 <div class="indent-2" 
                      x-data="{ open: {{ site.posts.tocOpenAsDefault }}, buttonText: '[{% if site.posts.tocOpenAsDefault %}{{ 'hide' | i18n }}{% else %}{{ 'show' | i18n }}{% endif %}]'}">
