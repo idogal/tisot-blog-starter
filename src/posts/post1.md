@@ -10,6 +10,7 @@ published_by: Ido Gal
 thumbnail: /assets/img/posts/tangerine-chan-cjcD8rFvGHc-unsplash_resized.jpg
 thumbnail_show_caption: true
 thumbnail_caption_text: 
+show_toc: true
 head_image: /assets/img/posts/IMG_20221209_103718.jpg
 tags: 
     - tips
