@@ -59,6 +59,24 @@ publisher:
                     {% endif %}
                 </figure>
             </div>
+            {% if content | toc %}
+            <aside class="bg-base-200 text-left py-0.5 
+                            prose-a:no-underline hover:prose-a:underline 
+                            prose-ol:indent-0 prose-ol:list-none prose-ol:pl-0
+                            prose-li:pl-2
+                            border border-gray-400">
+                <div class="indent-2" x-data="{ open: true, buttonText: '[{{ 'hide' | i18n }}]' }">
+                    <span class="prose-xl font-bold base-content">{{ 'Table of Content' | i18n }}</span>
+                    <button class="hover:underline" 
+                            x-on:click="open = !open, buttonText = open ? '[{{ 'hide' | i18n }}]' : '[{{ 'show' | i18n }}]'" 
+                            x-text="buttonText"></button>
+                    <span class="prose-ol:indent-2.5 prose-ol:my-0" 
+                          x-show="open" x-transition>
+                        {{ content | toc | safe }}
+                    </span>
+                </div>
+            </aside>
+            {% endif %}
             <div id="content" class="prose-lg">
                 {{ content | safe }}
             </div>

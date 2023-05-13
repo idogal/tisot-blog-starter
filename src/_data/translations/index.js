@@ -119,6 +119,18 @@ module.exports = {
     he: "ו",
     en: "and",
   },
+  hide: {
+    he: "הסתר",
+    en: "hide",
+  },
+  show: {
+    he: "הצג",
+    en: "show",
+  },
+  "Table of Content": {
+    he: "תוכן העניינים",
+    en: "Table of Content",
+  },  
   footer_built_by_i18n: {
     he: "נבנה על ידי עדוא גל, 2023",
     en: "Built by Ido Gal, 2023",
