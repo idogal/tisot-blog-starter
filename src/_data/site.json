@@ -9,6 +9,9 @@
   "disqusEnabled" : false,  
   "defaultLang": "en",
   "productionMode": false,
+  "posts": {
+    "tocOpenAsDefault": false
+  },
   "footer": {
     "BuiltBy": "footer_built_by_i18n",
     "allRightsReserved": "footer_copyright_i18n",
