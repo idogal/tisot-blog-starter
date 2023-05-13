@@ -1,14 +1,14 @@
 {
-  "name": "Tisot",
-  "subtitle": "A blog starter kit",
-  "description": "A blog starter kit",
+  "name": "טיסות",
+  "subtitle": "בלוג ישראלי על טיסות וטיולים",
+  "description": "בלוג ישראלי על טיסות וטיולים",
   "siteUrl": "https://www.tisot.info",
   "sitePath": "/idog-blog-tisot/",
   "keywords": "טיולים, טיסות, טיסות תקציביות, חוץ לארץ, חול",
   "disqusShortname" : "tisot-blog",
   "disqusEnabled" : true,  
-  "defaultLang": "en",
-  "productionMode": false,
+  "defaultLang": "he",
+  "productionMode": true,
   "posts": {
     "tocOpenAsDefault": false
   },  
