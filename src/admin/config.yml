@@ -53,6 +53,7 @@ collections:
       - { label: "Thumbnail Image", name: "thumbnail", widget: "image", required: true }
       - { label: "Show thumbnail caption", name: "thumbnail_show_caption", widget: "boolean", default: false, required: false}
       - { label: "Thumbnail caption text", name: "thumbnail_caption_text", widget: "string", default: "", required: false}
+      - { label: "Show Table of Content", name: "show_toc", widget: "boolean", required: false}
       - { label: "Tags", name: "tags", widget: "list", default: [], allow_add: true, field: {label: Tag, name: tag, widget: string} }
       - { label: "Keywords", name: "keywords", widget: "list", default: [], allow_add: true, field: {label: Keyword, name: keyword, widget: string} }
       - { label: "In Draft Mode", name: "isDraft", widget: "boolean", default: true }
