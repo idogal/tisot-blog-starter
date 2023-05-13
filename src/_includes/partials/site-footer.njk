@@ -1,4 +1,5 @@
-<footer class="footer footer-center p-4 bg-base-300 text-base">
+<footer
+    class="footer footer-center p-4 bg-base-300 text-base">
     {# <div class="grid grid-flow-col gap-4"> #}
     <div>
         {# <span class="footer-title">Blog Information</span> #}
@@ -9,20 +10,22 @@
 </footer>
 <footer class="footer footer-center px-10 py-4 bg-base-300 text-base border-t border-neutral-400">
     <div>
-        <p>{{ site.footer.BuiltBy | i18n }}. {% if site.footer.enableCopyrightText %} {{ site.footer.allRightsReserved | i18n }}. {% endif %}
-            <a class="footerlink" href="{{ site.footer.repoUrl }}">{{ site.footer.repoMessage | i18n }}</a>.            
+        <p>{{ site.footer.BuiltBy | i18n }}.
+            {% if site.footer.enableCopyrightText %}
+                {{ site.footer.allRightsReserved | i18n }}.
+            {% endif %}
+            <a class="footerlink" href="{{ site.footer.repoUrl }}">{{ site.footer.repoMessage | i18n }}</a>.
         </p>
         <p>
             {{ 'Using' | i18n }}
             <a class="footerlink" href="https://www.11ty.dev/">Eleventy</a>,
-            <a class="footerlink" href="https://tailwindcss.com/">Tailwind CSS</a>
-            {{ 'and' | i18n }}
-            <a class="footerlink" href="https://daisyui.com/">daisyUI</a>.
-            <br>
-                {{ 'Using the' | i18n }}
-                <a class="footerlink" href="https://formsubmit.co/">FormSubmit</a>
-                {{ 'forms endpoint' | i18n }}.
-            </p>
-        </div>
+            <a class="footerlink" href="https://tailwindcss.com/">Tailwind CSS</a>,            
+            <a class="footerlink" href="https://daisyui.com/">daisyUI</a> {{ 'and' | i18n }}
+            <a class="footerlink" href="https://alpinejs.dev/">Alpine.JS</a>.
+            <br/> 
+            {# {{ 'Using the' | i18n }}
+            <a class="footerlink" href="https://formsubmit.co/">FormSubmit</a>
+            {{ 'forms endpoint' | i18n }}. #}
+        </p>
     </div>
-</footer>
+</div></footer>
