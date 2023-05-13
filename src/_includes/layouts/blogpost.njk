@@ -67,7 +67,7 @@ publisher:
                             border border-gray-400">
                 <div class="indent-2" x-data="{ open: false, buttonText: '[show]' }">
                     <span class="prose-xl font-bold base-content">Table of Content</span>
-                    <button class="hover:underline" x-on:click="open = !open" x-text="buttonText"></button>
+                    <button class="hover:underline" x-on:click="open = !open, buttonText = open ? '[hide]' : '[show]'" x-text="buttonText"></button>
                     <span class="indent-0.5" x-show="open" x-transition>
                         {{ content | toc | safe }}
                     </span>
