@@ -3,10 +3,10 @@ layout: "layouts/base.njk"
 publisher: 
 ---
 
-<section>
+<section class="relative">
     <article class="container mx-auto prose lg:prose-lg prose-base lg:prose-h1:text-5xl prose-h1:text-4xl ">
         <div name="main_text" class="text-center">
-            <h1>
+            <h1 id="post_main_title">
                 {{ title }}
             </h1>
             <div class="mb-3">
@@ -60,7 +60,7 @@ publisher:
                 </figure>
             </div>
             {% if (content | toc) and (not (showshow_tocToc == false)) %}
-            <aside class="bg-base-200 text-left py-0.5 lg:mb-0 mb-2
+            <aside id="post_toc_outer" class="bg-base-200 text-left py-0.5 lg:mb-0 mb-2
                             prose-a:no-underline hover:prose-a:underline 
                             prose-ol:indent-0 prose-ol:list-none prose-ol:pl-0
                             prose-li:px-2
@@ -72,8 +72,9 @@ publisher:
                             x-on:click="open = !open, buttonText = open ? '[{{ 'hide' | i18n }}]' : '[{{ 'show' | i18n }}]'" 
                             x-text="buttonText"></button>
                     <span class="prose-base 
-                                 prose-ol:indent-2.5 prose-ol:my-0" 
-                          x-show="open" x-transition>
+                                 prose-ol:indent-2.5 prose-ol:my-0"
+                            id="post_toc_inner"
+                            x-show="open" x-transition>
                         {{ content | toc | safe }}
                     </span>
                 </div>
@@ -81,6 +82,19 @@ publisher:
             {% endif %}
             <div id="content" class="prose-lg">
                 {{ content | safe }}
+            </div>
+            <div x-data="{ displayBackToTop: false }">
+                <a id="back-to-top-button"
+                        x-show=displayBackToTop
+                        x-on:scroll.window="displayBackToTop = (window.pageYOffset > window.outerHeight * 0.3) ? true : false"
+                        href="#post_toc_outer"
+                        class="btn btn-circle shadow-md fixed bottom-10 right-10 
+                                bg-secondary hover:bg-secondary-focus border-transparent hover:border-transparent">
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.6568 8.96219L16.2393 10.3731L12.9843 7.10285L12.9706 20.7079L10.9706 20.7059L10.9843 7.13806L7.75404 10.3532L6.34314 8.93572L12.0132 3.29211L17.6568 8.96219Z" 
+                        fill="currentColor"/>
+                    </svg>
+                </a>
             </div>
         </div>
         {% if site.disqusEnabled %}
