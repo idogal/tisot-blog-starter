@@ -5,7 +5,7 @@ backend:
   ### enable below lines for github integration ###
   name: gitlab
   repo: ido.g/idog-blog-tisot
-  # site_domain: cms.netlify.com
+  site_url: https://www.tisot.info
   # api_root: https://gitlab.com/ido.g/portfolio-design/api/v4
   # base_url: https://gitlab.com/ido.g/portfolio-design/
   # auth_endpoint: oauth/authorize
@@ -16,14 +16,13 @@ backend:
 
 media_folder: "/src/assets/img/"
 public_folder: "/assets/img"
-# publish_mode: editorial_workflow
+publish_mode: editorial_workflow
 site_url: https://ido.g.gitlab.io/idog-blog-tisot/
 display_url: https://ido.g.gitlab.io/idog-blog-tisot/
 logo_url: https://ido.g.gitlab.io/idog-blog-tisot/assets/favicon/android-chrome-512x512.png
 
 # Please run "npx netlify-cms-proxy-server" for local backend
-# local_backend: true
-# publish_mode: editorial_workflow
+local_backend: true
 
 collections:
   - label: "Post"
