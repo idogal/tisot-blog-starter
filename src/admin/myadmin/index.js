@@ -1,5 +1,5 @@
 import CMS from 'netlify-cms-app';
-import { he } from 'npm';
+import { he } from 'netlify-cms-locales';
 
 CMS.init();
 CMS.registerLocale('he', he);
