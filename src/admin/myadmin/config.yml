@@ -1,27 +1,25 @@
 backend:
-  # Use netlify identity as backend
-  # name: git-gateway
-  branch: main
-  ### enable below lines for github integration ###
   name: gitlab
   repo: ido.g/idog-blog-tisot
-  site_url: https://www.tisot.info
-  # api_root: https://gitlab.com/ido.g/portfolio-design/api/v4
-  # base_url: https://gitlab.com/ido.g/portfolio-design/
+  branch: main
+  # api_root: https://gitlab.com/ido.g/idog-blog-tisot/api/v4
+  # base_url: https://gitlab.com/ido.g/idog-blog-tisot/
   # auth_endpoint: oauth/authorize
   # cms_label_prefix:
   auth_type: pkce
   app_id: d2015d598c23d422e2c9c1e20a0ed07fd9e1c5c4ef796a4734e522bce34ad681
-  # locale: 'he'
-
+  
+# locale: 'he'
 media_folder: "/src/assets/img/"
 public_folder: "/assets/img"
 publish_mode: editorial_workflow
+site_url: https://www.tisot.info
 display_url: https://www.tisot.info/
 logo_url: https://www.tisot.info/assets/favicon/android-chrome-512x512.png
-
+show_preview_links: true
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
+search: true
 
 collections:
   - label: "Post"
@@ -33,7 +31,7 @@ collections:
     public_folder: "/assets/img/posts/"
     create: true
     slug: "{{slug}}"
-    preview_path: "/posts/{{slug}}"        
+    preview_path: "/posts/{{slug}}"
     editor:
       preview: true
     fields:
