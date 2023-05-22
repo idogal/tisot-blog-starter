@@ -5,11 +5,11 @@ eleventyExcludeFromCollections: true
 {% if (env.devMode == false and site.productionMode == true) %}
 User-agent: *
 Allow: /
-Disallow: /admin/
+Disallow: /admin/myadmin/
 Disallow: /search-index/
 Disallow: /privacy-policy/
 
-Host: {{ site.sitePath | url }}
+Host: {{ site.siteUrl | url }}
 
-Sitemap: {{ site.sitePath + 'sitemap.xml' | url }}
+Sitemap: {{ site.siteUrl + '/sitemap.xml' | url }}
 {% endif %}
