@@ -3,20 +3,15 @@
         <div class="card rounded-md my-1 md:my-2 shadow-md">
             <figure class="relative aspect-[3/2]">
                 <a href="{{ post.url }}">
-                    <img src="{{ post.data.thumbnail }}"/>
+                    {% image post.data.thumbnail, post.data.title %}
                 </a>
                 {% if post.data.thumbnail_show_caption %}
                     {% set dir = locales[page.lang].dir %}
-
                     {% if post.data.thumbnail_caption_text %}
                         {% photoCaption post.data.thumbnail_caption_text, true, dir %}
                     {% else %}
                         {% set photoByi18n = 'Photo by' | i18n %}
-                        {% if page.lang == 'he' %}
-                            {% set oni18n = 'באמצעות' %}
-                        {% else %}
-                            {% set oni18n = 'on' %}
-                        {% endif %}
+                        {% if page.lang == 'he' %}{% set oni18n = 'באמצעות' %}{% else %}{% set oni18n = 'on' %}{% endif %}
                         {% photoCredit photoByi18n, oni18n, 'Tangerine Chan', true, dir %}
                     {% endif %}
                 {% endif %}

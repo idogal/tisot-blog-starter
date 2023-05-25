@@ -166,12 +166,21 @@ module.exports = function (eleventyConfig) {
   );
 
   async function imageShortcode(src, alt, sizes, cls) {
-    let metadata = await Image(src, {
-      widths: [600, 1200],
-      formats: ["webp", "jpeg"],
+    if (src == undefined) {
+      src = "/assets/img/posts/tangerine-chan-cjcD8rFvGHc-unsplash_resized.jpg";
+    }
+
+    let imgUrl = "./src" + src;
+    if (sizes == undefined ) {
+      sizes = "100vw";
+    }
+
+    let metadata = await Image(imgUrl, {
+      widths: [432, 617, 712, "auto"],
+      formats: ["webp", "auto"],
       outputDir: "./public/assets/img/",
-      urlPath: `${sitePath}/assets/img/`,
-      filenameFormat: function (id, src, width, format, options) {
+      urlPath: `/assets/img/`,
+      filenameFormat: function (id, imgUrl, width, format, options) {
         return `${id}-${width}.${format}`;
       },
       // ,sharpOptions: {
@@ -189,13 +198,11 @@ module.exports = function (eleventyConfig) {
       decoding: "async",
     };
 
-    console.log(metadata);
-
     // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
     return Image.generateHTML(metadata, imageAttributes);
   }
 
-  eleventyConfig.addAsyncShortcode("headImage", imageShortcode);
+  eleventyConfig.addAsyncShortcode("image", imageShortcode);
 
   const mdLib = markdownIt({})
     .use(markdownItImgFigures, { figcaption: true })
