@@ -7,6 +7,10 @@ module.exports = {
     he: "מדיניות פרטיות",
     en: "Privacy Policy",
   },
+  "Terms of Use": {
+    he: "תנאי שימוש",
+    en: "Terms of Use",
+  },
   "Published on": {
     he: "פורסם ב",
     en: "Published on",
