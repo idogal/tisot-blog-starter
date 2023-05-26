@@ -1,0 +1,15 @@
+---
+layout: "layouts/base.njk"
+eleventyExcludeFromCollections: true
+---
+
+<section>
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold leading-normal text-center mb-3">
+            {{ title | i18n }}
+        </h1>
+        <div id="content" class="container mx-auto prose">
+            {{ content | safe }}
+        </div>
+    </div>
+</section>

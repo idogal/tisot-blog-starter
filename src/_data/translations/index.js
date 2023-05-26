@@ -7,6 +7,10 @@ module.exports = {
     he: "מדיניות פרטיות",
     en: "Privacy Policy",
   },
+  "Terms of Use": {
+    he: "תנאי שימוש",
+    en: "Terms of Use",
+  },
   "Published on": {
     he: "פורסם ב",
     en: "Published on",
@@ -136,7 +140,7 @@ module.exports = {
     en: "Built by Ido Gal, 2023",
   },
   footer_copyright_i18n: {
-    he: "כל הזכויות שמורות לעדוא גל",
+    he: "כל הזכויות שמורות",
     en: "All rights reverved",
   },
   repo_message_i18n: {
