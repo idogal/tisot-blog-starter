@@ -1,0 +1,12 @@
+---
+layout: "layouts/base.njk"
+---
+
+<main id="main-content" tabindex="-1">
+    <div class="container mx-auto px-6 lg:px-24">
+        <h1 class="text-3xl font-bold leading-normal mb-3 text-center">
+            {{ title | i18n }}
+        </h1>
+        {{ content | safe }}
+    </div>
+</main>
