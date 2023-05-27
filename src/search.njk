@@ -1,0 +1,26 @@
+---
+title: Search
+layout: "layouts/default_with_header.njk"
+permalink: /search/index.html
+---
+
+<div class="flex md:flex-row md:space-x-20 md:px-0 md:justify-center sm:items-center flex-col px-2 pt-4">
+    <div x-data="searchInput" class="min-h-[65vh] w-full ">
+        <div class="form-control">
+            <label class="label">
+                <span class="label-text">{{ "Enter search term" | i18n }}</span>
+            </label>
+            <input type="text" 
+                    placeholder="{{ "Type here" | i18n }}" 
+                    x-model="inputVal" 
+                    x-on:input.keydown="getItems(inputVal)" 
+                    class="input input-bordered w-full max-w-xs"/>
+        </div>
+        <div id="search_results" class="">
+            <ul id="search_results_ul">
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+<script src="/assets/js/search.js"></script>
