@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default("en-GB", true) }}" dir="{{ locales[page.lang].dir | default("ltr", true) }}" data-theme="corporate">
     <head>
-        {% include "partials/analytics.njk" %}
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +18,8 @@
 
         <link href='https://fonts.googleapis.com/css2?family=Alef&display=swap' rel='stylesheet' type='text/css'>
         <link href="/assets/css/output.css" rel="stylesheet" type="text/css">
-        <link href="/assets/css/custom.css" rel="stylesheet"  type="text/css">        
+        <link href="/assets/css/custom.css" rel="stylesheet"  type="text/css">
+        {% include "partials/analytics.njk" %}
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         <script type="module" src="/assets/js/blog_custom.js"></script>
     </head>
