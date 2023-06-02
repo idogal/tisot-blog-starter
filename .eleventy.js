@@ -160,10 +160,7 @@ module.exports = function (eleventyConfig) {
     require("./src/assets/code/filters/formattedDate")
   );
 
-  eleventyConfig.addFilter(
-    "search",
-    require("./src/assets/code/filters/searchFilter")
-  );
+  eleventyConfig.addFilter("search", require("./src/assets/code/filters/search_eslunr.js"));
 
   async function imageShortcode(src, alt, sizes, cls) {
     if (src == undefined) {

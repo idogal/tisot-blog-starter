@@ -39,6 +39,10 @@ module.exports = {
     he: "דף הבית",
     en: "Home",
   },
+  Search: {
+    he: "חיפוש",
+    en: "Search",
+  },    
   Blog: {
     he: "בלוג",
     en: "Blog",
@@ -130,6 +134,14 @@ module.exports = {
   "Table of Content": {
     he: "תוכן העניינים",
     en: "Table of Content",
+  },
+  "Enter search term": {
+    he: "הזן ערך לחיפוש",
+    en: "Enter search term",
+  },
+  "Type here": {
+    he: "הקלד כאן",
+    en: "Type here",
   },  
   footer_built_by_i18n: {
     he: "נבנה על ידי עדוא גל, 2023",
