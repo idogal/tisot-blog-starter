@@ -1,0 +1,105 @@
+---
+layout: "layouts/base.njk"
+---
+
+<section class="relative">
+    <article class="container mx-auto prose lg:prose-lg prose-base lg:prose-h1:text-5xl prose-h1:text-4xl ">
+        <div name="main_text" class="text-center">
+            <h1 id="post_main_title">
+                {{ title }}
+            </h1>
+            <div class="mb-3">
+                {% include "partials/social_share_bar.njk" %}
+            </div>
+            <div class="text-center">
+                {% if publish_date %}
+                    {{ 'Published on' | i18n }}
+                    <b>{{ publish_date | formattedDate }}</b>
+                {% endif %}
+                {% if published_by %}
+                    {{ 'by' | i18n }}
+                    <b>{{ published_by }}</b>
+                {% endif %}
+                <br/>
+                {% if trip_date %}
+                    {{ 'Trip date' | i18n }}
+                    <b>{{ trip_date | formattedDate }}</b>,
+                {% endif %}
+                {% if trip_length_days %}
+                    {{ 'Trip length' | i18n }}
+                    <b>{{ trip_length_days }} days</b>,
+                {% endif %}
+                {% if trip_type %}
+                    {{ 'Trip type' | i18n }}
+                    <b>{{ trip_type }}</b>
+                {% endif %}
+            </div>
+            <div class="pt-2 text-center">
+                {% for tag in tags %}
+                    <span class="badge">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            <div class="px-2 lg:px-0">
+                <figure class="relative">
+                    {% set imgUrl = head_image %}
+                    {% image imgUrl, title, "100vw", "w-full" %}
+                    {# <img class="w-full" src="{{ head_image }}" alt="This post thumbnail"/> #}
+                    {% if head_image_show_caption %}
+                        {% set dir = locales[page.lang].dir %}
+                        {% if head_image_caption_text %}
+                            {% photoCaption head_image_caption_text, false, dir %}
+                        {% else %}
+                            {% set photoByi18n = 'Photo by' | i18n %}
+                            {% if page.lang == 'he' %}{% set oni18n = 'באמצעות' %}{% else %}{% set oni18n = 'on' %}{% endif %}
+                            {% photoCredit photoByi18n, oni18n, 'Tangerine Chan', false, dir %}
+                        {% endif %}
+                    {% endif %}
+                </figure>
+            </div>
+            {% if (content | toc) and (not (showshow_tocToc == false)) %}
+            <aside id="post_toc_outer" class="bg-base-200 text-left py-0.5 lg:mb-0 mb-2
+                            prose-a:no-underline hover:prose-a:underline 
+                            prose-ol:indent-0 prose-ol:list-none prose-ol:pl-0
+                            prose-li:px-2
+                            border border-gray-400">
+                <div class="indent-2" 
+                     x-data="{ open: {{ site.posts.tocOpenAsDefault }}, buttonText: '[{% if site.posts.tocOpenAsDefault %}{{ 'hide' | i18n }}{% else %}{{ 'show' | i18n }}{% endif %}]'}">
+                    <span class="font-bold base-content">{{ 'Table of Content' | i18n }}</span>
+                    <button class="hover:underline" 
+                            x-on:click="open = !open, buttonText = open ? '[{{ 'hide' | i18n }}]' : '[{{ 'show' | i18n }}]'" 
+                            x-text="buttonText"></button>
+                    <span class="prose-base 
+                                 prose-ol:indent-2.5 prose-ol:my-0"
+                            id="post_toc_inner"
+                            x-show="open" x-transition>
+                        {{ content | toc | safe }}
+                    </span>
+                </div>
+            </aside>
+            {% endif %}
+            <div id="content" class="prose-lg">
+                {{ content | safe }}
+            </div>
+            <div x-data="{ displayBackToTop: false }">
+                <a id="back-to-top-button"
+                        x-show=displayBackToTop
+                        x-on:scroll.window="displayBackToTop = (window.pageYOffset > window.outerHeight * 0.3) ? true : false"
+                        href="#post_main_title"
+                        class="btn btn-circle shadow-md fixed bottom-5 right-5 lg:bottom-10 lg:right-10 opacity-60
+                                bg-secondary hover:bg-secondary-focus border-transparent hover:border-transparent">
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.6568 8.96219L16.2393 10.3731L12.9843 7.10285L12.9706 20.7079L10.9706 20.7059L10.9843 7.13806L7.75404 10.3532L6.34314 8.93572L12.0132 3.29211L17.6568 8.96219Z" 
+                        fill="currentColor"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        {% if site.disqusEnabled %}
+            {# <hr/> #}
+            <div class="divider"></div>
+            <div name="comments">
+                {% include "partials/disqus.njk" %}
+            </div>
+        {% endif %}
+    </article>
+</section>

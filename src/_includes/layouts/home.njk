@@ -1,0 +1,14 @@
+---
+layout: layouts/default.njk
+permalink: false
+---
+
+{% include "partials/home-heading.njk" %}
+{% if content %}
+    <hr class="mt-3"/>
+{% endif %}
+{{ content | safe }}
+{# <hr class="mt-3 mb-1"/> #}
+<div class="divider"></div>
+{% set blogPosts = collections.posts | getTop(3) | reverse %}
+{% include "partials/posts-grid.njk" %}

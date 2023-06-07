@@ -1,0 +1,7 @@
+.footerlink {
+    text-decoration-line: underline;
+}
+
+.footerlink:hover {
+    background-color: hsl(var(--af));
+}

@@ -1,0 +1,20 @@
+{
+  "sizes": [
+    {
+      "className": "text-xs",
+      "sizeRank": 1
+    },
+    {
+      "className": "text-sm",
+      "sizeRank": 2
+    },
+    {
+      "className": "text-base",
+      "sizeRank": 3
+    },
+    {
+      "className": "text-lg",
+      "sizeRank": 4
+    }
+  ]
+}

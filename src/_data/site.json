@@ -1,0 +1,44 @@
+{
+  "name": "Tisot",
+  "subtitle": "A blog starter kit",
+  "description": "A blog starter kit",
+  "siteUrl": "http://localhost",
+  "sitePath": "/idog-blog-daisyui/",
+  "keywords": "",
+  "disqusShortname" : "",
+  "disqusEnabled" : false,  
+  "defaultLang": "en",
+  "productionMode": false,
+  "posts": {
+    "tocOpenAsDefault": false
+  },
+  "footer": {
+    "BuiltBy": "footer_built_by_i18n",
+    "allRightsReserved": "footer_copyright_i18n",
+    "enableCopyrightText": false,
+    "repoUrl": "https://gitlab.com/ido.g/idog-blog-daisyui",
+    "repoMessage": "repo_message_i18n"
+  }, 
+  "contact": {
+    "enableContactForm": false,
+    "submitPostActionUrl": "https://formsubmit.co/1234567890",
+    "emailAddress": "test@mymail.com",
+    "nameMessage": "your_name_question_i18n",
+    "emailMessage": "your_email_question_i18n",
+    "subjectMessage": "subject_question_i18n",
+    "subjectMessagePlaceholder": "subject_question_placeholder_i18n",
+    "msgMessage": "msg_question_i18n",
+    "msgMessagePlaceholder": "msg_question_placeholder_i18n"
+  },
+  "image": {
+    "imageByMessage": "image_by_i18n"
+  },
+  "notFound": {
+    "notFoundMessage1": "not_found_1_i18n",
+    "notFoundMessage2": "not_found_2_i18n"
+  },
+  "social": {
+    "useColourForIcons": false,
+    "showSocialIcons": true
+  }
+}

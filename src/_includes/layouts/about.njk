@@ -1,0 +1,52 @@
+---
+layout: "layouts/base.njk"
+---
+
+<section>
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold leading-normal mb-3 text-center">
+            {{ title | i18n }}
+        </h1>
+        <div dir="ltr" class="flex md:flex-row md:space-x-20 md:px-0 md:justify-center sm:items-center flex-col px-2 pt-4">
+            <div class="md:w-64 md:max-h-64">
+                <figure class="avatar">
+                    <div class="rounded">
+                        <img src="{{ avatar }}" alt="This post thumbnail"/>
+                    </div>
+                    {% if avatar_show_caption %}
+                        {% set dir = locales[page.lang].dir %}
+                        {% if avatar_caption_text %}
+                            {% photoCaption avatar_caption_text, false, dir %}
+                        {% else %}
+                            {% set photoByi18n = 'Photo by' | i18n %}
+                            {% if page.lang == 'he' %}
+                                {% set oni18n = 'באמצעות' %}
+                            {% else %}
+                                {% set oni18n = 'on' %}
+                            {% endif %}
+                            {% photoCredit photoByi18n, oni18n, 'Andrii Leonov', false, dir %}
+                        {% endif %}
+                    {% endif %}
+                </figure>
+            </div>
+            <div class="md:w-64 md:max-h-64 md:my-0 my-5">
+                <div class="flex flex-row items-center justify-center min-h-full">
+                    <div class="flex flex-col justify-center text-center leading-relaxed">
+                        <h2 class="text-2xl font-bold mb-2">
+                            {{ about_name }}
+                        </h2>
+                        <div dir="ltr" class="text-xl select-none">
+                            <p>
+                                {{ email }}<br/>{{ phone }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="prose prose-lg mx-auto text-center">
+            <div id="content" class="">
+                {{ content  | safe }}
+            </div>
+        </div>
+    </section>

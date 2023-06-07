@@ -1,0 +1,64 @@
+---
+layout: "layouts/base.njk"
+---
+
+<section>
+    <div class="container mx-auto text-center">
+        <h1 class="text-3xl font-bold leading-normal mb-3">
+            {{ title | i18n }}
+        </h1>
+        {% if site.contact.enableContactForm %}
+            <div class="container mx-auto max-w-3xl px-6">
+                <form target="_blank" action="{{ site.contact.submitPostActionUrl }}" method="POST" class="grid justify-items-center grid-rows-5 grid-flow-col">
+                    <div class="form-control w-full max-w-md">
+                        <label class="label">
+                            <span class="label-text font-semibold">{{ site.contact.nameMessage | i18n }}</span>
+                        </label>
+                        <input type="text" placeholder="{{ 'John Doe' | i18n }}" name="name" class="input input-bordered input-md w-full max-w-md rounded bg-neutral-100" required/>
+                    </div>
+                    <div class="form-control w-full max-w-md">
+                        <label class="label">
+                            <span class="label-text font-semibold">{{ site.contact.emailMessage | i18n }}</span>
+                        </label>
+                        <input
+                            dir="ltr"
+                            type="text"
+                            placeholder="mail@mymail.com"
+                            name="email"
+                            class="input input-bordered input-md w-full max-w-md rounded bg-neutral-100"
+                            required/>
+                    </div>
+                    <div class="form-control w-full max-w-md">
+                        <label class="label">
+                            <span class="label-text font-semibold">{{ site.contact.subjectMessage | i18n }}</span>
+                        </label>
+                        <input type="text" placeholder="{{ site.contact.subjectMessagePlaceholder | i18n }}" name="subject" class="input input-bordered input-md w-full max-w-md rounded bg-neutral-100" required/>
+                    </div>
+                    <div class="form-control w-full max-w-md">
+                        <label class="label">
+                            <span class="label-text font-semibold">{{ site.contact.msgMessage | i18n }}</span>
+                        </label>
+                        <textarea class="textarea textarea-bordered textarea-lg w-full max-w-md rounded bg-neutral-100" name="message" placeholder="{{ site.contact.msgMessagePlaceholder | i18n }}"></textarea>
+                    </div>
+                    <div class="container mx-auto max-w-md">
+                        <div class="float-left">
+                            <button class="btn mt-6 btn-outline" type="submit">{{ 'Submit' | i18n }}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        {% else %}
+            <div class="container mx-auto text-lg">
+                <div class="mb-8">{{ content  | safe }}</div>
+                <p class="text-xl inline">
+                    {{ 'e-mail address' | i18n }}: <div dir="ltr" class="select-none inline"> {{ site.contact.emailAddress }}</div>
+                </p>
+                <a
+                    class="btn sm:btn-sm md:btn-md lg:btn-lg mt-4"
+                    href="mailto:{{ site.contact.emailAddress }}?subject={{ site.contact.subjectMessagePlaceholder | i18n }}&body={{ site.contact.msgMessagePlaceholder | i18n }}">
+                    {{ 'Send Email' | i18n }}
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</section>

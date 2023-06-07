@@ -1,0 +1,7 @@
+{
+  "dir": "rtl",
+  "lang": "he",
+  "locale": "he-IL",
+  "eleventyExcludeFromCollections": true,
+  "permalink": false  
+}
