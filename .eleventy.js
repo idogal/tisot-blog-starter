@@ -12,6 +12,7 @@ const pluginTOC = require('eleventy-plugin-toc')
 
 const markdownIt = require("markdown-it");
 const markdownItImgFigures = require("markdown-it-image-figures");
+const markdownItLinkAttrs = require('markdown-it-link-attributes');
 const htmlmin = require("html-minifier");
 const slugLimax = require("limax");
 
@@ -203,6 +204,7 @@ module.exports = function (eleventyConfig) {
 
   const mdLib = markdownIt({})
     .use(markdownItImgFigures, { figcaption: true })
+    .use(markdownItLinkAttrs, { attrs: { target: "_blank", } })
     .use(require('markdown-it-anchor'), {});
 
   eleventyConfig.setLibrary("md", mdLib);
