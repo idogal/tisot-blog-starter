@@ -8,7 +8,7 @@ thumbnail_caption_text:
 subtitle: איזור פלנדריה בבלגיה במהלך דצמבר, אפשרות טובה במיוחד להנות משווקי חג המולד.
 title: " בלגיה - גנט - דצמבר 2022"
 slug_title: בלגיה-גנט-2023
-publish_date: 2022-03-01T08:00:00.000Z
+publish_date: 2023-03-01T08:00:00.000Z
 head_image: /assets/img/posts/img_20221210_181327_b.jpg
 tags:
   - בלגיה
