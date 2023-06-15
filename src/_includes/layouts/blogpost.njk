@@ -56,27 +56,7 @@ layout: "layouts/base.njk"
                     {% endif %}
                 </figure>
             </div>
-            {% if (content | toc) and (not (showshow_tocToc == false)) %}
-            <aside id="post_toc_outer" class="bg-base-200 text-left py-0.5 lg:mb-0 mb-2
-                            prose-a:no-underline hover:prose-a:underline 
-                            prose-ol:indent-0 prose-ol:list-none prose-ol:pl-0
-                            prose-li:px-2
-                            border border-gray-400">
-                <div class="indent-2" 
-                     x-data="{ open: {{ site.posts.tocOpenAsDefault }}, buttonText: '[{% if site.posts.tocOpenAsDefault %}{{ 'hide' | i18n }}{% else %}{{ 'show' | i18n }}{% endif %}]'}">
-                    <span class="font-bold base-content">{{ 'Table of Content' | i18n }}</span>
-                    <button class="hover:underline" 
-                            x-on:click="open = !open, buttonText = open ? '[{{ 'hide' | i18n }}]' : '[{{ 'show' | i18n }}]'" 
-                            x-text="buttonText"></button>
-                    <span class="prose-base 
-                                 prose-ol:indent-2.5 prose-ol:my-0"
-                            id="post_toc_inner"
-                            x-show="open" x-transition>
-                        {{ content | toc | safe }}
-                    </span>
-                </div>
-            </aside>
-            {% endif %}
+            {% include "partials/toc.njk" %}
             <div id="content" class="prose-lg">
                 {{ content | safe }}
             </div>
