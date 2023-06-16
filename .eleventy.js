@@ -161,6 +161,54 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("search", require("./src/assets/code/filters/search_eslunr.js"));
 
+  function removeDuplicateForwardSlashes(val) {
+    const parts = val.split("://");
+    
+    let urlPart = "";
+    if (parts.length == 0) {
+      return val;
+    } else if (parts.length == 1) {
+      urlPart = parts[0];
+    } else if (parts.length == 2) {
+      urlPart = parts[1];
+    } else {
+      return val;
+    }
+
+    let removed = urlPart;
+    let found = removed.match("\//");
+    while (found) {
+      removed = removed.replaceAll("\//", "/");
+      found = removed.match("\//");
+    }
+
+    if (parts.length == 1) {
+      return removed;
+    } else if (parts.length == 2) {
+      return parts[0] + "://" + removed;
+    }
+  }
+
+  function removeLastUrlPart(val) {    
+    let url = "";
+    const isEndsWith = val.endsWith("/");
+    if (isEndsWith) {
+      url = val.substring(0, val.lastIndexOf('/'));
+      url = url.substring(0, url.lastIndexOf('/'));
+    } else {
+      url = val.substring(0, val.lastIndexOf('/'));
+    }
+
+    if (isEndsWith) {
+      return url + "/";
+    } else {
+      return url;
+    }
+  }
+
+  eleventyConfig.addFilter("removeDuplicateForwardSlashes", removeDuplicateForwardSlashes);
+  eleventyConfig.addFilter("removeLastUrlPart", removeLastUrlPart);
+
   async function imageShortcode(src, alt, sizes, cls) {
     if (src == undefined) {
       src = "/assets/img/posts/tangerine-chan-cjcD8rFvGHc-unsplash_resized.jpg";
