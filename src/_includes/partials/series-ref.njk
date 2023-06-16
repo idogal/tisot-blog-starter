@@ -1,0 +1,12 @@
+{% if previous_post or next_post %}
+<div class="pt-3 italic text-error-content">            
+    {% set previousSegmentUrl = (page.url | removeLastUrlPart) %}
+    {% set previousPostUrl = ((previousSegmentUrl + "/" + previous_post + "/") | removeDuplicateForwardSlashes) %}
+    {% set nextPostUrl = ((previousSegmentUrl + "/" + next_post + "/") | removeDuplicateForwardSlashes) %}
+    <span>
+    {{ 'This post is part of a series' | i18n }}.
+    {% if previous_post %} <a class="text-error-content no-underline hover:bg-secondary-focus" href="{{ previousPostUrl }}">{{ 'Previous post' | i18n }}</a>.{% endif %}
+    {% if next_post %} <a class="text-error-content no-underline hover:bg-secondary-focus" href="{{ nextPostUrl }}">{{ 'Next post' | i18n }}</a>.{% endif %}
+    </span>
+</div>
+{% endif %}
