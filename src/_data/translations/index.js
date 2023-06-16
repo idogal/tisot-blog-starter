@@ -131,6 +131,15 @@ module.exports = {
     he: "הצג",
     en: "show",
   },
+  "This post is part of a series": {
+    he: "רשומה זו הינה חלק מסדרה"
+  },
+  "Previous post": {
+    he: "לרשומה הקודמת"
+  },
+  "Next post": {
+    he: "לרשומה הבאה"
+  },    
   "Table of Content": {
     he: "תוכן העניינים",
     en: "Table of Content",

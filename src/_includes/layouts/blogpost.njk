@@ -57,6 +57,18 @@ layout: "layouts/base.njk"
                 </figure>
             </div>
             {% include "partials/toc.njk" %}
+            {% if previous_post or next_post %}
+            <div class="pt-3 italic text-error-content">            
+                {% set previousSegmentUrl = (page.url | removeLastUrlPart) %}
+                {% set previousPostUrl = ((previousSegmentUrl + "/" + previous_post + "/") | removeDuplicateForwardSlashes) %}
+                {% set nextPostUrl = ((previousSegmentUrl + "/" + next_post + "/") | removeDuplicateForwardSlashes) %}
+                <span>
+                {{ 'This post is part of a series' | i18n }}.
+                {% if previous_post %} <a class="text-error-content no-underline hover:bg-secondary-focus" href="{{ previousPostUrl }}">{{ 'Previous post' | i18n }}</a>.{% endif %}
+                {% if next_post %} <a class="text-error-content no-underline hover:bg-secondary-focus" href="{{ nextPostUrl }}">{{ 'Next post' | i18n }}</a>.{% endif %}
+                </span>
+            </div>
+            {% endif %}
             <div id="content" class="prose-lg">
                 {{ content | safe }}
             </div>
@@ -74,6 +86,10 @@ layout: "layouts/base.njk"
                 </a>
             </div>
         </div>
+        {# {% set previousPost1 = collections.posts | getPreviousCollectionItem %} #}
+        {# {% set nextPost1 = collections.posts | getNextCollectionItem  %}         #}
+        {# <a href="{{ previousPost1.url  }}">previousPost1.</a> #}
+        {# <a href="{{ nextPost1.url  }}">nextPost1.</a> #}
         {% if site.disqusEnabled %}
             {# <hr/> #}
             <div class="divider"></div>
