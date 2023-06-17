@@ -3,93 +3,23 @@ layout: "layouts/base.njk"
 ---
 
 <section class="relative">
-    <article class="container mx-auto prose lg:prose-lg prose-base lg:prose-h1:text-5xl prose-h1:text-4xl ">
-        <div name="main_text" class="text-center">
-            <h1 id="post_main_title">
-                {{ title }}
-            </h1>
-            <div class="mb-3">
-                {% include "partials/social_share_bar.njk" %}
-            </div>
-            <div class="text-center">
-                {% if publish_date %}
-                    {{ 'Published on' | i18n }}
-                    <b>{{ publish_date | formattedDate }}</b>
-                {% endif %}
-                {% if published_by %}
-                    {{ 'by' | i18n }}
-                    <b>{{ published_by }}</b>
-                {% endif %}
-                <br/>
-                {% if trip_date %}
-                    {{ 'Trip date' | i18n }}
-                    <b>{{ trip_date | formattedDate }}</b>,
-                {% endif %}
-                {% if trip_length_days %}
-                    {{ 'Trip length' | i18n }}
-                    <b>{{ trip_length_days }} days</b>,
-                {% endif %}
-                {% if trip_type %}
-                    {{ 'Trip type' | i18n }}
-                    <b>{{ trip_type }}</b>
-                {% endif %}
-            </div>
-            <div class="pt-2 text-center">
-                {% for tag in tags %}
-                    <span class="badge">{{ tag }}</span>
-                {% endfor %}
-            </div>
-            <div class="px-2 lg:px-0">
-                <figure class="relative">
-                    {% set imgUrl = head_image %}
-                    {% image imgUrl, title, "100vw", "w-full" %}
-                    {# <img class="w-full" src="{{ head_image }}" alt="This post thumbnail"/> #}
-                    {% if head_image_show_caption %}
-                        {% set dir = locales[page.lang].dir %}
-                        {% if head_image_caption_text %}
-                            {% photoCaption head_image_caption_text, false, dir %}
-                        {% else %}
-                            {% set photoByi18n = 'Photo by' | i18n %}
-                            {% if page.lang == 'he' %}{% set oni18n = 'באמצעות' %}{% else %}{% set oni18n = 'on' %}{% endif %}
-                            {% photoCredit photoByi18n, oni18n, 'Tangerine Chan', false, dir %}
-                        {% endif %}
-                    {% endif %}
-                </figure>
-            </div>
-            {% include "partials/toc.njk" %}
-            {% if previous_post or next_post %}
-            <div class="pt-3 italic text-error-content">            
-                {% set previousSegmentUrl = (page.url | removeLastUrlPart) %}
-                {% set previousPostUrl = ((previousSegmentUrl + "/" + previous_post + "/") | removeDuplicateForwardSlashes) %}
-                {% set nextPostUrl = ((previousSegmentUrl + "/" + next_post + "/") | removeDuplicateForwardSlashes) %}
-                <span>
-                {{ 'This post is part of a series' | i18n }}.
-                {% if previous_post %} <a class="text-error-content no-underline hover:bg-secondary-focus" href="{{ previousPostUrl }}">{{ 'Previous post' | i18n }}</a>.{% endif %}
-                {% if next_post %} <a class="text-error-content no-underline hover:bg-secondary-focus" href="{{ nextPostUrl }}">{{ 'Next post' | i18n }}</a>.{% endif %}
-                </span>
-            </div>
-            {% endif %}
-            <div id="content" class="prose-lg">
-                {{ content | safe }}
-            </div>
-            <div x-data="{ displayBackToTop: false }">
-                <a id="back-to-top-button"
-                        x-show=displayBackToTop
-                        x-on:scroll.window="displayBackToTop = (window.pageYOffset > window.outerHeight * 0.3) ? true : false"
-                        href="#post_main_title"
-                        class="btn btn-circle shadow-md fixed bottom-5 right-5 lg:bottom-10 lg:right-10 opacity-60
-                                bg-secondary hover:bg-secondary-focus border-transparent hover:border-transparent">
-                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.6568 8.96219L16.2393 10.3731L12.9843 7.10285L12.9706 20.7079L10.9706 20.7059L10.9843 7.13806L7.75404 10.3532L6.34314 8.93572L12.0132 3.29211L17.6568 8.96219Z" 
-                        fill="currentColor"/>
-                    </svg>
-                </a>
-            </div>
+    <article class="container mx-auto">
+        <div class="flex justify-center">
+            <div name="main_text" class="text-center">
+                <div class="prose lg:prose-lg prose-base lg:prose-h1:text-5xl prose-h1:text-4xl">
+                    <span id="post_heading">
+                        {% include "partials/blog_post/post-heading.njk" %}
+                    </span>
+                    {% include "partials/toc.njk" %}
+                    {% include "partials/series-ref.njk" %}
+                    <div id="content" class="prose-lg">
+                        {{ content | safe }}
+                    </div>
+                    {% include "partials/blog_post/back-to-top-button.njk" %}
+                </div>
+                {% include "partials/blog_post/prev-next-buttons.njk" %}
+            </div>        
         </div>
-        {# {% set previousPost1 = collections.posts | getPreviousCollectionItem %} #}
-        {# {% set nextPost1 = collections.posts | getNextCollectionItem  %}         #}
-        {# <a href="{{ previousPost1.url  }}">previousPost1.</a> #}
-        {# <a href="{{ nextPost1.url  }}">nextPost1.</a> #}
         {% if site.disqusEnabled %}
             {# <hr/> #}
             <div class="divider"></div>

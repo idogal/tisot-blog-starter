@@ -143,6 +143,12 @@ module.exports = {
   },
   "Next post": {
     he: "לרשומה הבאה"
+  },
+  "Older Post": {
+    he: "לרשומה ישנה יותר"
+  },
+  "Newer Post": {
+    he: "לרשומה חדשה יותר"
   },    
   "Table of Content": {
     he: "תוכן העניינים",

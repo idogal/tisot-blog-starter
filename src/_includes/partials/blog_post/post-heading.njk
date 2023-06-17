@@ -1,0 +1,53 @@
+<span id="post_heading_text">
+    <h1 id="post_main_title">
+        {{ title }}
+    </h1>
+    <div class="mb-3">
+        {% include "partials/social_share_bar.njk" %}
+    </div>
+    <div class="text-center">
+        {% if publish_date %}
+            {{ 'Published on' | i18n }}
+            <b>{{ publish_date | formattedDate }}</b>
+        {% endif %}
+        {% if published_by %}
+            {{ 'by' | i18n }}
+            <b>{{ published_by }}</b>
+        {% endif %}
+        <br/>
+        {% if trip_date %}
+            {{ 'Trip date' | i18n }}
+            <b>{{ trip_date | formattedDate }}</b>,
+        {% endif %}
+        {% if trip_length_days %}
+            {{ 'Trip length' | i18n }}
+            <b>{{ trip_length_days }} days</b>,
+        {% endif %}
+        {% if trip_type %}
+            {{ 'Trip type' | i18n }}
+            <b>{{ trip_type }}</b>
+        {% endif %}
+    </div>
+    <div class="pt-2 text-center">
+        {% for tag in tags %}
+            <span class="badge">{{ tag }}</span>
+        {% endfor %}
+    </div>
+</span>
+<div class="px-2 lg:px-0">
+    <figure class="relative">
+        {% set imgUrl = head_image %}
+        {% image imgUrl, title, "100vw", "w-full" %}
+        {# <img class="w-full" src="{{ head_image }}" alt="This post thumbnail"/> #}
+        {% if head_image_show_caption %}
+            {% set dir = locales[page.lang].dir %}
+            {% if head_image_caption_text %}
+                {% photoCaption head_image_caption_text, false, dir %}
+            {% else %}
+                {% set photoByi18n = 'Photo by' | i18n %}
+                {% if page.lang == 'he' %}{% set oni18n = 'באמצעות' %}{% else %}{% set oni18n = 'on' %}{% endif %}
+                {% photoCredit photoByi18n, oni18n, 'Tangerine Chan', false, dir %}
+            {% endif %}
+        {% endif %}
+    </figure>
+</div>
