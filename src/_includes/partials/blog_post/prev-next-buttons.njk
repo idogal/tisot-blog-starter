@@ -1,0 +1,14 @@
+{% set previousPostInOrder = collections.posts | getPreviousCollectionItem %}
+{% set nextPostInOrder = collections.posts | getNextCollectionItem %}
+{% if previousPostInOrder or nextPostInOrder %}
+<div class="container mx-auto text-center max-w-md mt-12">
+    <div class="btn-group grid grid-cols-2">
+        {% if previousPostInOrder.url %}
+        <a class="btn btn-outline" href="{{ previousPostInOrder.url }}">{{ 'Older Post' | i18n }}</a>
+        {% endif %}
+        {% if nextPostInOrder.url %}
+        <a class="btn btn-outline" href="{{ nextPostInOrder.url }}">{{ 'Newer Post' | i18n }}</a>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
