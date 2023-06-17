@@ -61,6 +61,7 @@ layout: "layouts/base.njk"
             <div id="content" class="prose-lg">
                 {{ content | safe }}
             </div>
+            {% include "partials/blog_post/prev-next-buttons.njk" %}
             <div x-data="{ displayBackToTop: false }">
                 <a id="back-to-top-button"
                         x-show=displayBackToTop
@@ -75,10 +76,6 @@ layout: "layouts/base.njk"
                 </a>
             </div>
         </div>
-        {# {% set previousPost1 = collections.posts | getPreviousCollectionItem %} #}
-        {# {% set nextPost1 = collections.posts | getNextCollectionItem  %}         #}
-        {# <a href="{{ previousPost1.url  }}">previousPost1.</a> #}
-        {# <a href="{{ nextPost1.url  }}">nextPost1.</a> #}
         {% if site.disqusEnabled %}
             {# <hr/> #}
             <div class="divider"></div>
