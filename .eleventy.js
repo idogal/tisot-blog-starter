@@ -33,9 +33,22 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/admin": "./admin" });
   eleventyConfig.addWatchTarget("styles/**/*.css");
 
+  var compareByPublishDateDesc = function compare( a, b ) {
+    if ( a.data.publish_date > b.data.publish_date ){
+      return -1;
+    }
+
+    if ( a.data.publish_date < b.data.publish_date ){
+      return 1;
+    }
+
+    return 0;
+  }
+
   eleventyConfig.addCollection("posts", function (collectionApi) {
     const posts = collectionApi.getFilteredByGlob("./src/posts/*.md");
     var filteredPosts = posts.filter(post => !post.data.isDraft);
+    filteredPosts.sort(compareByPublishDateDesc);
     return filteredPosts;
   });
 
@@ -71,23 +84,11 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("getTop", (postsArray, n) => {
-    function compare( a, b ) {
-      if ( a.data.publish_date > b.data.publish_date ){
-        return -1;
-      }
-
-      if ( a.data.publish_date < b.data.publish_date ){
-        return 1;
-      }
-
-      return 0;
-    }
-
     if (!Array.isArray(postsArray) || postsArray.length === 0) {
       return [];
     }
 
-    postsArray.sort(compare);
+    postsArray.sort(compareByPublishDateDesc);
 
     if (n < 0) {
       return postsArray.slice(n);
