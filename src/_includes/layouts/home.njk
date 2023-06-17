@@ -10,5 +10,5 @@ permalink: false
 {{ content | safe }}
 {# <hr class="mt-3 mb-1"/> #}
 <div class="divider"></div>
-{% set blogPosts = collections.posts | getTop(3) | reverse %}
+{% set blogPosts = collections.posts | getTop(3) %}
 {% include "partials/posts-grid.njk" %}
