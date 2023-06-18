@@ -1,7 +1,7 @@
 ---
 title: קאבין זירו מנהטן וקאבין זירו מטס (20 ליטר) - Cabin Zero Manhattan and Mets (20L)
 subtitle: סקירה של תיקי "קאבין מקס" שמתאימים כתיקים שנכנסים "מתחת למושב" עבור טיסות חסך
-slug_title: קאבין-מקס-תיקים
+slug_title: cabin-max-manhattan-metz-20l-bags
 published_by: עדוא גל
 publish_date: 2023-06-17T22:26:58.928Z
 head_image: /assets/img/posts/cabin_max_3.webp
