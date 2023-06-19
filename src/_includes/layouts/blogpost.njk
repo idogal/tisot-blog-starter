@@ -18,14 +18,16 @@ layout: "layouts/base.njk"
                     {% include "partials/blog_post/back-to-top-button.njk" %}
                 </div>
                 {% include "partials/blog_post/prev-next-buttons.njk" %}
-            </div>        
-        </div>
-        {% if site.disqusEnabled %}
-            {# <hr/> #}
-            <div class="divider"></div>
-            <div name="comments">
-                {% include "partials/disqus.njk" %}
+                {% if site.disqusEnabled %}
+                <div class="container mx-auto text-center mt-12">
+                        <div class="divider"></div>
+                        <div name="comments" class="prose">
+                            {% include "partials/disqus.njk" %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
             </div>
-        {% endif %}
+        </div>
     </article>
 </section>
