@@ -1,12 +1,12 @@
-# "Tisot" - An 11ty Blog Template And Starter Kit
+# "Tisot" - An 11ty Blog Template And Starter Kit With RTL Support
 
 ## Introduction
 
-This is a template for a blog website.
-
-This template adheres (mostly) to the [JAMStack](https://jamstack.org/) web development architectural pattern.
+This is a template for a blog website. It adheres (mostly) to the [JAMStack](https://jamstack.org/) web development architectural pattern.
 
 Generally speaking - this is not just a simple HTML boilerplate. This code is meant to serve as a basis for a potentially "real" (production) website, that serves editable content.
+
+The template is adapted to support RTL and supports the Hebrew language specifically out of the box.
 
 You are encouraged to contact me if you wish the improve the functionality or UI usability or visibility (or to use GitLab's issue tracker).
 
@@ -26,6 +26,7 @@ This project is based on, or using, the following list if items.
 - [eleventy-plugin-i18n](https://github.com/adamduncan/eleventy-plugin-i18n). An Eleventy plugin to assist with internationalization and dictionary translations.
 - [eleventy-plugin-toc](https://github.com/jdsteinbach/eleventy-plugin-toc). An Eleventy plugin for the generation of a Table of Contents from the content (MD) files. 
 - Making use of the [markdown-it](https://github.com/markdown-it/markdown-it) & [markdown-it-anchor](https://www.npmjs.com/package/markdown-it-anchor) parser to set ID values for the TOC items, and the [markdown-it-image-figures](https://github.com/Antonio-Laguna/markdown-it-image-figures) to caption images inside posts.
+- [tailwindcss-flip] for RTL support, in addition to the built in support by DaisyUI, and in addition to custom improvements and support that the library lacks.
 
 ## License
 
