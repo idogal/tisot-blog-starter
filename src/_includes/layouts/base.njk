@@ -4,10 +4,18 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ site.name }} - {{ site.subtitle }}</title>
-        <meta name="title" content="{{ site.name }}: {% if title %}{{ title }}{% else %}{{ site.name }} - {{ site.subtitle }}{% endif %}">
+        <title>{% if title %}{{ title }} | {% endif %}{{ site.name }} - {{ site.subtitle }}</title>
+        <meta name="title" content="{% if title %}{{ title }} | {% endif %}{{ site.name }} - {{ site.subtitle }}">
         <meta name="description" content="{% if subtitle %}{{ subtitle }}{% else %}{{ site.description }}{% endif %}">
         <meta name="keywords" content="{% if tags %}{{ tags }}{% else %}{{ site.keywords }}{% endif %}{% if keywords %}{% if tags %},{% else %}{% endif %}{{ keywords }}{% endif %}">
+        <meta name="site_name" content="{{ site.name }} - {{ site.subtitle }}">
+        {% set canonicalPath = (site.siteUrl + "/" + site.sitePath + "/" + page.url) | removeDuplicateForwardSlashes %}
+        <meta name="canonical" content="{{ canonicalPath }}">
+        {% if no_index or no_follow %}
+        <meta name="robots" content="{% if no_index %}noindex{% endif %}, {% if no_index %}no_follow{% endif %}">
+        {% else %}
+        <meta name="robots" content="index, follow">
+        {% endif %}
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
