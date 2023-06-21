@@ -9,7 +9,8 @@
         <meta name="description" content="{% if subtitle %}{{ subtitle }}{% else %}{{ site.description }}{% endif %}">
         <meta name="keywords" content="{% if tags %}{{ tags }}{% else %}{{ site.keywords }}{% endif %}{% if keywords %}{% if tags %},{% else %}{% endif %}{{ keywords }}{% endif %}">
         <meta name="site_name" content="{{ site.name }} - {{ site.subtitle }}">
-        {% set canonicalPath = (site.siteUrl + "/" + site.sitePath + "/" + page.url) | removeDuplicateForwardSlashes %}
+        {% if (env.customUrlMode == false) or (env.devMode == true) %}{% set pathPrefix = site.sitePath %}{% else %}{% set pathPrefix = '' %}{% endif %}
+        {% set canonicalPath = (site.siteUrl + "/" + pathPrefix + "/" + page.url) | removeDuplicateForwardSlashes %}
         <meta name="canonical" content="{{ canonicalPath }}">
         {% if no_index or no_follow %}
         <meta name="robots" content="{% if no_index %}noindex{% endif %}, {% if no_index %}no_follow{% endif %}">
