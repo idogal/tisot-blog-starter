@@ -5,7 +5,8 @@ slug_title: post-3
 date: Last Modified
 publish_date: 2023-01-01T13:07:04
 trip_date: 2022-08-06T13:07:04
-thumbnail: /assets/img/posts/tangerine-chan-cjcD8rFvGHc-unsplash_resized.jpg
+head_image: /assets/img/ref_img_1_72f4ce6a-c4ed-4546-a23c-0fb09d6852f2.jpg
+thumbnail: /assets/img/ref_img_1_72f4ce6a-c4ed-4546-a23c-0fb09d6852f2.jpg
 thumbnail_show_caption: true
 thumbnail_caption_text:
 tags: post
