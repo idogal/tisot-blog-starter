@@ -12,9 +12,11 @@ You are encouraged to contact me if you wish the improve the functionality or UI
 
 ### Demo
 
+A demo in the English language, in a LTR layout, can be visited here:
+
 https://ido.g.gitlab.io/idog-blog-daisyui/
 
-You can also refer to a production website using this template at: https://www.tisot.info/
+You can also refer to a production website using this template, in Hebrew, RTL, at: https://www.tisot.info/
 
 ## Technologies / Dependencies
 
