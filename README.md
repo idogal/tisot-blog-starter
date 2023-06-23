@@ -14,6 +14,8 @@ You are encouraged to contact me if you wish the improve the functionality or UI
 
 https://ido.g.gitlab.io/idog-blog-daisyui/
 
+You can also refer to a production website using this template at: https://www.tisot.info/
+
 ## Technologies / Dependencies
 
 This project is based on, or using, the following list if items.
