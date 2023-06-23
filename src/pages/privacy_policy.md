@@ -1,7 +1,7 @@
 ---
 layout: "layouts/privacy_policy.njk"
 permalink: /privacy-policy/index.html
-title: Privacy Policy
+title: מדיניות פרטיות
 no_index: true
 no_follow: true
 ---

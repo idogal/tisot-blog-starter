@@ -1,7 +1,7 @@
 ---
 layout: "layouts/terms_of_use.njk"
 permalink: /terms-of-use/index.html
-title: Terms of Use
+title: תנאי השימוש
 ---
 
 יש לקרוא תנאי שימוש אלו לפני התחלת השימוש באתר.

@@ -2,7 +2,7 @@
 layout: layouts/about.njk
 avatar_show_caption: false
 permalink: /about/index.html
-title: About
+title: אודות
 avatar: /assets/img/p1020357_2.jpg
 about_name: עדוא גל
 email: idogaltech@gmail.com
