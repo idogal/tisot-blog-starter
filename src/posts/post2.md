@@ -17,6 +17,9 @@ tags:
   - Flibco
   - חג המולד
   - שווקי חג המולד
+keywords:
+  - ברוז'
+  - סיור
 date: Last Modified
 isDraft: false
 ---
