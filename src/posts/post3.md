@@ -1,6 +1,7 @@
 ---
 title: Post 3
 subtitle: Post 1 Lorem egestas purus viverra accumsan in
+slug_title: post-3
 date: Last Modified
 publish_date: 2023-01-01T13:07:04
 trip_date: 2022-08-06T13:07:04

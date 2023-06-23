@@ -1,6 +1,7 @@
 ---
 title: Post 1
 subtitle: Post 1 Lorem ipsum dolor sit amet
+slug_title: post-1
 date: Last Modified
 publish_date: 2023-01-01T13:07:04
 trip_date: 2022-08-06T13:07:04

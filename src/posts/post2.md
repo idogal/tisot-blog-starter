@@ -1,6 +1,7 @@
 ---
 title: Post 2
 subtitle: Post 2 sapien et ligula ullamcorper
+slug_title: post-2
 date: Last Modified
 publish_date: 2023-01-01T13:07:04
 trip_date: 2022-08-06T13:07:04
