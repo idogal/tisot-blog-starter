@@ -12,3 +12,8 @@ permalink: false
 <div class="divider"></div>
 {% set blogPosts = collections.posts | getTop(3) %}
 {% include "partials/posts-grid.njk" %}
+<div class="container mx-auto mt-3">
+    <div class="btn-group grid grid-cols-1">
+        <a id="allPostsButton" class="btn btn-outline" href=".\blog\">{{ 'To all posts' | i18n }}</a>
+    </div>
+</div>

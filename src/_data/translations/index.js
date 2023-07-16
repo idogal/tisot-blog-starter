@@ -145,6 +145,9 @@ module.exports = {
   },
   "Newer Post": {
     he: "לרשומה חדשה יותר"
+  },
+  "To all posts": {
+    he: "לכל הרשומות"
   },    
   "Table of Content": {
     he: "תוכן העניינים",
