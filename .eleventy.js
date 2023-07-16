@@ -160,6 +160,11 @@ module.exports = function (eleventyConfig) {
     require("./src/assets/code/filters/formattedDate")
   );
 
+  eleventyConfig.addFilter(
+    "formattedDate2",
+    require("./src/assets/code/filters/formattedDate2")
+  );
+
   eleventyConfig.addFilter("search", require("./src/assets/code/filters/search_eslunr.js"));
 
   function removeDuplicateForwardSlashes(val) {
