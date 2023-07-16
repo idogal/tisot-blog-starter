@@ -16,7 +16,7 @@ eleventyExcludeFromCollections: true
         {% endif %}
         {% set fullPath = pathPrefix + page.url %}
         <loc>{{ site.siteUrl + fullPath | url }}</loc>
-        <lastmod>{{ page.date.toISOString() }}</lastmod>
+        <lastmod>{{ page.date | formattedDate2 }}</lastmod>
     </url>
     {% endif %}
 {% endfor %}
