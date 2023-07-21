@@ -5,7 +5,7 @@ subtitle: דובאי היא שער טוב ליעדים רבים במזרח וב�
 published_by: עדוא גל
 publish_date: 2023-04-22T15:33:43.234Z
 trip_date: 2023-03-27T15:33:43.250Z
-date: Last Modified
+date: git Last Modified
 trip_type: זוגי
 trip_length: 1
 head_image: /assets/img/posts/img_20230328_193222.jpg

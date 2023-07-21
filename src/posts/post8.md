@@ -1,25 +1,15 @@
 ---
-title: קאבין זירו מנהטן וקאבין זירו מטס (20 ליטר) - Cabin Zero Manhattan and Mets (20L)
-subtitle: סקירה של תיקי "קאבין מקס" שמתאימים כתיקים שנכנסים "מתחת למושב" עבור טיסות חסך
-slug_title: cabin-max-manhattan-metz-20l-bags
-published_by: עדוא גל
-publish_date: 2023-06-17T22:26:58.928Z
-head_image: /assets/img/posts/cabin_max_3.webp
-head_image_show_caption: false
-thumbnail: /assets/img/posts/cabin_max_3.webp
-thumbnail_show_caption: false
-tags:
-  - תיקים
-  - ציוד
-  - תרמיל
-  - Low Cost
-  - איך לארוז
-keywords:
-  - Cabin Max
-  - קאבין מקס
-  - Ryanair
-  - Wizz Air
-  - לואו קוסט
+title: Post 8
+subtitle: Post 6 Tristique et egestas quis ipsum suspendisse. Non arcu risus quis varius quam quisque id. Ac felis donec et odio pellentesque
+slug_title: post-8
+date: git Last Modified
+publish_date: 2023-01-01T13:07:04
+trip_date: 2022-08-06T13:07:04
+head_image: /assets/img/ref_img_5_5b43a211-cf3e-4210-8f68-029643d97cd2.jpg
+thumbnail: /assets/img/ref_img_5_5b43a211-cf3e-4210-8f68-029643d97cd2.jpg
+thumbnail_show_caption: true
+thumbnail_caption_text:
+tags: post
 isDraft: false
 ---
 

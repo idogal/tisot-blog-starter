@@ -2,7 +2,7 @@
 published_by: עדוא גל
 trip_date: 2023-01-10T09:53:32.526Z
 thumbnail: /assets/img/posts/img_20230111_230851_b.jpg
-date: Last Modified
+date: git Last Modified
 trip_type: חברים
 thumbnail_show_caption: false
 subtitle: קטניה וסיציליה, חלופה טובה וברת-השגה לצפון איטליה ולאירופה עבור חודשי החורף.

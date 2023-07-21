@@ -4,6 +4,7 @@ trip_date: 2022-12-08T20:26:14.315Z
 trip_type: זוגי
 thumbnail: /assets/img/posts/img_20221210_181327_b.jpg
 thumbnail_show_caption: false
+date: git Last Modified
 thumbnail_caption_text:
 subtitle: איזור פלנדריה בבלגיה במהלך דצמבר, אפשרות טובה במיוחד להנות משווקי חג המולד.
 title: " בלגיה - גנט - דצמבר 2022"

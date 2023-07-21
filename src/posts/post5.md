@@ -4,6 +4,7 @@ subtitle: סקירה על האפשרויות השונות לרכישת סים ל
 slug_title: סים-המלצות-טיולים-חול
 published_by: עדוא גל
 publish_date: 2023-04-29T16:56:58.928Z
+date: git Last Modified
 trip_date: ""
 head_image: /assets/img/posts/brett-jordan-o0kpg3rirhs-unsplash.jpg
 head_image_show_caption: true

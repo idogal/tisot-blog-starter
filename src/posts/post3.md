@@ -18,7 +18,7 @@ keywords:
   - קאבין מקס
   - איך לארוז
   - מה לארוז
-date: Last Modified
+date: git Last Modified
 isDraft: false
 ---
 
