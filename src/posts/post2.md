@@ -21,7 +21,6 @@ tags:
 keywords:
   - ברוז'
   - סיור
-date: Last Modified
 isDraft: false
 ---
 ## על גנט
