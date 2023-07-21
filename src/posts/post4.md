@@ -2,7 +2,7 @@
 title: Post 4
 subtitle: Post 1 Tristique et egestas quis ipsum suspendisse. Non arcu risus quis varius quam quisque id. Ac felis donec et odio pellentesque
 slug_title: post-4
-date: Last Modified
+date: git Last Modified
 publish_date: 2023-01-01T13:07:04
 trip_date: 2022-08-06T13:07:04
 head_image: /assets/img/ref_img_3_bf65468-67cb-4aba-a4fb-907fcac9c273.jpg

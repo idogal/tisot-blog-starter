@@ -2,7 +2,7 @@
 title: Post 5
 subtitle: Post 5 Tristique et egestas quis ipsum suspendisse. Non arcu risus quis varius quam quisque id. Ac felis donec et odio pellentesque
 slug_title: post-5
-date: Last Modified
+date: git Last Modified
 publish_date: 2023-01-01T13:07:04
 trip_date: 2022-08-06T13:07:04
 thumbnail: /assets/img/tangerine-chan-cjcD8rFvGHc-unsplash_resized.jpg
