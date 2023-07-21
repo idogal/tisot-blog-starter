@@ -262,7 +262,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary("md", mdLib);
 
   eleventyConfig.addTransform("htmlmin", function (content) {
-    if (this.page.outputPath && (this.page.outputPath.endsWith(".html") || this.page.outputPath.endsWith(".xml"))) {
+    if (this.page.outputPath && (this.page.outputPath.endsWith(".html"))) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
