@@ -3,6 +3,10 @@ module.exports = {
     he: "אודות",
     en: "About",
   },
+  "Blog Posts": {
+    he: "רשומות יומן",
+    en: "Blog Posts",
+  },
   "Privacy Policy": {
     he: "מדיניות פרטיות",
     en: "Privacy Policy",

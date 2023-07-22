@@ -6,6 +6,11 @@ pagination:
   alias: blogPosts
 ---
 
+<div class="container mx-auto text-center">
+    <h1 class="text-3xl font-bold leading-normal">
+        {{ title | i18n }}
+    </h1>
+</div>    
 <div class="container mx-auto py-6 px-6 lg:px-24">
     {% include "partials/posts-grid.njk" %}
     <div class="container mx-auto text-center max-w-md mt-12">
