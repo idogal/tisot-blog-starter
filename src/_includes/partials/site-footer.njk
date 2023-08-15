@@ -1,22 +1,22 @@
-<footer
-    class="footer footer-center p-4 bg-base-300 text-base">
-    {# <div class="grid grid-flow-col gap-4"> #}
-    <div class="grid grid-flow-col gap-x-3">
-        {% for item in navigation_footer.items %}
-            {% set isLast = (loop.index ==  navigation_footer.items.length) %}
-            <a class="link link-hover tracking-wide" href="{{ item.url }}">{{ item.text | i18n }}</a> {% if isLast == false %}|{% endif %}
-        {% endfor %}
+<footer>
+    <div class="footer footer-center p-4 bg-base-300 text-base">
+        {# <div class="grid grid-flow-col gap-4"> #}
+        <nav class="grid grid-flow-col gap-x-3">
+            {% for item in navigation_footer.items %}
+                {% set isLast = (loop.index ==  navigation_footer.items.length) %}
+                <a class="link link-hover tracking-wide" href="{{ item.url }}">{{ item.text | i18n }}</a> {% if isLast == false %}|{% endif %}
+            {% endfor %}
+        </nav>
     </div>
-</footer>
-<footer class="footer footer-center px-10 py-4 bg-base-300 text-base border-t border-neutral-400">
-    <div class="leading-tight">
-        <div class="font-bold tracking-wide">{{ site.footer.BuiltBy | i18n }}. {% if site.footer.enableCopyrightText %} {{ site.footer.allRightsReserved | i18n }}. {% endif %}
+    <div class="footer footer-center px-10 py-4 bg-base-300 text-base border-t border-neutral-400">
+        <div class="leading-tight">
+            <div class="font-bold tracking-wide">{{ site.footer.BuiltBy | i18n }}. {% if site.footer.enableCopyrightText %} {{ site.footer.allRightsReserved | i18n }}. {% endif %}
+            </div>
+            <div class="tracking-wide" dir="ltr">Built by Ido Gal, 2023.
+                Powered by <a dir="ltr" class="footerlink font-normal tracking-normal" href="{{ site.footer.repoUrl }}"> 'IdoG-Blog-DaisyUI'</a> & 
+                <a class="footerlink" href="https://www.11ty.dev/">Eleventy</a>. <a class="footerlink" href="/sitemap.xml">Sitemap</a>.
+            </div>
         </div>
-        <div class="tracking-wide" dir="ltr">Built by Ido Gal, 2023.
-            Powered by <a dir="ltr" class="footerlink font-normal tracking-normal" href="{{ site.footer.repoUrl }}"> 'IdoG-Blog-DaisyUI'</a> & 
-            <a class="footerlink" href="https://www.11ty.dev/">Eleventy</a>. <a class="footerlink" href="/sitemap.xml">Sitemap</a>.
-        </div>
+        <button class="btn btn-outline" onClick="return klaro.show(klaroConfig, false);">{{ 'Open consent manager' | i18n }}</button>
     </div>
-    <button class="btn btn-outline" onClick="return klaro.show(klaroConfig, false);">{{ 'Open consent manager' | i18n }}</button>
-    
 </footer>
