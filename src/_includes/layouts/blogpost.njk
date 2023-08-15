@@ -2,7 +2,7 @@
 layout: "layouts/base.njk"
 ---
 
-<section class="relative">
+<div class="relative">
     <article class="container mx-auto">
         <div class="flex justify-center">
             <div name="main_text" class="text-center">
@@ -12,9 +12,9 @@ layout: "layouts/base.njk"
                     </span>
                     {% include "partials/toc.njk" %}
                     {% include "partials/series-ref.njk" %}
-                    <div id="content" class="prose-lg">
+                    <section id="content" class="prose-lg">
                         {{ content | safe }}
-                    </div>
+                    </section>
                     {% include "partials/blog_post/back-to-top-button.njk" %}
                 </div>
                 {% include "partials/blog_post/prev-next-buttons.njk" %}
@@ -30,4 +30,4 @@ layout: "layouts/base.njk"
             </div>
         </div>
     </article>
-</section>
+</div>
