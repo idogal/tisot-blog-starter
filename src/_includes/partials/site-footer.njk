@@ -1,31 +1,32 @@
-<footer
-    class="footer footer-center p-4 bg-base-300 text-base">
-    {# <div class="grid grid-flow-col gap-4"> #}
-    <div class="grid grid-flow-col gap-x-3">
-        {% for item in navigation_footer.items %}
-            {% set isLast = (loop.index ==  navigation_footer.items.length) %}
-            <a class="link link-hover tracking-wide" href="{{ item.url }}">{{ item.text | i18n }}</a> {% if isLast == false %}|{% endif %}
-        {% endfor %}
+<footer>
+    <div class="footer footer-center p-4 bg-base-300 text-base">
+        {# <div class="grid grid-flow-col gap-4"> #}
+        <nav class="grid grid-flow-col gap-x-3">
+            {% for item in navigation_footer.items %}
+                {% set isLast = (loop.index ==  navigation_footer.items.length) %}
+                <a class="link link-hover tracking-wide" href="{{ item.url }}">{{ item.text | i18n }}</a> {% if isLast == false %}|{% endif %}
+            {% endfor %}
+        </nav>
+    </div>
+    <div class="footer footer-center px-10 py-4 bg-base-300 text-base border-t border-neutral-400">
+        <div>
+            <p>{{ site.footer.BuiltBy | i18n }}.
+                {% if site.footer.enableCopyrightText %}
+                    {{ site.footer.allRightsReserved | i18n }}.
+                {% endif %}
+                <a class="footerlink" href="{{ site.footer.repoUrl }}">{{ site.footer.repoMessage | i18n }}</a>.
+            </p>
+            <p>
+                {{ 'Using' | i18n }}
+                <a class="footerlink" href="https://www.11ty.dev/">Eleventy</a>,
+                <a class="footerlink" href="https://tailwindcss.com/">Tailwind CSS</a>,            
+                <a class="footerlink" href="https://daisyui.com/">daisyUI</a> {{ 'and' | i18n }}
+                <a class="footerlink" href="https://alpinejs.dev/">Alpine.JS</a>.
+                <br/> 
+                {# {{ 'Using the' | i18n }}
+                <a class="footerlink" href="https://formsubmit.co/">FormSubmit</a>
+                {{ 'forms endpoint' | i18n }}. #}
+            </p>
+        </div>
     </div>
 </footer>
-<footer class="footer footer-center px-10 py-4 bg-base-300 text-base border-t border-neutral-400">
-    <div>
-        <p>{{ site.footer.BuiltBy | i18n }}.
-            {% if site.footer.enableCopyrightText %}
-                {{ site.footer.allRightsReserved | i18n }}.
-            {% endif %}
-            <a class="footerlink" href="{{ site.footer.repoUrl }}">{{ site.footer.repoMessage | i18n }}</a>.
-        </p>
-        <p>
-            {{ 'Using' | i18n }}
-            <a class="footerlink" href="https://www.11ty.dev/">Eleventy</a>,
-            <a class="footerlink" href="https://tailwindcss.com/">Tailwind CSS</a>,            
-            <a class="footerlink" href="https://daisyui.com/">daisyUI</a> {{ 'and' | i18n }}
-            <a class="footerlink" href="https://alpinejs.dev/">Alpine.JS</a>.
-            <br/> 
-            {# {{ 'Using the' | i18n }}
-            <a class="footerlink" href="https://formsubmit.co/">FormSubmit</a>
-            {{ 'forms endpoint' | i18n }}. #}
-        </p>
-    </div>
-</div></footer>
