@@ -44,11 +44,11 @@
     </head>
     {% include "partials/site-header.njk" %}    
     <body class="text-base">
-        <div class="py-6 px-3 lg:px-0">
+        <main class="py-6 px-3 lg:px-0">
             {% block content %}
                 {{ content | safe }}
             {% endblock %}
-        </div>
+        </main>
         <link href='https://fonts.googleapis.com/css2?family=Alef&display=swap' rel='stylesheet' type='text/css'>
     </body>
     {% include "partials/site-footer.njk" %}
