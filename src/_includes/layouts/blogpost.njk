@@ -3,9 +3,9 @@ layout: "layouts/base.njk"
 ---
 
 <div class="relative">
-    <article class="container mx-auto">
+    <div class="container mx-auto">
         <div class="flex justify-center">
-            <div name="main_text" class="text-center">
+            <article name="main_text" class="text-center">
                 <div class="prose lg:prose-lg prose-base lg:prose-h1:text-5xl prose-h1:text-4xl">
                     <span id="post_heading">
                         {% include "partials/blog_post/post-heading.njk" %}
@@ -27,7 +27,7 @@ layout: "layouts/base.njk"
                     </div>
                 </div>
                 {% endif %}
-            </div>
+            </article>
         </div>
-    </article>
+    </div>
 </div>
