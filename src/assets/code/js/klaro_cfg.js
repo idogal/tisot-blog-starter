@@ -220,6 +220,7 @@ var klaroConfig = {
       default: true,
       contextualConsentOnly: false,
       onlyOnce: true,
+      optOut: true,
       translations: {
         zz: {
           title: "TinyAnalytics",
