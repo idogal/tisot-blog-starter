@@ -1,3 +1,13 @@
+window.onload = () => {
+  const cookieValue = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith("klaro="))
+    ?.split("=")[1];
+
+  if (!cookieValue)
+    klaro.show(klaroConfig, false);
+}
+
 const tailwindTextSizes = {
   sizes: [
     { className: "text-xs", sizeRank: 1 },
