@@ -1,5 +1,5 @@
 {% if previous_post or next_post %}
-<div class="pt-3 italic text-error-content">            
+<div class="pt-3 pb-3 lg:pb-0 italic text-error-content">            
     {% set previousSegmentUrl = (page.url | removeLastUrlPart) %}
     {% set previousPostUrl = ((previousSegmentUrl + "/" + previous_post + "/") | removeDuplicateForwardSlashes) %}
     {% set nextPostUrl = ((previousSegmentUrl + "/" + next_post + "/") | removeDuplicateForwardSlashes) %}
