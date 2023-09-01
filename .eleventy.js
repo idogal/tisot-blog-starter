@@ -2,6 +2,8 @@ const translations = require("./src/_data/translations");
 const siteConfig = require("./src/_data/site.json");
 const envConfig = require("./src/_data/env.js");
 
+const searchFilters = require("./src/assets/code/filters/search_filters.js");
+
 const tailwindcss = require("tailwindcss");
 const { EleventyI18nPlugin } = require("@11ty/eleventy");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
@@ -165,7 +167,8 @@ module.exports = function (eleventyConfig) {
     require("./src/assets/code/filters/formattedDate2")
   );
 
-  eleventyConfig.addFilter("search", require("./src/assets/code/filters/search_eslunr.js"));
+  eleventyConfig.addFilter("search_index", searchFilters.searchIndex);
+  eleventyConfig.addFilter("search_data", searchFilters.searchData);
 
   function removeDuplicateForwardSlashes(val) {
     const parts = val.split("://");

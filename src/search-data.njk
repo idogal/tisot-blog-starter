@@ -1,0 +1,6 @@
+---
+permalink: /search-data.json
+eleventyExcludeFromCollections: true
+---
+
+{{ collections.posts | search_data | dump | safe }}
