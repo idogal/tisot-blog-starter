@@ -11,11 +11,11 @@ backend:
   # auth_endpoint: oauth/authorize
   # cms_label_prefix:
   auth_type: pkce
-  app_id: ec6a9ae381b7e2a374302647071d9e7ed2768a08641b26b5e5dfabab83e9563a
+  app_id: 
 
 media_folder: "src/assets/img/"
 public_folder: "/assets/img"
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 site_url: https://ido.g.gitlab.io/idog-blog-daisyui/
 display_url: https://ido.g.gitlab.io/idog-blog-daisyui/
 logo_url: https://ido.g.gitlab.io/idog-blog-daisyui/assets/favicon/android-chrome-512x512.png
