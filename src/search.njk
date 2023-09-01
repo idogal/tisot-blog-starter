@@ -22,7 +22,7 @@ no_follow: true
             </div>
             <div id="search_results" class="flex justify-center mt-6">
                 <div class=" lg:w-6/12">
-                    <ul id="search_results_ul" class="space-y-1.5 leading-relaxed">
+                    <ul id="search_results_ul" class="space-y-1.5 leading-loose">
                     </ul>                
                 </div>
             </div>
@@ -30,5 +30,7 @@ no_follow: true
     </div>
 </div>
 </div>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/lunr/lunr.js"></script>
+<script type="text/javascript" src="/assets/js/lunr.stemmer.support.min.js"></script>
+<script type="text/javascript" src="/assets/js/lunr.he.min.js"></script>
 <script src="/assets/js/search.js"></script>

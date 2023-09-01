@@ -3,4 +3,4 @@ permalink: /search-index.json
 eleventyExcludeFromCollections: true
 ---
 
-{{ collections.posts | search | dump | safe }}
+{{ collections.posts | search_index | dump | safe }}
