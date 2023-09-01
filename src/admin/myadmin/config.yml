@@ -15,7 +15,7 @@ public_folder: "/assets/img"
 # publish_mode: editorial_workflow
 site_url: https://www.tisot.info
 display_url: https://www.tisot.info/
-logo_url: https://www.tisot.info/assets/favicon/android-chrome-512x512.png
+logo_url: https://www.tisot.info/assets/favicon/logo_18adad04-f6e9-45de-aac2-dabb047bfe37_t.png
 show_preview_links: true
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
@@ -24,7 +24,7 @@ search: true
 i18n:
   structure: single_file
   locales: [en, he]
-  default_locale: en
+  default_locale: he
 
 collections:
   - label: "Post"
