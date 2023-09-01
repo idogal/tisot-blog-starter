@@ -12,7 +12,7 @@ backend:
 # locale: 'he'
 media_folder: "/src/assets/img/"
 public_folder: "/assets/img"
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 site_url: https://www.tisot.info
 display_url: https://www.tisot.info/
 logo_url: https://www.tisot.info/assets/favicon/android-chrome-512x512.png
