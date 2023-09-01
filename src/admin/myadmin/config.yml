@@ -21,6 +21,11 @@ show_preview_links: true
 local_backend: true
 search: true
 
+i18n:
+  structure: single_file
+  locales: [en, he]
+  default_locale: en
+
 collections:
   - label: "Post"
     name: "post"
