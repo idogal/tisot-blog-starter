@@ -5,7 +5,7 @@ subtitle: סקירה על מספר יעדים באירופה שמומלצים ל
 slug_title: recommended-nightlife-destinations-europe
 published_by: עדוא גל
 publish_date: 2023-07-17T22:22:22.222Z
-date: 07/18/2023
+date: git Last Modified
 trip_date: 2023-09-02T07:35:16.477Z
 head_image: /assets/img/posts/nightlife/nl_budapest_sail.jpg
 head_image_show_caption: false
