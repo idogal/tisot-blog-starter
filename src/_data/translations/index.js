@@ -16,7 +16,7 @@ module.exports = {
     en: "Terms of Use",
   },
   "Published on": {
-    he: "פורסם ב",
+    he: "פורסם ב־",
     en: "Published on",
   },
   "Published by": {
@@ -142,17 +142,17 @@ module.exports = {
   "This post is part of a series": {
     he: "רשומה זו הינה חלק מסדרה"
   },
-  "Previous post": {
+  "To the previous post": {
     he: "לרשומה הקודמת"
   },
-  "Next post": {
+  "To the next post": {
     he: "לרשומה הבאה"
   },
-  "Older Post": {
-    he: "לרשומה ישנה יותר"
+  "Previous Post": {
+    he: "רשומה קודמת"
   },
-  "Newer Post": {
-    he: "לרשומה חדשה יותר"
+  "Next Post": {
+    he: "רשומה באה"
   },
   "To all posts": {
     he: "לכל הרשומות"

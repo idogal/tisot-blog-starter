@@ -10,8 +10,8 @@ layout: "layouts/base.njk"
                     <span id="post_heading" class="text-center">
                         {% include "partials/blog_post/post-heading.njk" %}
                     </span>
-                    {% include "partials/toc.njk" %}
-                    {% include "partials/series-ref.njk" %}
+                    {% include "partials/blog_post/toc.njk" %}
+                    {% include "partials/blog_post/series-ref.njk" %}
                     <section id="content" class="prose-lg">
                         {{ content | safe }}
                     </section>

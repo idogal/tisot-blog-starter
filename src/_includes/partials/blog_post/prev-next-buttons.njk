@@ -12,8 +12,8 @@
         {% set nextClass = "" %}
         {% if not previousPostInOrder.url %}{% set prevClass = "invisible" %}{% endif %}
         {% if not nextPostInOrder.url %}{% set nextClass = "invisible" %}{% endif %}
-        <a id="olderPostButton" class="btn btn-outline {{ prevClass }}" href="{{ previousPostInOrder.url }}">{{ 'Older Post' | i18n }}</a>
-        <a id="newerPostButton" class="btn btn-outline {{ nextClass }}" href="{{ nextPostInOrder.url }}">{{ 'Newer Post' | i18n }}</a>
+        <a id="olderPostButton" class="btn btn-outline {{ prevClass }}" href="{{ previousPostInOrder.url }}">{{ 'Previous Post' | i18n }}</a>
+        <a id="newerPostButton" class="btn btn-outline {{ nextClass }}" href="{{ nextPostInOrder.url }}">{{ 'Next Post' | i18n }}</a>
     </div>
 </div>
 {% endif %}
