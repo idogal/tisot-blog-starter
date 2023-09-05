@@ -45,7 +45,7 @@ collections:
       - { label: "Post Slug", name: "slug_title", widget: "string", required: true }
       - { label: "Published by", name: "published_by", widget: "string" }
       - { label: "Publish Date", name: "publish_date", widget: "datetime" }
-      - { label: "Date", name: "date", widget: "string", default: "git Last Modified" }
+      - { label: "Date", name: "date", widget: "string", default: "git Last Modified", required: false }
       - { label: "Trip Date", name: "trip_date", widget: "datetime", required: false }
       - { label: "Trip Type", name: "trip_type", widget: "string", required: false }
       - { label: "Trip Length", name: "trip_length", widget: "number", required: false }
