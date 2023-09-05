@@ -9,7 +9,7 @@ var klaroConfig = {
 
   elementID: "klaro",
   storageMethod: "cookie",
-  cookieDomain: 'www.tisot.info',
+  cookieDomain: "www.tisot.info",
   storageName: "klaro",
 
   /*
@@ -94,8 +94,8 @@ var klaroConfig = {
       },
       contextualConsent: {
         acceptAlways: "אשר לתמיד",
-        acceptOnce: "אשר כעת",
-        description: "האם ברצונך לטעון תוכן חיצוני שמסופק בידי {title}?",
+        acceptOnce: "אשר",
+        description: "האם לטעון {title}",
       },
       decline: "אני מסרב",
       ok: "אני מאשר",
@@ -165,9 +165,9 @@ var klaroConfig = {
         Analytics: {
           title: "ניתוח תעבורת רשת",
         },
-        'Privacy Policy': {
-          title: "מדניות־פרטיות"
-        }
+        "Privacy Policy": {
+          title: "מדניות־פרטיות",
+        },
       },
     },
   },
@@ -179,23 +179,21 @@ var klaroConfig = {
     {
       purposes: ["comments"],
       name: "disqus-comments",
-      default: true,
-      contextualConsentOnly: false,
+      default: false,
+      contextualConsentOnly: true,
       // required: false,
-      // optOut: false,
-      // onlyOnce: false,      
+      optOut: false,
+      // onlyOnce: false,
       translations: {
         zz: {
           title: "Disqus",
-        },
-        en: {
-          description: "Disqus comment system",
+          description: "Disqus comments system",
         },
         he: {
-          description: '"Disqus" מערכת התגובות',
+          title: "תגובות (באמצעות Disqus)",
+          description: '"Disqus" מערכת התגובות'
         },
       },
-      
       cookies: [
         [/^__jid.*$/, "/", "disqus.com"],
         [/^disqus_unique.*$/, "/", ".disqus.com"],
@@ -231,7 +229,7 @@ var klaroConfig = {
         he: {
           description: '"TinyAnalytics" ניתוח תעבורת רשת',
         },
-      },      
+      },
     },
     {
       purposes: ["privacy-policy"],
@@ -250,8 +248,8 @@ var klaroConfig = {
         he: {
           description: '"iubenda" ספק מדיניות פרטניות',
         },
-      },      
-    }
+      },
+    },
   ],
 
   callback: function (consent, service) {
