@@ -41,9 +41,9 @@
         <link href="/assets/css/klaro.css" rel="stylesheet"  type="text/css">
         {% include "partials/analytics.njk" %}
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-        <script type="module" src="/assets/js/blog_custom.js"></script>
-        <script type="text/javascript" src="/assets/js/klaro.js"></script>
-        <script type="text/javascript" src="/assets/js/klaro_cfg.js"></script>
+        <script defer type="module" src="/assets/js/blog_custom.js"></script>
+        <script defer type="text/javascript" src="/assets/js/klaro.js"></script>
+        <script defer type="text/javascript" src="/assets/js/klaro_cfg.js"></script>
     </head>
     {% include "partials/site-header.njk" %}    
     <body class="text-base">
@@ -52,7 +52,7 @@
                 {{ content | safe }}
             {% endblock %}
         </main>
-        <link href='https://fonts.googleapis.com/css2?family=Alef&display=swap' rel='stylesheet' type='text/css'>
+        {# <link href='https://fonts.googleapis.com/css2?family=Alef&display=swap' rel='stylesheet' type='text/css'> #}
     </body>
     {% include "partials/site-footer.njk" %}
 </html>
