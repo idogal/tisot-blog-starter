@@ -258,7 +258,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addAsyncShortcode("image", imageShortcode);
 
   const mdLib = markdownIt({})
-    .use(markdownItImgFigures, { figcaption: true })
+    .use(markdownItImgFigures, { figcaption: true, async: true, lazy: true })
     .use(markdownItLinkAttrs, { attrs: { target: "_blank", } })
     .use(require('markdown-it-anchor'), {});
 
