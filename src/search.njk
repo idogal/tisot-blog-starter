@@ -5,30 +5,25 @@ permalink: /search/index.html
 no_index: true
 no_follow: true
 ---
+
 <div class="flex flex-col min-h-screen">
-<div class="mt-12 grow ">
-    <div x-data="searchInput" class="">
+    <div class="mt-12 grow ">
+        <div>
             <div class="flex justify-center">
                 <div class="form-control w-full max-w-xs">
                     <label class="label">
                         <span class="label-text text-base">{{ "Enter search term" | i18n }}</span>
                     </label>
-                    <input type="text" 
-                            placeholder="{{ "Type here" | i18n }}" 
-                            x-model="inputVal" 
-                            x-on:input.keydown="getItems(inputVal)" 
-                            class="input input-bordered w-full max-w-xs"/>
+                    <input type="text" x-on:input.keydown="getItems($event.target.value)" class="input input-bordered w-full max-w-xs"/>
                 </div>
             </div>
             <div id="search_results" class="flex justify-center mt-6">
                 <div class=" lg:w-6/12">
-                    <ul id="search_results_ul" class="space-y-1.5 leading-loose">
-                    </ul>                
+                    <ul id="search_results_ul" class="space-y-1.5 leading-loose"></ul>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 <script type="text/javascript" src="https://unpkg.com/lunr/lunr.min.js"></script>
 <script type="text/javascript" src="/assets/js/lunr.stemmer.support.min.js"></script>
