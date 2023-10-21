@@ -8,6 +8,7 @@ layout: "layouts/base.njk"
             {{ title | i18n }}
         </h1>
         <div dir="ltr" class="flex md:flex-row md:space-x-20 md:px-0 md:justify-center sm:items-center flex-col px-2 pt-4">
+            {% if avatar %}
             <div class="md:w-64 md:max-h-64">
                 <figure class="avatar">
                     <div class="rounded">
@@ -29,6 +30,7 @@ layout: "layouts/base.njk"
                     {% endif %}
                 </figure>
             </div>
+            {% endif %}
             <div class="md:w-64 md:max-h-64 md:my-0 my-5">
                 <div class="flex flex-row items-center justify-center min-h-full">
                     <div class="flex flex-col justify-center text-center leading-relaxed">
