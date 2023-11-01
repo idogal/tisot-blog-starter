@@ -74,7 +74,7 @@
                                 C8.581722,18.576161 5,14.994439 5,10.576161 C5,7.05918297 7.26947343,4.07226889 10.423839,3 Z"></path>
                     </svg>
                 </label>
-                <div class="flex-none">
+                <div class="flex-none" x-data="{ textSizes: ['SM', 'MD', 'LG'], selectedSize: 'MD' }">
                     <div class="dropdown dropdown-end">
                         <label tabindex="0" class="btn btn-active btn-circle">
                             <div class="indicator">
@@ -106,56 +106,55 @@
                             </div>
                         </label>
                         <ul class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-20">
-                            <li>
-                                <a>SM</a>
-                            </li>
-                            <li>
-                                <a class="active">MD</a>
-                            </li>
-                            <li>
-                                <a>LG</a>
-                            </li>
-                        </ul>
+                            <template x-for="textSize in textSizes">
+                                <li>
+                                    {# <label for="txtSize_{{ textSize }}" x-html="textSize"></label> #}
+                                    <input type="text" id="txtSize_{{ textSize }}" x-html="textSize"/>
+                                </li>
+                            </template>
+                        </ul >
+                        {# <span text="test"><!-- Will output: "bob" --></span> #}
+                        <input type="text" x-bind:placeholder="selectedSize"></div>
+                        {# <span x-text="textSizeBtn"><!-- Will output: "bob" --></span> #}
+                    </div>
+                    <span class="flex justify-center items-center lg:hidden">
+                        {% for item in navigation.items %}
+                            {% if (item.text === 'Search' or item.text === 'search') %}
+                                <a href="{{ item.url }}">
+                                    <svg
+                                        class="h-6 w-6"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        role="img"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        aria-labelledby="searchIconTitle">
+                                        <title id="searchIconTitle">Search</title>
+                                        <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.4121122,14.4121122 L20,20"></path>
+                                        <circle fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" cx="10" cy="10" r="6"></circle>
+                                    </svg>
+                                    {# </a> #}
+                                {% endif %}
+                            {% endfor %}
+                        </span>
+                        {# <button dir="ltr" class="btn btn-outline rounded" type="button" name="increaseSizeBtn" id="decreasetextsize">-A</button> #}
+                    {# <button dir="ltr" class="btn btn-outline rounded" type="button" name="decreaseSizeBtn" id="increasetextsize">A+</button>             #}
+                        {# <div class="hidden">
+                                                    <div class="form-control">
+                                                        <input type="text" placeholder="Search" class="input rounded"/>
+                                                    </div>
+                                                    <select class="select select-bordered">
+                                                        <option disabled selected>Language</option>
+                                                        {% for item in locales %}
+                                                            <option>
+                                                                {{ item.label }}
+                                                            </option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div> #}
                     </div>
                 </div>
-                <span class="flex justify-center items-center lg:hidden">
-                    {% for item in navigation.items %}
-                        {% if (item.text === 'Search' or item.text === 'search') %}
-                            <a href="{{ item.url }}">
-                                <svg
-                                    class="h-6 w-6"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    role="img"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    aria-labelledby="searchIconTitle">
-                                    <title id="searchIconTitle">Search</title>
-                                    <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.4121122,14.4121122 L20,20"></path>
-                                    <circle fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" cx="10" cy="10" r="6"></circle>
-                                </svg>
-                                {# </a> #}
-                            {% endif %}
-                        {% endfor %}
-                    </span>
-                    {# <button dir="ltr" class="btn btn-outline rounded" type="button" name="increaseSizeBtn" id="decreasetextsize">-A</button> #}
-                {# <button dir="ltr" class="btn btn-outline rounded" type="button" name="decreaseSizeBtn" id="increasetextsize">A+</button>             #}
-                    {# <div class="hidden">
-                            <div class="form-control">
-                                <input type="text" placeholder="Search" class="input rounded"/>
-                            </div>
-                            <select class="select select-bordered">
-                                <option disabled selected>Language</option>
-                                {% for item in locales %}
-                                    <option>
-                                        {{ item.label }}
-                                    </option>
-                                {% endfor %}
-                            </select>
-                        </div> #}
-                </div>
             </div>
-        </div>
-    </header>
+        </header>
