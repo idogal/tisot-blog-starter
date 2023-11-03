@@ -74,51 +74,51 @@
                                 C8.581722,18.576161 5,14.994439 5,10.576161 C5,7.05918297 7.26947343,4.07226889 10.423839,3 Z"></path>
                     </svg>
                 </label>
-                <div class="flex-none">
-                    <div class="dropdown dropdown-end">
-                        <label tabindex="0" class="btn btn-active btn-circle">
-                            <div class="indicator">
-                                <svg
-                                    stroke="currentColor"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    aria-labelledby="textIconTitle">
-                                    <title id="textIconTitle">Text</title>
-                                    <path stroke-width="1.5" d="M2 18L4.08333 13M12 18L9.91667 13M4.08333 13L7 6L9.91667 13M4.08333 13H9.91667"></path>
-                                    <circle stroke-width="1.5" cx="18" cy="14" r="4"></circle>
-                                    <line stroke-width="1.5" x1="22" y1="10" x2="22" y2="18"></line>
-                                </svg>
-                                <svg
-                                    stroke="currentColor"
-                                    fill="none"
-                                    role="img"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    aria-labelledby="chevronDownIconTitle">
-                                    <title id="chevronDownIconTitle">Chevron Down</title>
-                                    <polyline stroke-width="1" points="6 10 12 16 18 10"></polyline>
-                                </svg>
-                            </div>
-                        </label>
-                        <div class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-20">
-                            <div class="grid grid-cols-1 gap-3 p-3" tabindex="0">
-                                <template
-                                    x-for="textSize in getSizesAsArray()">
-                                    {# <button class="" id="txtSize_{{ textSize }}" x-html="textSize" x-on:click="selectedSize=textSize"></button> #}
-                                    <button
-                                        class=""
-                                        id="txtSize_{{ textSize }}"
-                                        x-html="textSize"                                        
-                                        x-on:click="setSize(textSize); console.log(selectedSize)"></button>
-                                </template>
-                            </div>
+                <div class="dropdown dropdown-end">
+                    <label tabindex="0" class="btn btn-active btn-circle">
+                        <div class="indicator">
+                            <svg
+                                stroke="currentColor"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-labelledby="textIconTitle">
+                                <title id="textIconTitle">Text</title>
+                                <path stroke-width="1.5" d="M2 18L4.08333 13M12 18L9.91667 13M4.08333 13L7 6L9.91667 13M4.08333 13H9.91667"></path>
+                                <circle stroke-width="1.5" cx="18" cy="14" r="4"></circle>
+                                <line stroke-width="1.5" x1="22" y1="10" x2="22" y2="18"></line>
+                            </svg>
+                            <svg
+                                stroke="currentColor"
+                                fill="none"
+                                role="img"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                aria-labelledby="chevronDownIconTitle">
+                                <title id="chevronDownIconTitle">Chevron Down</title>
+                                <polyline stroke-width="1" points="6 10 12 16 18 10"></polyline>
+                            </svg>
                         </div>
-                    </div>
+                    </label>
+                    <ul
+                        class="z-[1] menu menu-compact dropdown-content p-2 shadow bg-base-200 rounded-box w-28">
+                        <template x-for="textSize in getSizesAsArray()">
+                            <li>
+                                <button
+                                    x-bind:class="textSize === selectedSizeName ? 'bg-base-300' : ''"
+                                    class="hover:bg-base-300"
+                                    id="txtSize_{{ textSize }}"
+                                    x-html="textSize"
+                                    x-on:click="setSize(textSize)"></button>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+                <div class="flex">
                     <span class="flex justify-center items-center lg:hidden">
                         {% for item in navigation.items %}
                             {% if (item.text === 'Search' or item.text === 'search') %}

@@ -24,6 +24,7 @@ document.addEventListener("alpine:init", () => {
     },
 
     selectedSize: "lg",
+    selectedSizeName: "Large",
 
     getSizesAsArray() {
       const vals = [];
@@ -42,7 +43,9 @@ document.addEventListener("alpine:init", () => {
       const vals = [];
       for (const size of Object.keys(this.textSizes)) {
         if (selectedBtnSize === this.textSizes[size]["name"]) {
-          this.selectedSize = this.textSizes[size]["prop"];
+          const selectedSizeContainer = this.textSizes[size];
+          this.selectedSize = selectedSizeContainer["prop"];
+          this.selectedSizeName = selectedSizeContainer["name"];
         }
       }
     },
