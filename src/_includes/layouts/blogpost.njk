@@ -12,7 +12,7 @@ layout: "layouts/base.njk"
                     </span>
                     {% include "partials/blog_post/toc.njk" %}
                     {% include "partials/blog_post/series-ref.njk" %}
-                    <section id="content" class="prose-lg">
+                    <section id="content" x-bind:class="getFontClass()">
                         {{ content | safe }}
                     </section>
                     {% include "partials/blog_post/back-to-top-button.njk" %}
