@@ -38,7 +38,7 @@
                         data-act-class="ACTIVECLASS"/>
                     <span class="hidden">Change colour schema icon</span>
                     <svg
-                        class="swap-on w-6 h-6"
+                        class="swap-on w-6 h-6 stroke-1.5 hover:stroke-2.5"
                         stroke="currentColor"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
@@ -47,16 +47,15 @@
                         viewBox="0 0 24 24"
                         aria-labelledby="sunIconTitle">
                         <title id="sunIconTitle">Sun</title>
-                        <circle stroke-width="2" cx="12" cy="12" r="4"></circle>
+                        <circle cx="12" cy="12" r="4"></circle>
                         <path
-                            stroke-width="1.5"
                             fill="none"
                             d="M12 5L12 3M12 21L12 19M5 12L2 12 5 12zM22 12L19 12 22 12zM16.9497475 7.05025253L19.0710678 4.92893219 16.9497475
                                 7.05025253zM4.92893219 19.0710678L7.05025253 16.9497475 4.92893219 19.0710678zM16.9497475 16.9497475L19.0710678
                                 19.0710678 16.9497475 16.9497475zM4.92893219 4.92893219L7.05025253 7.05025253 4.92893219 4.92893219z"></path>
                     </svg>
                     <svg
-                        class="swap-off fill-current w-6 h-6"
+                        class="swap-off fill-current w-6 h-6 stroke-1.5 hover:stroke-2.5"
                         xmlns="http://www.w3.org/2000/svg"
                         stroke="currentColor"
                         width="24"
@@ -68,7 +67,6 @@
                             fill="none"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            stroke-width="2"
                             d="M10.423839,3 C10.1490474,3.80837289 10,4.67486099 10,5.57616098 C10,9.99443898 13.581722,13.576161 18,13.576161
                                 C18.9013,13.576161 19.7677881,13.4271135 20.576161,13.152322 C19.5038921,16.3066875 16.516978,18.576161 13,18.576161
                                 C8.581722,18.576161 5,14.994439 5,10.576161 C5,7.05918297 7.26947343,4.07226889 10.423839,3 Z"></path>
@@ -78,6 +76,7 @@
                     <label tabindex="0" class="btn btn-active btn-circle">
                         <div class="indicator">
                             <svg
+                                class="stroke-1.5 hover:stroke-2.5"                                
                                 stroke="currentColor"
                                 width="24"
                                 height="24"
@@ -86,11 +85,12 @@
                                 xmlns="http://www.w3.org/2000/svg"
                                 aria-labelledby="textIconTitle">
                                 <title id="textIconTitle">Text</title>
-                                <path stroke-width="1.5" d="M2 18L4.08333 13M12 18L9.91667 13M4.08333 13L7 6L9.91667 13M4.08333 13H9.91667"></path>
-                                <circle stroke-width="1.5" cx="18" cy="14" r="4"></circle>
-                                <line stroke-width="1.5" x1="22" y1="10" x2="22" y2="18"></line>
+                                <path d="M2 18L4.08333 13M12 18L9.91667 13M4.08333 13L7 6L9.91667 13M4.08333 13H9.91667"></path>
+                                <circle cx="18" cy="14" r="4"></circle>
+                                <line x1="22" y1="10" x2="22" y2="18"></line>
                             </svg>
                             <svg
+                                class="stroke-1.5 hover:stroke-2.5"  
                                 stroke="currentColor"
                                 fill="none"
                                 role="img"
@@ -100,7 +100,7 @@
                                 viewBox="0 0 24 24"
                                 aria-labelledby="chevronDownIconTitle">
                                 <title id="chevronDownIconTitle">Chevron Down</title>
-                                <polyline stroke-width="1" points="6 10 12 16 18 10"></polyline>
+                                <polyline points="6 10 12 16 18 10"></polyline>
                             </svg>
                         </div>
                     </label>
@@ -124,7 +124,7 @@
                             {% if (item.text === 'Search' or item.text === 'search') %}
                                 <a href="{{ item.url }}">
                                     <svg
-                                        class="h-6 w-6"
+                                        class="h-6 w-6 stroke-1.5 hover:stroke-2.5"
                                         fill="none"
                                         stroke="currentColor"
                                         role="img"
@@ -134,8 +134,8 @@
                                         viewBox="0 0 24 24"
                                         aria-labelledby="searchIconTitle">
                                         <title id="searchIconTitle">Search</title>
-                                        <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.4121122,14.4121122 L20,20"></path>
-                                        <circle fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" cx="10" cy="10" r="6"></circle>
+                                        <path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M14.4121122,14.4121122 L20,20"></path>
+                                        <circle fill="none" stroke-linecap="round" stroke-linejoin="round" cx="10" cy="10" r="6"></circle>
                                     </svg>
                                 </a>
                             {% endif %}
