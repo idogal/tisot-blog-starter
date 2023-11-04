@@ -43,9 +43,14 @@
         <link href="/assets/css/output.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/custom.css" rel="stylesheet" type="text/css">
         {% include "partials/analytics.njk" %}
-        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="/assets/js/app.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        
         <script defer type="module" src="/assets/js/blog_custom.js"></script>
     </head>
+    <span x-data="textConfiguration">
     {% include "partials/site-header.njk" %}    
     <body class="text-base">
         <main class="py-6 px-3 lg:px-0">
@@ -56,4 +61,5 @@
         {# <link href='https://fonts.googleapis.com/css2?family=Alef&display=swap' rel='stylesheet' type='text/css'> #}
     </body>
     {% include "partials/site-footer.njk" %}
+    </span>
 </html>
