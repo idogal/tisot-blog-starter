@@ -28,7 +28,7 @@
             </ul>
         </nav>
         <div class="navbar-end md:px-32 px-6">
-            <div class="flex flex-auto flex-row justify-end gap-4">
+            <div class="flex flex-auto flex-row justify-end gap-3">
                 <label class="swap swap-rotate">
                     <input
                         class="invisible"
@@ -36,7 +36,7 @@
                         id="checkbox"
                         data-toggle-theme="business,corporate"
                         data-act-class="ACTIVECLASS"/>
-                    <span class="hidden">Change colour schema icon</span>
+                    {# <span class="hidden">Change colour schema icon</span> #}
                     <svg
                         class="swap-on w-6 h-6 stroke-1.5 hover:stroke-2.5"
                         stroke="currentColor"
@@ -46,7 +46,7 @@
                         height="24"
                         viewBox="0 0 24 24"
                         aria-labelledby="sunIconTitle">
-                        <title id="sunIconTitle">Sun</title>
+                        <title id="sunIconTitle">Switch to dark mode</title>
                         <circle cx="12" cy="12" r="4"></circle>
                         <path
                             fill="none"
@@ -62,7 +62,7 @@
                         height="24"
                         viewBox="0 0 24 24"
                         aria-labelledby="moonIconTitle">
-                        <title id="moonIconTitle">Moon</title>
+                        <title id="moonIconTitle">Switch to light mode</title>
                         <path
                             fill="none"
                             stroke-linecap="round"
@@ -76,7 +76,7 @@
                     <label tabindex="0" class="btn btn-active btn-circle">
                         <div class="indicator">
                             <svg
-                                class="stroke-1.5 hover:stroke-2.5"                                
+                                class="stroke-1.5 hover:stroke-2.5"
                                 stroke="currentColor"
                                 width="24"
                                 height="24"
@@ -84,13 +84,13 @@
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
                                 aria-labelledby="textIconTitle">
-                                <title id="textIconTitle">Text</title>
+                                <title id="textIconTitle">Text Size</title>
                                 <path d="M2 18L4.08333 13M12 18L9.91667 13M4.08333 13L7 6L9.91667 13M4.08333 13H9.91667"></path>
                                 <circle cx="18" cy="14" r="4"></circle>
                                 <line x1="22" y1="10" x2="22" y2="18"></line>
                             </svg>
                             <svg
-                                class="stroke-1.5 hover:stroke-2.5"  
+                                class="stroke-1.5 hover:stroke-2.5"
                                 stroke="currentColor"
                                 fill="none"
                                 role="img"
@@ -99,13 +99,12 @@
                                 height="24"
                                 viewBox="0 0 24 24"
                                 aria-labelledby="chevronDownIconTitle">
-                                <title id="chevronDownIconTitle">Chevron Down</title>
+                                <title id="chevronDownIconTitle">Text Size</title>
                                 <polyline points="6 10 12 16 18 10"></polyline>
                             </svg>
                         </div>
                     </label>
-                    <ul
-                        class="z-[1] menu menu-compact dropdown-content p-2 shadow bg-base-200 rounded-box w-28">
+                    <ul class="z-[1] menu menu-compact dropdown-content p-2 shadow bg-base-200 rounded-box w-28">
                         <template x-for="textSize in getSizesAsArray()">
                             <li>
                                 <button
