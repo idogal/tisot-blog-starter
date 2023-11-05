@@ -164,7 +164,27 @@ module.exports = {
   "Type here": {
     he: "הקלד כאן",
     en: "Type here",
-  },  
+  },
+  "Small": {
+    he: "קטן",
+    en: "Small",
+  },
+  "Medium": {
+    he: "בינוני",
+    en: "Medium",
+  },
+  "Large": {
+    he: "גדול",
+    en: "Large",
+  },
+  "XL": {
+    he: "גדול מאוד",
+    en: "XL",
+  },
+  "2XL": {
+    he: "ענק",
+    en: "2XL",
+  },
   footer_built_by_i18n: {
     he: "נבנה על ידי עדוא גל, 2023",
     en: "Built by Ido Gal, 2023",

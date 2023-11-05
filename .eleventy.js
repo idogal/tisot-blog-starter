@@ -169,6 +169,7 @@ module.exports = function (eleventyConfig) {
     require("./src/assets/code/filters/formattedDate2")
   );
 
+  eleventyConfig.addFilter("stringify", (v) => JSON.stringify(v));
   eleventyConfig.addFilter("search_index", searchFilters.searchIndex);
   eleventyConfig.addFilter("search_data", searchFilters.searchData);
 

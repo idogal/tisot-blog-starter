@@ -20,5 +20,27 @@
       "text": "Contact",
       "url": "/contact/"
     }
-  ]
+  ],
+  "textSizes": [
+    {
+      "name": "Small",
+      "prop": "sm"
+    },
+    {
+      "name": "Medium",
+      "prop": "base"
+    },
+    {
+      "name": "Large",
+      "prop": "lg"
+    },
+    {
+      "name": "XL",
+      "prop": "xl"
+    },
+    {
+      "name": "2XL",
+      "prop": "2xl"
+    }
+  ]  
 }
