@@ -2,8 +2,8 @@
     <div class="footer footer-center p-4 bg-base-300 text-base">
         {# <div class="grid grid-flow-col gap-4"> #}
         <nav class="grid grid-flow-col gap-x-3">
-            {% for item in navigation_footer.items %}
-                {% set isLast = (loop.index ==  navigation_footer.items.length) %}
+            {% for item in navigation.footer %}
+                {% set isLast = (loop.index ==  navigation.footer.length) %}
                 <a class="link link-hover tracking-wide" href="{{ item.url }}">{{ item.text | i18n }}</a> {% if isLast == false %}|{% endif %}
             {% endfor %}
         </nav>

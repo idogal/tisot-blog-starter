@@ -11,7 +11,7 @@
     {
       "text": "Search",
       "url": "/search/"
-    },      
+    },
     {
       "text": "About",
       "url": "/about/"
@@ -42,5 +42,15 @@
       "name": "2XL",
       "prop": "2xl"
     }
-  ]  
+  ],
+  "footer": [
+    {
+      "text": "Privacy Policy",
+      "url": "/privacy-policy/"
+    },
+    {
+      "text": "Terms of Use",
+      "url": "/terms-of-use/"
+    }
+  ]
 }
