@@ -50,8 +50,16 @@
         
         <script defer type="module" src="/assets/js/blog_custom.js"></script>
     </head>
-    <span x-data="textConfiguration">
-    {% include "partials/site-header.njk" %}    
+    {% set vall = "[" %}
+    {% set counter = 0 %}
+    {% for textSize in navigation.textSizes %}
+        {% set vall = vall + "{ \"name\": \"" + (textSize.name | i18n) + "\", \"prop\": \"" + (textSize.prop) + "\" }" %}
+        {% set counter = counter + 1 %}
+        {% if counter != navigation.textSizes.length %}{% set vall = vall + "," %}{% endif %}
+    {% endfor %}
+    {% set vall = vall + "]" %}
+    <span x-data="textConfiguration" x-init="setSizes('{{ vall }}')">
+    {% include "partials/site-header.njk" %}
     <body class="text-base">
         <main class="py-6 px-3 lg:px-0">
             {% block content %}

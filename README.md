@@ -162,9 +162,9 @@ The `src` folder:
 
 #### Navigation
 
-To add new items (or to remove existing ones) to the *main navigation* bar, customise the `src\_data\navigation.json` file.
+To add new items (or to remove existing ones) to the *main navigation* bar, customise the `src\_data\navigation.json` file, "items" collection.
 
-To add new items (or to remove existing ones) to the *footer*, customise the `src\_data\navigation_footer.json` file.
+To add new items (or to remove existing ones) to the *footer*, customise the `src\_data\navigation.json` file, "footer" collection.
 
 #### Templating methodology
 
