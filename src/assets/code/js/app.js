@@ -3,8 +3,8 @@ document.addEventListener("alpine:init", () => {
     return {
       textSizes: {},
 
-      selectedSize: this.$persist("lg"),
-      selectedSizeName: this.$persist("Large"),
+      selectedSize: this.$persist("lg").as("text-size-prop"),
+      selectedSizeName: this.$persist("Large").as("text-size-name"),
 
       getSizesAsArray() {
         const vals = [];
@@ -21,6 +21,19 @@ document.addEventListener("alpine:init", () => {
 
       setSizes(v) {
         this.textSizes = JSON.parse(v);
+
+        let isValidSize = false;
+        for (const size of Object.keys(this.textSizes)) {
+          if (this.textSizes[size]["name"] === this.selectedSizeName) {
+            isValidSize = true;
+            break;
+          }
+        }
+
+        if (!isValidSize) {
+          this.selectedSizeName = this.textSizes[2]["name"];
+          this.selectedSize = this.textSizes[2]["prop"];
+        }
       },
 
       setSize(selectedBtnSize) {
