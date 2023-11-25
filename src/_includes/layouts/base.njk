@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default("en-GB", true) }}" dir="{{ locales[page.lang].dir | default("ltr", true) }}" data-theme="corporate">
+<html lang="{{ page.lang | default("en-GB", true) }}" dir="{{ locales[page.lang].dir | default("ltr", true) }}" 
+      x-data="theme" x-init="console.log('init html')" x-bind:data-theme="themeName" >
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,7 +49,7 @@
         <script defer src="/assets/js/app.js"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         
-        <script defer type="module" src="/assets/js/blog_custom.js"></script>
+        {# <script defer type="module" src="/assets/js/blog_custom.js"></script> #}
     </head>
     {% set vall = "[" %}
     {% set counter = 0 %}
