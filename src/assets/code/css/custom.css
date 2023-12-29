@@ -5,25 +5,32 @@
 .footerlink:hover {
   background-color: hsl(var(--af));
 }
-  
+
 .klaro .cookie-modal {
   direction: rtl;
 }
 
+.comment-policy-refresh__heading {
+  font-style: italic;
+  background-color: yellow;
+  color: blueviolet;
+}
+
+
 /* alef-regular - hebrew_latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Alef';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/Alef/alef-v21-hebrew_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  
-  /* alef-700 - hebrew_latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Alef';
-    font-style: normal;
-    font-weight: 700;
-    src: url('../fonts/Alef/alef-v21-hebrew_latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Alef";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Alef/alef-v21-hebrew_latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* alef-700 - hebrew_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Alef";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Alef/alef-v21-hebrew_latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
