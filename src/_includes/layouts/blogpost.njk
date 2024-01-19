@@ -19,13 +19,16 @@ layout: "layouts/base.njk"
                 </div>
                 {% include "partials/blog_post/prev-next-buttons.njk" %}
                 {% if site.disqusEnabled %}
-                <div class="container mx-auto text-center mt-12">
-                        <div class="divider"></div>
-                        <div name="comments" class="prose">
-                            {% include "partials/disqus.njk" %}
+                    <div class="container mx-auto text-center mt-12">
+                        <div class="flex flex-col">
+                            <div class="divider"></div>
+                            <div class="flex justify-center ">
+                                <div name="comments" class="prose basis-full">
+                                    {% include "partials/disqus.njk" %}
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
                 {% endif %}
             </article>
         </div>
