@@ -18,6 +18,10 @@ module.exports = {
   "Published on": {
     he: "פורסם ב־",
     en: "Published on",
+  },  
+  "updated on": {
+    he: "עודכן ב־",
+    en: "updated on",
   },
   "Published by": {
     he: "פורסם על ידי",
