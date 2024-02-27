@@ -10,9 +10,9 @@
             {{ 'Published on' | i18n }}
             <b>{{ publish_date | formattedDate }}</b>
         {% endif %}
-        {% if ((page.date - publish_date) / 86400000) > 30 %}
+        {% if update_date %}
             ({{ 'updated on' | i18n }}
-            <b>{{ page.date | formattedDate }}</b>)
+            <b>{{ update_date | formattedDate }}</b>)
         {% endif %}        
         {% if published_by %}
             {{ 'by' | i18n }}
