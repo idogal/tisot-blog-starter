@@ -39,10 +39,10 @@ e2e:chrome:
     - rm google-chrome*.deb
     - wget -N https://storage.googleapis.com/chrome-for-testing-public/122.0.6261.111/linux64/chromedriver-linux64.zip
     - unzip chromedriver-linux64.zip
-    - chmod +x chromedriver
-    - cp chromedriver /usr/local/bin
-    - rm chromedriver-linux64.zip
-    - rm chromedriver    
+    - chmod +x chromedriver-linux64/chromedriver
+    - cp chromedriver-linux64/chromedriver /usr/local/bin
+    - rm chromedriver-linux64/chromedriver-linux64.zip
+    - rm chromedriver-linux64/chromedriver2226
   script:
     - npm install selenium-webdriver
     - npm run test --host=selenium__standalone-chrome    
