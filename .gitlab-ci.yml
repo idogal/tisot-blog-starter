@@ -41,8 +41,7 @@ e2e:chrome:
     - unzip chromedriver-linux64.zip
     - chmod +x chromedriver-linux64/chromedriver
     - cp chromedriver-linux64/chromedriver /usr/local/bin
-    - rm chromedriver-linux64/chromedriver-linux64.zip
-    - rm chromedriver-linux64/chromedriver2226
+    - rm -rf chromedriver-linux64
   script:
     - npm install selenium-webdriver
     - npm run test --host=selenium__standalone-chrome    
