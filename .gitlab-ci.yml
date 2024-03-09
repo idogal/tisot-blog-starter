@@ -7,7 +7,7 @@ before_script:
 
 stages:
   - deploy
-  - confidence-check  
+  - test  
 
 pages:
   stage: deploy
@@ -21,3 +21,28 @@ pages:
     # This ensures that only pushes to the default branch will trigger
     # a pages deploy
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+
+e2e:chrome:
+  stage: test
+  services:
+    - selenium/standalone-chrome
+  before_script:
+    - apt-get update -y
+    # Install the chrome and chrome webdriver
+    - apt-get install -y xvfb
+    - apt-get install -y zip
+    - apt-get install -y wget
+    - apt-get install -y ca-certificates
+    - apt-get install -y libnss3-dev libasound2 libxss1 libappindicator3-1 libu2f-udev libvulkan1  gconf-service libgconf-2-4 libpango1.0-0 xdg-utils fonts-liberation libgbm1    
+    - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    - dpkg -i google-chrome*.deb 
+    - rm google-chrome*.deb
+    - wget -N https://storage.googleapis.com/chrome-for-testing-public/122.0.6261.111/linux64/chromedriver-linux64.zip
+    - unzip chromedriver-linux64.zip
+    - chmod +x chromedriver
+    - cp chromedriver /usr/local/bin
+    - rm chromedriver-linux64.zip
+    - rm chromedriver    
+  script:
+    - npm install selenium-webdriver
+    - npm run test --host=selenium__standalone-chrome    
