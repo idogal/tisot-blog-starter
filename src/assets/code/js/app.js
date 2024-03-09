@@ -52,14 +52,14 @@ document.addEventListener("alpine:init", () => {
 
   Alpine.data("theme", function () {
     return {
-      themeName: this.$persist("business").as("theme-name"),
+      themeName: this.$persist("dim").as("theme-name"),
 
       init() {
         console.log('init theme');
       },
   
       toggleTheme() {
-        this.themeName = (this.themeName === "business" ? "corporate" : "business") ;
+        this.themeName = (this.themeName === "dim" ? "corporate" : "dim") ;
       },
     };
   });

@@ -50,9 +50,9 @@ module.exports = {
     },
   },
   daisyui: {
-    themes: ["business", "corporate"],
+    themes: ["dim", "corporate"],
     rtl: true,
-    darkTheme: "business",
+    darkTheme: "dim",
   },
   plugins: [daisyuiPlugin, tailwindFlipPlugin, prosePlugin, typographyPlugin],
 };
