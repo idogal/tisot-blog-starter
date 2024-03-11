@@ -32,7 +32,6 @@ module.exports = {
         DEFAULT: {
           css: {
             div: {
-              "line-height": "1.5rem;",
             },
             p: {
               "text-align": "justify;",
