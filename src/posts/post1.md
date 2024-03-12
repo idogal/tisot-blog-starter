@@ -57,6 +57,24 @@ bibendum est. Enim tortor at auctor urna nunc id cursus metus aliquam. Pharetra 
 Eget est lorem ipsum dolor sit amet consectetur adipiscing elit. Tristique et egestas quis ipsum suspendisse. Non arcu
 risus quis varius quam quisque id. Ac felis donec et odio pellentesque.
 
+### Level 4
+
+Some bullets:
+
+- Nunc pulvinar sapien
+  - Tristique et egestas quis ipsum
+  - Enim tortor at auctor urna
+- Commodo elit at imperdiet dui
+  - Iaculis at erat pellentesque
+- Amet nisl suscipit adipiscing
+
+Some numeric bullets:
+ 1. Amet nisl suscipit adipiscing
+ 2. Commodo elit at imperdiet dui
+    1. Commodo elit at imperdiet dui diam sit amet nisl suscipit
+    2. Enim tortor at auctor urna
+ 3. Nunc pulvinar sapien
+
 ## Header 2 of level 2 Header 2 of level 2Header 2 of level 2Header 2 of level 2Header 2 of level 2Header 2 of level 2Header 2 of level 2Header 2 of level 2
 
 Nunc pulvinar sapien et ligula ullamcorper malesuada. Commodo elit at imperdiet dui. Iaculis at erat pellentesque
