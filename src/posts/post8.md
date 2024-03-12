@@ -7,7 +7,7 @@ publish_date: 2023-01-01T13:07:04
 trip_date: 2022-08-06T13:07:04
 head_image: /assets/img/ref_img_5_5b43a211-cf3e-4210-8f68-029643d97cd2.jpg
 thumbnail: /assets/img/ref_img_5_5b43a211-cf3e-4210-8f68-029643d97cd2.jpg
-thumbnail_show_caption: true
+thumbnail_show_caption: false
 thumbnail_caption_text:
 tags: post
 isDraft: false
