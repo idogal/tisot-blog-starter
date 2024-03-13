@@ -52,7 +52,7 @@ document.addEventListener("alpine:init", () => {
 
   Alpine.data("theme", function () {
     return {
-      themeName: this.$persist("dim").as("theme-name"),
+      themeName: this.$persist("corporate").as("theme-name"),
 
       init() {
         console.log('init theme');
