@@ -5,12 +5,17 @@
   "siteUrl": "http://localhost:8080/",
   "sitePath": "/idog-blog-daisyui/",
   "keywords": "",
-  "disqusShortname" : "",
-  "disqusEnabled" : false,  
   "defaultLang": "en",
   "productionMode": false,
   "posts": {
     "tocOpenAsDefault": false
+  },
+  "comments": {
+    "enabled": true,
+    "provider": "disqus",
+    "disqus": {
+      "disqusShortname": ""
+    }
   },
   "footer": {
     "BuiltBy": "footer_built_by_i18n",
@@ -18,7 +23,7 @@
     "enableCopyrightText": false,
     "repoUrl": "https://gitlab.com/ido.g/idog-blog-daisyui",
     "repoMessage": "repo_message_i18n"
-  }, 
+  },
   "contact": {
     "enableContactForm": false,
     "submitPostActionUrl": "https://formsubmit.co/1234567890",

@@ -18,17 +18,18 @@ layout: "layouts/base.njk"
                     {% include "partials/blog_post/back-to-top-button.njk" %}
                 </div>
                 {% include "partials/blog_post/prev-next-buttons.njk" %}
-                {% if site.disqusEnabled %}
-                    <div class="container mx-auto text-center mt-12">
-                        <div class="flex flex-col">
-                            <div class="divider"></div>
-                            <div class="flex justify-center ">
-                                <div name="comments" class="prose basis-full">
-                                    {% include "partials/disqus.njk" %}
-                                </div>
+                {% if site.comments.enabled %}
+                <div class="container mx-auto text-center mt-12">
+                    <div class="flex flex-col">
+                        <div class="divider"></div>
+                        <div class="flex justify-center ">
+                            <div name="comments" class="prose basis-full">
+                                {% set comment_provider_path = "partials/comments/" + site.comments.provider + ".njk" %}
+                                {% include comment_provider_path %}
                             </div>
                         </div>
                     </div>
+                </div>
                 {% endif %}
             </article>
         </div>
