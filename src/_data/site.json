@@ -11,10 +11,13 @@
     "tocOpenAsDefault": false
   },
   "comments": {
-    "enabled": true,
-    "provider": "disqus",
+    "enabled": false,
+    "provider": "",
     "disqus": {
       "disqusShortname": ""
+    },
+    "hyvor": {
+      "websiteId": ""
     }
   },
   "footer": {
