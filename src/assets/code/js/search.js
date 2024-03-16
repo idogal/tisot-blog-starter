@@ -10,17 +10,17 @@ fetch("../search-data.json").then((response) =>
   })
 );
 
-const getItems = function(inputValue) {
+const getItems = function (inputValue) {
   const ul = document.getElementById("search_results_ul");
   ul.innerHTML = "";
 
   const searchResults = document.searchIndex.search(inputValue);
-  if (searchResults != null && searchResults != undefined) {
+  if (searchResults) {
     for (let index = 0; index < searchResults.length; index++) {
       const searchResult = searchResults[index];
       const key = searchResult.ref;
 
-      if (searchResult.score < 1) {
+      if (searchResult.score < 0.5) {
         continue;
       }
 
@@ -34,9 +34,7 @@ const getItems = function(inputValue) {
         resultTextHead = resultEntryData.title;
       }
 
-      resultTextHeadDiv.appendChild(
-        document.createTextNode(resultTextHead)
-      );
+      resultTextHeadDiv.appendChild(document.createTextNode(resultTextHead));
       resultTextHeadDiv.setAttribute("class", "font-bold");
 
       refElement.appendChild(resultTextHeadDiv);
@@ -48,9 +46,7 @@ const getItems = function(inputValue) {
       if (resultEntryData) {
         refElement.appendChild(document.createTextNode(": "));
         let resultTextSubDiv = document.createElement("span");
-        resultTextSubDiv.appendChild(
-          document.createTextNode(resultTextSub)
-        );
+        resultTextSubDiv.appendChild(document.createTextNode(resultTextSub));
         refElement.appendChild(resultTextSubDiv);
       }
 
@@ -60,4 +56,4 @@ const getItems = function(inputValue) {
       ul.appendChild(li);
     }
   }
-}
+};
