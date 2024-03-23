@@ -3,6 +3,8 @@ const Chrome = require("selenium-webdriver/chrome");
 const assert = require("assert");
 var log4js = require("log4js");
 
+const testHeader = require("./test-navbar.js");
+
 const logger = log4js.getLogger();
 logger.level = "debug";
 
@@ -42,17 +44,8 @@ async function getDriver(browser) {
     const PAGE_TITLE = "Home Page | Tisot - A blog starter kit";
     assert.equal(PAGE_TITLE, title, `Title of the page is supposed to be: '${PAGE_TITLE}'`);
 
-    /*
+    await testHeader(driver);
 
-    await driver.manage().setTimeouts({ implicit: 500 });
-    let textBox = await driver.findElement(By.name("my-text"));
-    let submitButton = await driver.findElement(By.css("button"));
-    await textBox.sendKeys("Selenium");
-    await submitButton.click();
-    let message = await driver.findElement(By.id("message"));
-    let value = await message.getText();
-    assert.equal("Received!", value);
-    */
   } catch (e) {
     logger.error(e);
   } finally {
