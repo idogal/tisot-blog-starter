@@ -21,7 +21,7 @@
         <nav id="ts-navbar-center" class="navbar-center hidden lg:flex">
             <ul id="ts-navbar-center-menu" class="menu menu-horizontal px-1">
                 {% for item in navigation.items %}
-                    <li id="ts-navbar-center-menu-item">
+                    <li id="ts-navbar-center-menu-item-{{loop.index}}">
                         <a class="text-lg" href="{{ item.url }}">{{ item.text | i18n }}</a>
                     </li>
                 {% endfor %}
