@@ -3,7 +3,7 @@ const Chrome = require("selenium-webdriver/chrome");
 const assert = require("assert");
 var log4js = require("log4js");
 
-const testHeader = require("./test-navbar.js");
+const testHeader = require("./test-navbar");
 
 const logger = log4js.getLogger();
 logger.level = "debug";
@@ -44,7 +44,8 @@ async function getDriver(browser) {
     const PAGE_TITLE = "Home Page | Tisot - A blog starter kit";
     assert.equal(PAGE_TITLE, title, `Title of the page is supposed to be: '${PAGE_TITLE}'`);
 
-    await testHeader(driver);
+    const headerResult = await testHeader(driver);
+    assert.ok(headerResult);
 
   } catch (e) {
     logger.error(e);
