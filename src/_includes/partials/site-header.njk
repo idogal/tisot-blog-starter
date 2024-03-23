@@ -1,5 +1,5 @@
-<header class="sticky top-0 z-50">
-    <div class="navbar bg-base-300">
+<header id="ts-header" class="sticky top-0 z-50">
+    <div id="ts-navbar" class="navbar bg-base-300">
         <div class="navbar-start md:px-32 sm:px-2">
             <div class="dropdown">
                 <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -18,10 +18,10 @@
             </div>
             <a class="mx-4 no-animation normal-case font-semibold antialiased font-serif text-xl" href="{{ '/' }}">{{ site.name | i18n }}</a>
         </div>
-        <nav class="navbar-center hidden lg:flex">
-            <ul class="menu menu-horizontal px-1">
+        <nav id="ts-navbar-center" class="navbar-center hidden lg:flex">
+            <ul id="ts-navbar-center-menu" class="menu menu-horizontal px-1">
                 {% for item in navigation.items %}
-                    <li>
+                    <li id="ts-navbar-center-menu-item">
                         <a class="text-lg" href="{{ item.url }}">{{ item.text | i18n }}</a>
                     </li>
                 {% endfor %}
