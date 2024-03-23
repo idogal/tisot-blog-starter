@@ -7,6 +7,9 @@
   "keywords": "",
   "defaultLang": "en",
   "productionMode": false,
+  "meta": {
+    "titleAdditionalProps": ["name", "subtitle"]
+  },
   "posts": {
     "tocOpenAsDefault": false
   },

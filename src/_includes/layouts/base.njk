@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>{% if title %}{{ title }} | {% endif %}{{ site.name }} - {{ site.subtitle }}</title>
         <meta name="title" content="{% if title %}{{ title }} | {% endif %}{{ site.name }} - {{ site.subtitle }}">
         <meta name="description" content="{% if subtitle %}{{ subtitle }}{% else %}{{ site.description }}{% endif %}">
@@ -59,6 +60,13 @@
     {% include "partials/site-header.njk" %}
     <body class="text-base">
         <main class="py-6 px-3 lg:px-0">
+            {% set titleValue = "" %}
+            {% for p in site.meta.titleAdditionalProps %}      
+            {% set delimiter = "" %}{% if titleValue !== "" %}{% set delimiter = " | " %}{% endif %}
+            {% set titleValue = titleValue + delimiter  + p %}
+            {% endfor %}
+            {{titleValue}}
+
             {% block content %}
                 {{ content | safe }}
             {% endblock %}
