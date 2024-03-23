@@ -1,16 +1,14 @@
 const translations = require("./src/_data/translations");
 const siteConfig = require("./src/_data/site.json");
 const envConfig = require("./src/_data/env.js");
-
 const searchFilters = require("./src/assets/code/filters/search_filters.js");
 
-const tailwindcss = require("tailwindcss");
 const { EleventyI18nPlugin } = require("@11ty/eleventy");
+const i18n = require("eleventy-plugin-i18n");
+const pluginTOC = require('eleventy-plugin-toc')
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const Image = require("@11ty/eleventy-img");
-const i18n = require("eleventy-plugin-i18n");
-const pluginTOC = require('eleventy-plugin-toc')
 
 const markdownIt = require("markdown-it");
 const markdownItImgFigures = require("markdown-it-image-figures");
@@ -18,13 +16,8 @@ const markdownItLinkAttrs = require('markdown-it-link-attributes');
 const htmlmin = require("html-minifier");
 const slugLimax = require("limax");
 
-const debug = require("debug")("blog-idog");
-
 const sitePath =
   !envConfig.customUrlMode || envConfig.devMode ? siteConfig.sitePath : "";
-
-// const postcss = require('postcss');
-// const autoprefixer = require('autoprefixer');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "assets/img" });
