@@ -1,7 +1,7 @@
 const { By, Builder, Browser } = require("selenium-webdriver");
 const Chrome = require("selenium-webdriver/chrome");
 const assert = require("assert");
-var log4js = require("log4js");
+const log4js = require("log4js");
 
 const testHeader = require("./test-navbar");
 

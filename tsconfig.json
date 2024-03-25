@@ -2,8 +2,8 @@
   "compilerOptions": {    
     "esModuleInterop": true,
     "target": "es6",
-    "moduleResolution": "nodenext",
-    "module": "NodeNext",
+    "moduleResolution": "node16",
+    "module": "node16",
     "sourceMap": true,
     "rootDir": "src/test/",
     "outDir": "build/test/",

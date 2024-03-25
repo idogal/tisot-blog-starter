@@ -1,6 +1,6 @@
-const assert = require("assert");
-var log4js = require("log4js");
-const { By } = require("selenium-webdriver");
+import assert = require("assert");
+import log4js = require("log4js");
+import { By } from "selenium-webdriver";
 
 const logger = log4js.getLogger();
 logger.level = "debug";
@@ -10,13 +10,13 @@ async function testHeader(driver): Promise<boolean> {
   assert.ok("Site header exists.", tsHeader);
 
   const tsNavbar = await driver.findElement(By.id("ts-navbar"));
-  assert.ok("Header contains a navbar.", tsHeader);
+  assert.ok("Header contains a navbar.", tsNavbar);
 
   const tsNavbarCenter = await driver.findElement(By.id("ts-navbar-center"));
-  assert.ok("Header contains a navbar central area.", tsHeader);
+  assert.ok("Header contains a navbar central area.", tsNavbarCenter);
 
   const tsNavbarMenu = await driver.findElement(By.id("ts-navbar-center-menu"));
-  assert.ok("Header contains a navbar menu.", tsHeader);
+  assert.ok("Header contains a navbar menu.", tsNavbarMenu);
 
   const tsNavbarMenuItems = await tsNavbarMenu.findElements(By.css("li"));
   assert.equal(tsNavbarMenuItems.length, 5);
