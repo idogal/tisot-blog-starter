@@ -28,6 +28,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "src/admin/config.yml": "./admin/config.yml",
   });
+  
   eleventyConfig.addWatchTarget("styles/**/*.css");
 
   var compareByPublishDateDesc = function compare( a, b ) {
