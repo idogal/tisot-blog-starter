@@ -55,7 +55,6 @@ document.addEventListener("alpine:init", () => {
       themeName: this.$persist("corporate").as("theme-name"),
 
       init() {
-        console.log('init theme');
       },
   
       toggleTheme() {
