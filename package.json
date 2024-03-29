@@ -13,6 +13,7 @@
     "markdown-it-anchor": "^8.6.7",
     "markdown-it-image-figures": "^2.1.1",
     "markdown-it-link-attributes": "^4.0.1",
+    "minimist": "^1.2.8",
     "selenium-webdriver": "^4.18.1",
     "tailwindcss-flip": "^1.0.0",
     "theme-change": "^2.5.0"
@@ -33,11 +34,13 @@
     "webdriverio": "^8.33.1"
   },
   "scripts": {
-    "start": "tailwindcss -i ./src/assets/main.css -o ./public/assets/css/output.css && eleventy --serve",
-    "build": "tailwindcss -i ./src/assets/main.css -o ./public/assets/css/output.css --postcss --minify && eleventy",
+    "start": "tailwindcss -i ./src/assets/main.css -o ./build/output.css && eleventy --serve",
+    "build": "tailwindcss -i ./src/assets/main.css -o ./build/output.css --postcss --minify && eleventy",
     "updatedep": "npm i -g npm-check-updates && ncu -u && npm install",
     "debugall": "set DEBUG=Eleventy* && npx @11ty/eleventy --dryrun",
     "debug": "set DEBUG=*blog-idog* && npx @11ty/eleventy --dryrun",
+    "build-test-and-start": "tailwindcss -i ./src/assets/main.css -o ./build/output.css --postcss --minify && eleventy --output=public/test-env --serve",
+    "build-test": "tailwindcss -i ./src/assets/main.css -o ./build/output.css --postcss --minify && eleventy --output=public/test-env",
     "test": "node ./src/test/test-main.js"
   },
   "name": "idog_blog_daisyui",
