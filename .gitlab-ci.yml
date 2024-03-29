@@ -9,7 +9,20 @@ stages:
   - deploy
   - test  
 
-pages:
+build-test-pages:
+  stage: test
+  script:
+    - npm run build-test
+  artifacts:
+    paths:
+      # The folder that contains the files to be exposed at the Page URL
+      - public/test-env
+  rules:
+    # This ensures that only pushes to the default branch will trigger
+    # a pages deploy
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH  
+
+build-pages:
   stage: deploy
   script:
     - npm run build
