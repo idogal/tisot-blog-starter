@@ -6,7 +6,7 @@ before_script:
   - npm install
 
 stages:
-  - deploy
+  # - deploy
   - test  
 
 build-test-pages:
