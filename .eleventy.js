@@ -15,19 +15,40 @@ const markdownItImgFigures = require("markdown-it-image-figures");
 const markdownItLinkAttrs = require('markdown-it-link-attributes');
 const htmlmin = require("html-minifier");
 const slugLimax = require("limax");
+const parseArgs = require('minimist');
+
+const logger = require("log4js").getLogger();
+
+logger.level = "debug";
 
 const sitePath =
   !envConfig.customUrlMode || envConfig.devMode ? siteConfig.sitePath : "";
 
 module.exports = function (eleventyConfig) {
+
+  let outputDir = "public";
+  const argv = parseArgs(process.argv.slice(2));
+  if (argv.output) {
+    outputDir = argv.output;
+  }
+
+  logger.info("Output directory is ", outputDir);
+	
+  // let subdomain = process.env;
+  eleventyConfig.on("eleventy.before", async ({ dir, runMode, outputMode }) => {
+		subdomain = process.env;
+	});  
+  
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "assets/img" });
   eleventyConfig.addPassthroughCopy({ "src/assets/favicon": "assets/favicon" });
   eleventyConfig.addPassthroughCopy({ "src/assets/code/js": "assets/js" });
   eleventyConfig.addPassthroughCopy({ "src/assets/fonts": "assets/fonts" });
   eleventyConfig.addPassthroughCopy({ "src/assets/code/css": "assets/css" });
+  eleventyConfig.addPassthroughCopy({ "build/output.css": "assets/css/output.css" });
   eleventyConfig.addPassthroughCopy({
     "src/admin/config.yml": "./admin/config.yml",
   });
+  
   eleventyConfig.addWatchTarget("styles/**/*.css");
 
   var compareByPublishDateDesc = function compare( a, b ) {
@@ -227,7 +248,9 @@ module.exports = function (eleventyConfig) {
     let metadata = await Image(imgUrl, {
       widths: [432, 617, 712, "auto"],
       formats: ["webp", "auto"],
-      outputDir: "./public/assets/img/",
+      outputDir: "./" + outputDir + "/assets/img/",
+
+
       urlPath: `/assets/img/`,
       filenameFormat: function (id, imgUrl, width, format, options) {
         return `${id}-${width}.${format}`;
@@ -282,7 +305,7 @@ module.exports = function (eleventyConfig) {
     pathPrefix: sitePath,
     dir: {
       input: "src",
-      output: "public",
+      output: outputDir,
       data: "_data",
     },
   };
