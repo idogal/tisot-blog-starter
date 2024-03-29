@@ -6,11 +6,11 @@ before_script:
   - npm install
 
 stages:
-  # - deploy
-  - test  
+  - deploy
+  # - test  
 
 build-test-pages:
-  stage: test
+  stage: deploy
   script:
     - npm run build-test
   artifacts:
@@ -23,7 +23,7 @@ build-test-pages:
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH  
 
 build-pages:
-  stage: deploy
+  # stage: deploy
   script:
     - npm run build
   artifacts:
