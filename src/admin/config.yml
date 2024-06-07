@@ -46,7 +46,7 @@ collections:
       - { label: "Date", name: "date", widget: "datetime", default: "git Last Modified", required: false }
       - { label: "Trip Date", name: "trip_date", widget: "datetime", required: false }
       - { label: "Trip Type", name: "trip_type", widget: "string", required: false }
-      - { label: "Trip Length", name: "trip_length", widget: "number", required: false }
+      - { label: "Trip Length", name: "trip_length_days", widget: "number", required: false }
       - { label: "Main Image", name: "head_image", widget: "image", required: false }
       - { label: "Show main Image caption", name: "head_image_show_caption", widget: "boolean", default: false, required: false}
       - { label: "Main image caption text", name: "head_image_caption_text", widget: "string", default: "", required: false}      
