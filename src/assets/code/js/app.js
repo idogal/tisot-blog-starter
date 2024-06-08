@@ -1,4 +1,17 @@
 document.addEventListener("alpine:init", () => {
+  Alpine.data("theme", function () {
+    return {
+      themeName: this.$persist("corporate").as("theme-name"),
+
+      init() {
+      },
+  
+      toggleTheme() {
+        this.themeName = (this.themeName === "dim" ? "corporate" : "dim") ;
+      },
+    };
+  });
+    
   Alpine.data("textConfiguration", function () {
     return {
       textSizes: {},
@@ -45,20 +58,6 @@ document.addEventListener("alpine:init", () => {
             this.selectedSizeName = selectedSizeContainer["name"];
           }
         }
-      },
-    };
-  });
-
-
-  Alpine.data("theme", function () {
-    return {
-      themeName: this.$persist("corporate").as("theme-name"),
-
-      init() {
-      },
-  
-      toggleTheme() {
-        this.themeName = (this.themeName === "dim" ? "corporate" : "dim") ;
       },
     };
   });
