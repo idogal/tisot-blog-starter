@@ -2,16 +2,25 @@
 <html lang="{{ page.lang | default("en-GB", true) }}" dir="{{ locales[page.lang].dir | default("ltr", true) }}" 
       x-data="theme" x-init="" x-bind:data-theme="themeName" >
     <head>
+        {% if (env.customUrlMode == false) or (env.devMode == true) %}{% set pathPrefix = site.sitePath %}{% else %}{% set pathPrefix = '' %}{% endif %}
+        {% set canonicalPath = (site.siteUrl + "/" + pathPrefix + "/" + page.url) | removeDuplicateForwardSlashes %}
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% if title %}{{ title }} | {% endif %}{{ site.name }} - {{ site.subtitle }}</title>
+        <script type="application/ld+json">
+        {
+            "@context" : "https://schema.org",
+            "@type" : "WebSite",
+            "name" : "{{ site.name }} - {{ site.subtitle }}",
+            "alternateName" : "{{ site.alternateName }}",
+            "url" : "{{ canonicalPath }}",
+        }
+        </script>        
         <meta name="title" content="{% if title %}{{ title }} | {% endif %}{{ site.name }} - {{ site.subtitle }}">
         <meta name="description" content="{% if subtitle %}{{ subtitle }}{% else %}{{ site.description }}{% endif %}">
         <meta name="keywords" content="{% if tags %}{{ tags }}{% else %}{{ site.keywords }}{% endif %}{% if keywords %}{% if tags %},{% else %}{% endif %}{{ keywords }}{% endif %}">
         <meta name="site_name" content="{{ site.name }} - {{ site.subtitle }}">
-        {% if (env.customUrlMode == false) or (env.devMode == true) %}{% set pathPrefix = site.sitePath %}{% else %}{% set pathPrefix = '' %}{% endif %}
-        {% set canonicalPath = (site.siteUrl + "/" + pathPrefix + "/" + page.url) | removeDuplicateForwardSlashes %}
         <meta name="canonical" content="{{ canonicalPath }}">
         {% if no_index or no_follow %}
         <meta name="robots" content="{% if no_index %}noindex{% endif %}, {% if no_index %}no_follow{% endif %}">
