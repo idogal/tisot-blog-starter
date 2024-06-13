@@ -25,7 +25,7 @@
         {% endif %}
         {% if trip_length_days %}
             {{ 'Trip length' | i18n }}
-            <b>{{ trip_length_days }} days</b>,
+            <b>{{ trip_length_days }} {{ 'days' | i18n }}</b>,
         {% endif %}
         {% if trip_type %}
             {{ 'Trip type' | i18n }}

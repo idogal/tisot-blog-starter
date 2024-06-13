@@ -39,6 +39,10 @@ module.exports = {
     he: "משך הטיול",
     en: "Trip length",
   },
+  days: {
+    he: "ימים",
+    en: "days",
+  },
   אודות: {
     he: "אודות",
     en: "About",
