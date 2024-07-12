@@ -63,11 +63,15 @@ module.exports = function (eleventyConfig) {
     return 0;
   }
 
+  function getAllPostsForDisplay(collectionApi) {
+    return collectionApi
+      .getFilteredByGlob("./src/posts/*.md")
+      .filter((post) => !post.data.isDraft)
+      .filter((post) => post.url);
+  }
+
   eleventyConfig.addCollection("posts", function (collectionApi) {
-    const posts = collectionApi.getFilteredByGlob("./src/posts/*.md");
-    var filteredPosts = posts.filter(post => !post.data.isDraft);
-    filteredPosts.sort(compareByPublishDateDesc);
-    return filteredPosts;
+    return getAllPostsForDisplay(collectionApi).sort(compareByPublishDateDesc);
   });
 
   eleventyConfig.addCollection("social_icons", function (collectionApi) {
