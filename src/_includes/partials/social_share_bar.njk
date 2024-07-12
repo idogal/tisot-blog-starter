@@ -2,20 +2,22 @@
     <div class="flex flex-row justify-center">
         {% for social_icon in collections.social_icons %}
             {% if (page.url != false) %}
+                {% if (page.url == true) %}
                 {% if (env.customUrlMode == false) or (env.devMode == true) %}
-                    {% set pathPrefix = site.sitePath %}
-                {% else %}
-                    {% set pathPrefix = '' %}
-                {% endif %}
-                {% set fullPath = site.siteUrl + (pathPrefix + page.url).replace("//", "/") %}
-                {% set socialTitle = title %}
-                <a target="_blank" data-action="{{ social_icon.data.data_action }}" class="px-1" href="{% buildShareUrl social_icon.data.share_url, fullPath, socialTitle %}">
-                    {% set colour = "#374151" %}
-                    {% if site.social.useColourForIcons %}
-                        {% set colour = social_icon.data.icon_colour %}
+                        {% set pathPrefix = site.sitePath %}
+                    {% else %}
+                        {% set pathPrefix = '' %}
                     {% endif %}
-                    {% include social_icon.data.icon_partial %}
-                </a>
+                    {% set fullPath = site.siteUrl + (pathPrefix + page.url).replace("//", "/") %}
+                    {% set socialTitle = title %}
+                    <a target="_blank" data-action="{{ social_icon.data.data_action }}" class="px-1" href="{% buildShareUrl social_icon.data.share_url, fullPath, socialTitle %}">
+                        {% set colour = "#374151" %}
+                        {% if site.social.useColourForIcons %}
+                            {% set colour = social_icon.data.icon_colour %}
+                        {% endif %}
+                        {% include social_icon.data.icon_partial %}
+                    </a>
+            {% endif %}
             {% endif %}
         {% endfor %}
     </div>
