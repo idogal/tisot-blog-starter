@@ -15,8 +15,6 @@
     "markdown-it-image-figures": "^2.1.1",
     "markdown-it-link-attributes": "^4.0.1",
     "minimist": "^1.2.8",
-    "selenium-webdriver": "^4.23.0",
-    "tailwindcss-flip": "^1.0.0",
     "theme-change": "^2.5.0"
   },
   "devDependencies": {
@@ -24,12 +22,12 @@
     "@11ty/eleventy-img": "^5.0.0",
     "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
-    "daisyui": "^4.12.22",
     "debug": "^4.3.6",
     "eleventy-plugin-i18n": "^0.1.3",
     "log4js": "^6.9.1",
     "luxon": "^3.5.0",
     "postcss": "^8.4.49",
+    "selenium-webdriver": "^4.23.0",
     "tailwindcss": "^3.4.17",
     "tailwindcss-flip": "^1.0.0",
     "webdriverio": "^8.39.1"
