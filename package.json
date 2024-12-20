@@ -54,5 +54,5 @@
     "url": "https://gitlab.com/ido.g/idog-blog-daisyui/issues"
   },
   "homepage": "https://gitlab.com/ido.g/idog-blog-daisyui#readme",
-  "description": "A blog starter kit."
+  "description": "An Eleventy blog starter kit. Supports RTL and LTR languages. Uses TailwindCSS & DaisyUI."
 }
