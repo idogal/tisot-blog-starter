@@ -36,6 +36,7 @@ const searchIndex = function (pages) {
     this.field("subtitle");
     this.field("trip_type");
     this.field("tags");
+    this.field("keywords");
     // this.field("content");
 
     docs = getPagesAsJsonDocs(pages);
