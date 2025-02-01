@@ -10,8 +10,9 @@ no_follow: true
     <div class="mt-12 grow ">
         <div>
             <div class="flex justify-center">
-                <div class="form-control w-full max-w-xs">
-                    <input type="text" placeholder="{{ "Enter search term" | i18n }}" x-on:input.keydown="getItems($event.target.value)" class="input input-bordered w-full max-w-xs"/>
+                <div class="form-control w-full max-w-xs items-center">
+                    <input id="searchInputTextBox" type="text" placeholder="{{ "Enter search term" | i18n }}" x-on:input.keydown="getItems($event.target.value)" class="input input-bordered w-full max-w-xs hidden"/>
+                    <span id="searchInputLoadingSpinner" class="loading loading-spinner loading-lg"></span>
                 </div>
             </div>
             <div id="search_results" class="flex justify-center mt-6">
@@ -25,4 +26,4 @@ no_follow: true
 <script type="text/javascript" src="/assets/js/lunr_2.3.9.min.js"></script>
 <script type="text/javascript" src="/assets/js/lunr.stemmer.support.min.js"></script>
 <script type="text/javascript" src="/assets/js/lunr.he.min.js"></script>
-<script async src="/assets/js/search.js"></script>
+<script async="async" src="/assets/js/search.js"></script>

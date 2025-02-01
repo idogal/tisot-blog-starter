@@ -1,12 +1,21 @@
+let isDataLoadingFinished = false;
+let isIndexLoadingFinished = false;
+
 fetch("../search-index.json").then((response) =>
   response.json().then((rawIndex) => {
     document.searchIndex = lunr.Index.load(rawIndex);
+    console.debug("Loaded search index");
+    isIndexLoadingFinished = true;
+    toggleSearchLoadingState();
   })
 );
 
 fetch("../search-data.json").then((response) =>
   response.json().then((rawIndex) => {
     document.searchData = new Map(Object.entries(JSON.parse(rawIndex)));
+    console.debug("Loaded search data");
+    isDataLoadingFinished = true;
+    toggleSearchLoadingState();
   })
 );
 
@@ -56,4 +65,19 @@ const getItems = function (inputValue) {
       ul.appendChild(li);
     }
   }
+};
+
+function toggleSearchLoadingState() {
+  if (isIndexLoadingFinished && isDataLoadingFinished) {
+    console.debug("Search loading finished, activating search input");
+    const searchInputTextBox = document.getElementById("searchInputTextBox");
+    const searchInputLoadingSpinner = document.getElementById("searchInputLoadingSpinner");
+
+    searchInputLoadingSpinner.classList.add('hidden');
+    searchInputTextBox.classList.remove('hidden');
+
+    return;
+  }
+    
+  console.debug("Search loading not finished");
 };
