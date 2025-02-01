@@ -43,7 +43,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/favicon": "assets/favicon" });
   eleventyConfig.addPassthroughCopy({ "src/assets/code/js": "assets/js" });
   eleventyConfig.addPassthroughCopy({ "src/assets/fonts": "assets/fonts" });
-  eleventyConfig.addPassthroughCopy({ "src/assets/code/css": "assets/css" });
+  //eleventyConfig.addPassthroughCopy({ "src/assets/code/css": "assets/css" });
   eleventyConfig.addPassthroughCopy({ "build/output.css": "assets/css/output.css" });
   eleventyConfig.addPassthroughCopy({
     "src/admin/config.yml": "./admin/config.yml",
