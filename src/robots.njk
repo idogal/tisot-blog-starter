@@ -2,14 +2,14 @@
 permalink: /robots.txt
 eleventyExcludeFromCollections: true
 ---
-{# {% if (env.devMode == false and site.productionMode == true) %} #}
-User-agent: *
-Allow: /
-Disallow: /admin/
-Disallow: /search-index/
-Disallow: /privacy-policy/
+{% if (env.devMode == false and site.productionMode == true) %}
+user-agent: *
+allow: /
+disallow: /admin/
+disallow: /search-index/
+disallow: /privacy-policy/
 
-Host: {{ site.siteUrl | url }}
+host: {{ site.siteUrl | url }}
 
-Sitemap: {{ site.siteUrl + '/sitemap.xml' | url }}
-{# {% endif %} #}
+sitemap: {{ site.siteUrl + 'sitemap.xml' | url }}
+{% endif %}
