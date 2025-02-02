@@ -2,7 +2,7 @@
 permalink: /robots.txt
 eleventyExcludeFromCollections: true
 ---
-{% if (env.devMode == false and site.productionMode == true) %}
+{# {% if (env.devMode == false and site.productionMode == true) %} #}
 user-agent: *
 allow: /
 disallow: /admin/
@@ -12,4 +12,4 @@ disallow: /privacy-policy/
 host: {{ site.siteUrl | url }}
 
 sitemap: {{ site.siteUrl + 'sitemap.xml' | url }}
-{% endif %}
+{# {% endif %} #}
