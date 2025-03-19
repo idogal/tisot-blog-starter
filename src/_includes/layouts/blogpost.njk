@@ -4,6 +4,7 @@ layout: "layouts/base.njk"
 
 <div class="relative">
     <div class="container mx-auto">
+        {% include "partials/blog_post/post-fullscreen-image.njk" %}
         <div class="flex justify-center">
             <article name="main_text">
                 <div class="prose lg:prose-lg prose-base lg:prose-h1:text-5xl prose-h1:text-4xl">
@@ -19,17 +20,17 @@ layout: "layouts/base.njk"
                 </div>
                 {% include "partials/blog_post/prev-next-buttons.njk" %}
                 {% if site.comments.enabled %}
-                <div class="container mx-auto text-center mt-12">
-                    <div class="flex flex-col">
-                        <div class="divider"></div>
-                        <div class="flex justify-center ">
-                            <div name="comments" class="prose basis-full">
-                                {% set comment_provider_path = "partials/comments/" + site.comments.provider + ".njk" %}
-                                {% include comment_provider_path %}
+                    <div class="container mx-auto text-center mt-12">
+                        <div class="flex flex-col">
+                            <div class="divider"></div>
+                            <div class="flex justify-center ">
+                                <div name="comments" class="prose basis-full">
+                                    {% set comment_provider_path = "partials/comments/" + site.comments.provider + ".njk" %}
+                                    {% include comment_provider_path %}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 {% endif %}
             </article>
         </div>

@@ -62,3 +62,21 @@ document.addEventListener("alpine:init", () => {
     };
   });
 });
+
+function closeFullscreenPostImage() {
+  let postImageElement = document.getElementById("post-image-fullscreen-section");
+  postImageElement.classList = "hidden"
+}
+
+function handleNormalPostImageClick(element) {
+  const lgBreakpoint = window.matchMedia("(min-width: 1024px)");
+  if (!lgBreakpoint.matches) {
+    return;
+  }
+
+  let postImageFs = document.getElementById("post-image-fullscreen");
+  postImageFs.src = element.src;
+
+  let postImageElement = document.getElementById("post-image-fullscreen-section");
+  postImageElement.classList = "";
+}

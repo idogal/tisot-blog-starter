@@ -1,0 +1,41 @@
+<div id="post-image-fullscreen-section" class="hidden">
+    <span class="cursor-zoom-in md:cursor-zoom-in lg:cursor-zoom-in"></span>
+    <div class="fixed inset-0 z-40 backdrop-blur" aria-hidden="true"></div>
+    <div class="fixed top-0 left-0 h-full w-screen flex items-center justify-center z-50">
+        <div class="relative max-h-fit">
+            <section x-on:click="closeFullscreenPostImage()" 
+                     class="mt-0 w-[85vw] max-h-[inherit] focus:outline-none max-w-7xl cursor-zoom-out clickable">
+                <img
+                    id="post-image-fullscreen"
+                    class="block h-full w-full shadow-sm"
+                    src=""
+                    loading="lazy"/>
+                <span class="mt-2 absolute">
+                    <button
+                        class="relative inline-flex items-center justify-center gap-1 text-lg"
+                        id="close-post-image"
+                        type="button"
+                        aria-label="Close">
+                        <span>{{ 'Close' | i18n }}</span>
+                        <svg
+                            role="img"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24px"
+                            height="24px"
+                            viewBox="0 0 24 24"
+                            aria-labelledby="closeIconTitle"
+                            stroke="#000000"
+                            stroke-width="2"
+                            stroke-linecap="square"
+                            stroke-linejoin="miter"
+                            fill="none"
+                            color="#000000">
+                            <title id="closeIconTitle">{{ 'Close' | i18n }}</title>
+                            <path d="M6.34314575 6.34314575L17.6568542 17.6568542M6.34314575 17.6568542L17.6568542 6.34314575"/>
+                        </svg>
+                    </button>
+                </span>
+            </section>
+        </div>
+    </div>
+</div>

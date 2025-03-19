@@ -143,6 +143,10 @@ module.exports = {
     he: "הצג",
     en: "show",
   },
+  Close: {
+    he: "סגור",
+    en: "Close",
+  },
   "This post is part of a series": {
     he: "רשומה זו הינה חלק מסדרה"
   },

@@ -280,10 +280,32 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addAsyncShortcode("image", imageShortcode);
 
-  const mdLib = markdownIt({})
-    .use(markdownItImgFigures, { figcaption: true, async: true, lazy: true })
+  const markdownItProps = {  
+  }
+
+  const markdownItImgFiguresProps = { 
+    figcaption: true, 
+    async: true, 
+    lazy: true,
+    classes: 'lg:cursor-zoom-in  lg:clickable',
+    tabindex: true,
+    link: false,
+  }
+
+  const mdLib = 
+    markdownIt(markdownItProps)
+    .use(markdownItImgFigures, markdownItImgFiguresProps)
     .use(markdownItLinkAttrs, { attrs: { target: "_blank", } })
     .use(require('markdown-it-anchor'), {});
+
+  const defaultImageRender = mdLib.renderer.rules.image;
+
+  mdLib.renderer.rules.image = (tokens, idx, options, env, self) => {
+    // const token = tokens[idx]; // const src = token.attrGet('src');
+    let img = defaultImageRender(tokens, idx, options, env, self);
+    img = img.replace('<img', `<img onclick="handleNormalPostImageClick(this)"`);
+    return img; 
+  };  
 
   eleventyConfig.setLibrary("md", mdLib);
 
