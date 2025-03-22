@@ -74,8 +74,11 @@ function handleNormalPostImageClick(element) {
     return;
   }
 
+  const imgSrcSet = element.srcset.split(",");
+  const largestSrc = imgSrcSet[imgSrcSet.length - 1].trim().split(" ")[0];
+
   let postImageFs = document.getElementById("post-image-fullscreen");
-  postImageFs.src = element.src;
+  postImageFs.src = largestSrc;
 
   let postImageElement = document.getElementById("post-image-fullscreen-section");
   postImageElement.classList = "";

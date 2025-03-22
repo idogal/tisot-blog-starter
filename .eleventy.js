@@ -250,11 +250,9 @@ module.exports = function (eleventyConfig) {
     }
 
     let metadata = await Image(imgUrl, {
-      widths: [320, 640, 960, 1280, 1600, 1920, 3840],
+      widths: [320, 640, 960, 1280, 1600, 1920],
       formats: ["webp", "jpeg"],
       outputDir: "./" + outputDir + "/assets/img/",
-
-
       urlPath: `/assets/img/`,
       filenameFormat: function (id, imgUrl, width, format, options) {
         return `${id}-${width}.${format}`;
@@ -301,10 +299,32 @@ module.exports = function (eleventyConfig) {
   const defaultImageRender = mdLib.renderer.rules.image;
 
   mdLib.renderer.rules.image = (tokens, idx, options, env, self) => {
-    // const token = tokens[idx]; // const src = token.attrGet('src');
-    let img = defaultImageRender(tokens, idx, options, env, self);
-    img = img.replace('<img', `<img onclick="handleNormalPostImageClick(this)"`);
-    return img; 
+    const token = tokens[idx];
+    const imgSrc = "./src" + token.attrGet('src');
+    const imgAlt = token.content
+    const imgTitle = token.attrGet('title')
+
+    const imgOpts = {
+      widths: [320, 640, 1280, 1920],
+      formats: ['webp', 'jpeg'],
+      outputDir: "./" + outputDir + "/assets/img/posts/",
+      urlPath: `/assets/img/`,
+    }
+  
+    const v = Image(imgSrc, imgOpts);
+    const metadata = Image.statsSync(imgSrc, imgOpts);
+    let generated = Image.generateHTML(metadata, {
+      sizes: '(max-width: 710px) 100vw, 640px',
+      alt: imgAlt,
+      loading: 'lazy',
+      decoding: 'async',
+      title: imgTitle,
+    });
+
+    generated = 
+      generated.replace('<img', `<img onclick="handleNormalPostImageClick(this)"`);
+
+    return generated;
   };  
 
   eleventyConfig.setLibrary("md", mdLib);
