@@ -246,7 +246,7 @@ module.exports = function (eleventyConfig) {
 
     let imgUrl = "./src" + src;
     if (sizes == undefined ) {
-      sizes = "100vw";
+      sizes = '(max-width: 768) 100vw, (min-width: 768px) and (max-width: 1278px) 320px, (min-width: 1278px) 640px, 100vw';
     }
 
     let metadata = await Image(imgUrl, {
