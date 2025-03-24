@@ -46,8 +46,9 @@
         <meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">
         {# <meta name="theme-color" content="#ffffff"> #}
 
-        <link href="/assets/css/output.css" rel="stylesheet" type="text/css">
-    
+        <link rel="preload" href="/assets/css/output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="styles.css"></noscript>
+
         <script defer src="/assets/js/app.js"></script>
         <script defer src="/assets/js/alpinejs.persist.cdn.min.3.14.8.js"></script>        
         <script defer src="/assets/js/alpinejs.cdn.min.3.14.8.js"></script>
