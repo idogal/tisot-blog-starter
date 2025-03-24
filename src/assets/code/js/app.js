@@ -66,6 +66,9 @@ document.addEventListener("alpine:init", () => {
 function closeFullscreenPostImage() {
   let postImageElement = document.getElementById("post-image-fullscreen-section");
   postImageElement.classList = "hidden"
+  
+  let postImageFs = document.getElementById("post-image-fullscreen");
+  postImageFs.src = "";
 }
 
 function handleNormalPostImageClick(element) {

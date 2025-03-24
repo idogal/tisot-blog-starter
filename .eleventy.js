@@ -314,7 +314,7 @@ module.exports = function (eleventyConfig) {
     const v = Image(imgSrc, imgOpts);
     const metadata = Image.statsSync(imgSrc, imgOpts);
     let generated = Image.generateHTML(metadata, {
-      sizes: '(max-width: 710px) 100vw, 640px',
+      sizes: '(max-width: 960px) 100vw, 1280px',
       alt: imgAlt,
       loading: 'lazy',
       decoding: 'async',
