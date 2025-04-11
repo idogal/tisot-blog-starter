@@ -33,7 +33,7 @@
     "webdriverio": "^8.39.1"
   },
   "scripts": {
-    "start": "tailwindcss -i ./src/assets/main.css -o ./build/output.css && eleventy --serve",
+    "start": "tailwindcss -i ./src/assets/main.css -o ./build/output.css --postcss && eleventy --serve",
     "build": "tailwindcss -i ./src/assets/main.css -o ./build/output.css --postcss && eleventy",
     "updatedep": "npm i -g npm-check-updates && ncu -u && npm install",
     "debugall": "set DEBUG=Eleventy* && npx @11ty/eleventy --dryrun",
