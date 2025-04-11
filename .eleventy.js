@@ -246,11 +246,11 @@ module.exports = function (eleventyConfig) {
 
     let imgUrl = "./src" + src;
     if (sizes == undefined ) {
-      sizes = '(max-width: 768) 100vw, (min-width: 768px) and (max-width: 1278px) 320px, (min-width: 1278px) 640px, 100vw';
+      sizes = '(max-width: 768px) 592px, (min-width: 768px) and (max-width: 1024px) 348px, (min-width: 1024px) and (max-width: 1278px) 262px, (min-width: 1278px) and (max-width: 1536px) 348px, (min-width: 1536px) 432px, 100vw';
     }
 
     let metadata = await Image(imgUrl, {
-      widths: [320, 640, 960, 1280, 1600, 1920],
+      widths: [262, 348, 432, 592, 960, 1280, 1920],
       formats: ["webp", "jpeg"],
       outputDir: "./" + outputDir + "/assets/img/",
       urlPath: `/assets/img/`,
