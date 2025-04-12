@@ -259,7 +259,6 @@ module.exports = function (eleventyConfig) {
       alt,
       sizes,
       class: "w-full h-full object-cover",
-      loading: "lazy",
       decoding: "async",
     };
 
