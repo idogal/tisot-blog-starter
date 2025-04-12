@@ -1,10 +1,12 @@
-<div class="flex flex-col h-96">
-    <div class="hero h-full" style="background-image: url({{ main_image | url }});">
-        <div class="hero-overlay bg-opacity-70"></div>
-        <div class="hero-content text-center text-neutral-content max-h-96">
-            <div class="max-w-md max-h-96">
-                <h1 class="mb-5 lg:text-3xl text-2xl font-bold">{{ main_heading }}</h1>
-                <p class="mb-5 lg:text-2xl text-lg">{{ secondary_heading }}</p>
+<div
+    class="flex flex-col h-96">
+    <div class="relative w-full h-full">
+        {% header_image main_image, 'Main header image' %}
+        <div class="absolute inset-0 bg-zinc-800 bg-opacity-70"></div>
+        <div class="absolute inset-0 flex items-center justify-center text-center text-neutral-content">
+            <div class="max-w-md px-1">
+                <h1 class="mb-5 text-2xl font-bold lg:text-3xl">{{ main_heading }}</h1>
+                <p class="mb-5 text-lg lg:text-2xl">{{ secondary_heading }}</p>
             </div>
         </div>
     </div>

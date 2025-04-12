@@ -41,7 +41,7 @@
 <div class="px-2 lg:px-0">
     <figure class="relative">
         {% set imgUrl = head_image %}
-        {% image imgUrl, title, "100vw", "w-full" %}
+        {% grid_image imgUrl, title, "100vw", "w-full" %}
         {# <img class="w-full" src="{{ head_image }}" alt="This post thumbnail"/> #}
         {% if head_image_show_caption %}
             {% set dir = locales[page.lang].dir %}

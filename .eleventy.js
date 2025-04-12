@@ -239,7 +239,35 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("removeDuplicateForwardSlashes", removeDuplicateForwardSlashes);
   eleventyConfig.addFilter("removeLastUrlPart", removeLastUrlPart);
 
-  async function imageShortcode(src, alt, sizes, cls) {
+  async function headerImageShortcode(src, alt, sizes, cls) {
+    let imgUrl = "./src" + src;
+    if (sizes == undefined ) {
+      sizes = '(max-width: 768px) 592px, (min-width: 768px) and (max-width: 1024px) 720px, (min-width: 1024px) and (max-width: 1278px) 832px, (min-width: 1278px) and (max-width: 1536px) 1088px, (min-width: 1536px) 1344px, 100vw';
+    }
+
+    let metadata = await Image(imgUrl, {
+      widths: [592, 720, 832, 1088, 1344],
+      formats: ["webp"],
+      outputDir: "./" + outputDir + "/assets/img/",
+      urlPath: `/assets/img/`,
+      filenameFormat: function (id, imgUrl, width, format, options) {
+        return `${id}-${width}.${format}`;
+      },
+    });
+
+    let imageAttributes = {
+      alt,
+      sizes,
+      class: "w-full h-full object-cover",
+      loading: "lazy",
+      decoding: "async",
+    };
+
+    // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+    return Image.generateHTML(metadata, imageAttributes);
+  }
+
+  async function gridImageShortcode(src, alt, sizes, cls) {
     if (src == undefined) {
       src = "/assets/img/posts/tangerine-chan-cjcD8rFvGHc-unsplash_resized.jpg";
     }
@@ -257,11 +285,6 @@ module.exports = function (eleventyConfig) {
       filenameFormat: function (id, imgUrl, width, format, options) {
         return `${id}-${width}.${format}`;
       },
-      // ,sharpOptions: {
-      //   options: {
-      //     quality: 1
-      //   }
-      // }
     });
 
     let imageAttributes = {
@@ -276,7 +299,9 @@ module.exports = function (eleventyConfig) {
     return Image.generateHTML(metadata, imageAttributes);
   }
 
-  eleventyConfig.addAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addAsyncShortcode("grid_image", gridImageShortcode);
+
+  eleventyConfig.addAsyncShortcode("header_image", headerImageShortcode);
 
   const markdownItProps = {  
   }
