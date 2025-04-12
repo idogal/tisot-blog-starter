@@ -41,7 +41,7 @@ Please read the details of the license yourself.
 ## How to use
 
 ### Install Node.js
-You should have [Node.js](https://nodejs.org/en/), version 18, installed on your own development machine.
+You should have [Node.js](https://nodejs.org/en/), version 22, installed on your own development machine.
 
 ### Setup the repo
 Clone this repository to your machine.
