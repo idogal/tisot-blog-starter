@@ -9,7 +9,7 @@ disallow: /admin/
 disallow: /search-index/
 disallow: /privacy-policy/
 
-host: {{ site.siteUrl | url }}
+host: {{ site.siteUrl + site.sitePath | url }}
 
-sitemap: {{ site.siteUrl + 'sitemap.xml' | url }}
+sitemap: {{ site.siteUrl + site.sitePath + 'sitemap.xml' | url }}
 {# {% endif %} #}
