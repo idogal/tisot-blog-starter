@@ -3,7 +3,7 @@
   "subtitle": "A blog starter kit",
   "description": "A blog starter kit",
   "alternateName": "Tisot Blog",
-  "siteUrl": "http://localhost:8080/",
+  "siteUrl": "https://ido.g.gitlab.io",
   "sitePath": "/idog-blog-daisyui/",
   "keywords": "",
   "defaultLang": "en",
