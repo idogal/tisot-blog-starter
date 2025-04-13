@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "daisyui": "^4.12.22",
+    "daisyui": "^4.12.24",
     "debug": "^4.3.6",
     "eleventy-plugin-i18n": "^0.1.3",
     "eleventy-plugin-toc": "^1.1.5",
