@@ -14,7 +14,7 @@ layout: "layouts/base.njk"
                         <label class="label">
                             <span class="label-text font-semibold">{{ site.contact.nameMessage | i18n }}</span>
                         </label>
-                        <input type="text" placeholder="{{ 'John Doe' | i18n }}" name="name" class="input input-bordered input-md w-full max-w-md rounded bg-neutral-100" required/>
+                        <input type="text" placeholder="{{ 'John Doe' | i18n }}" name="name" class="input input-bordered input-md w-full max-w-md rounded-sm bg-neutral-100" required/>
                     </div>
                     <div class="form-control w-full max-w-md">
                         <label class="label">
@@ -25,20 +25,20 @@ layout: "layouts/base.njk"
                             type="text"
                             placeholder="mail@mymail.com"
                             name="email"
-                            class="input input-bordered input-md w-full max-w-md rounded bg-neutral-100"
+                            class="input input-bordered input-md w-full max-w-md rounded-sm bg-neutral-100"
                             required/>
                     </div>
                     <div class="form-control w-full max-w-md">
                         <label class="label">
                             <span class="label-text font-semibold">{{ site.contact.subjectMessage | i18n }}</span>
                         </label>
-                        <input type="text" placeholder="{{ site.contact.subjectMessagePlaceholder | i18n }}" name="subject" class="input input-bordered input-md w-full max-w-md rounded bg-neutral-100" required/>
+                        <input type="text" placeholder="{{ site.contact.subjectMessagePlaceholder | i18n }}" name="subject" class="input input-bordered input-md w-full max-w-md rounded-sm bg-neutral-100" required/>
                     </div>
                     <div class="form-control w-full max-w-md">
                         <label class="label">
                             <span class="label-text font-semibold">{{ site.contact.msgMessage | i18n }}</span>
                         </label>
-                        <textarea class="textarea textarea-bordered textarea-lg w-full max-w-md rounded bg-neutral-100" name="message" placeholder="{{ site.contact.msgMessagePlaceholder | i18n }}"></textarea>
+                        <textarea class="textarea textarea-bordered textarea-lg w-full max-w-md rounded-sm bg-neutral-100" name="message" placeholder="{{ site.contact.msgMessagePlaceholder | i18n }}"></textarea>
                     </div>
                     <div class="container mx-auto max-w-md">
                         <div class="float-left">
@@ -54,7 +54,7 @@ layout: "layouts/base.njk"
                     {{ 'e-mail address' | i18n }}: <div dir="ltr" class="select-none inline"> {{ site.contact.emailAddress }}</div>
                 </p>
                 <a
-                    class="btn sm:btn-sm md:btn-md lg:btn-lg mt-4"
+                    class="btn sm:btn-md md:btn-lg lg:btn-xl mt-4"
                     href="mailto:{{ site.contact.emailAddress }}?subject={{ site.contact.subjectMessagePlaceholder | i18n }}&body={{ site.contact.msgMessagePlaceholder | i18n }}">
                     {{ 'Send Email' | i18n }}
                 </a>

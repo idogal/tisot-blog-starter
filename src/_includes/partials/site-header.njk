@@ -8,7 +8,7 @@
                     </svg>
                     <span class="hidden">Dropdown menu button</span>
                 </label>
-                <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-200 rounded-box w-52">
+                <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow-sm bg-base-200 rounded-box w-52">
                     {% for item in navigation.items %}
                         <li>
                             <a href="{{ item.url }}">{{ item.text | i18n }}</a>
@@ -19,9 +19,9 @@
             <a class="mx-4 no-animation normal-case font-semibold antialiased font-serif text-xl" href="{{ '/' }}">{{ site.name | i18n }}</a>
         </div>
         <nav id="ts-navbar-center" class="navbar-center hidden lg:flex">
-            <ul id="ts-navbar-center-menu" class="menu menu-horizontal px-1">
+            <ul id="ts-navbar-center-menu" class="menu menu-horizontal">
                 {% for item in navigation.items %}
-                    <li id="ts-navbar-center-menu-item-{{loop.index}}">
+                    <li id="ts-navbar-center-menu-item-{{loop.index}} ">
                         <a class="text-lg" href="{{ item.url }}">{{ item.text | i18n }}</a>
                     </li>
                 {% endfor %}
@@ -29,7 +29,7 @@
         </nav>
         <div class="navbar-end md:px-32 px-6">
             <div class="flex flex-auto flex-row justify-end gap-3">
-                <label class="swap swap-rotate">
+                <label class="swap swap-rotate stroke-1.5 hover:stroke-2.5">
                     <input
                         class="invisible"
                         type="checkbox"
@@ -39,7 +39,7 @@
                         data-act-class="ACTIVECLASS"/>
                     {# <span class="hidden">Change colour schema icon</span> #}
                     <svg
-                        class="swap-on w-6 h-6 stroke-1.5 hover:stroke-2.5"
+                        class="swap-on w-6 h-6 "
                         stroke="currentColor"
                         role="img"
                         xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@
                                 19.0710678 16.9497475 16.9497475zM4.92893219 4.92893219L7.05025253 7.05025253 4.92893219 4.92893219z"></path>
                     </svg>
                     <svg
-                        class="swap-off fill-current w-6 h-6 stroke-1.5 hover:stroke-2.5"
+                        class="swap-off fill-current w-6 h-6"
                         xmlns="http://www.w3.org/2000/svg"
                         stroke="currentColor"
                         width="24"
@@ -74,10 +74,9 @@
                     </svg>
                 </label>
                 <div class="dropdown dropdown-end">
-                    <label tabindex="0" class="btn btn-ghost btn-circle">
-                        <div class="indicator">
+                    <label tabindex="0" class="btn btn-ghost btn-lg btn-circle">
+                        <div class="indicator stroke-1.5 hover:stroke-2.5">
                             <svg
-                                class="stroke-1.5 hover:stroke-2.5"
                                 stroke="currentColor"
                                 width="24"
                                 height="24"
@@ -91,7 +90,6 @@
                                 <line x1="22" y1="10" x2="22" y2="18"></line>
                             </svg>
                             <svg
-                                class="stroke-1.5 hover:stroke-2.5"
                                 stroke="currentColor"
                                 fill="none"
                                 role="img"
@@ -105,7 +103,7 @@
                             </svg>
                         </div>
                     </label>
-                    <ul class="z-[1] menu menu-compact dropdown-content p-2 shadow bg-base-200 rounded-box w-28">
+                    <ul class="z-1 menu menu-compact dropdown-content p-2 shadow-sm bg-base-200 rounded-box w-28">
                         <template x-for="textSize in getSizesAsArray()">
                             <li>
                                 <button
@@ -141,8 +139,8 @@
                             {% endif %}
                         {% endfor %}
                     </span>
-                    {# <button dir="ltr" class="btn btn-outline rounded" type="button" name="increaseSizeBtn" id="decreasetextsize">-A</button> #}
-                    {# <button dir="ltr" class="btn btn-outline rounded" type="button" name="decreaseSizeBtn" id="increasetextsize">A+</button>             #}
+                    {# <button dir="ltr" class="btn btn-outline rounded-sm" type="button" name="increaseSizeBtn" id="decreasetextsize">-A</button> #}
+                    {# <button dir="ltr" class="btn btn-outline rounded-sm" type="button" name="decreaseSizeBtn" id="increasetextsize">A+</button>             #}
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 <footer>
-    <div class="footer footer-center p-4 bg-base-300 text-base">
+    <div class="footer footer-horizontal footer-center p-4 bg-base-300 text-base">
         {# <div class="grid grid-flow-col gap-4"> #}
         <nav class="grid grid-flow-col gap-x-3">
             {% for item in navigation.footer %}
@@ -8,7 +8,7 @@
             {% endfor %}
         </nav>
     </div>
-    <div class="footer footer-center px-10 py-4 bg-base-300 text-base border-t border-neutral-400">
+    <div class="footer footer-horizontal footer-center px-10 py-4 bg-base-300 text-base border-t border-neutral-400">
         <div>
             <p>{{ site.footer.BuiltBy | i18n }}.
                 {% if site.footer.enableCopyrightText %}

@@ -1,7 +1,7 @@
 <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
     {% for post in blogPosts %}
         <div class="card rounded-md my-1 md:my-2 shadow-md">
-            <figure class="relative aspect-[3/2]">
+            <figure class="relative aspect-3/2">
                 <a href="{{ post.url }}">
                     {% grid_image post.data.thumbnail, post.data.title %}
                 </a>

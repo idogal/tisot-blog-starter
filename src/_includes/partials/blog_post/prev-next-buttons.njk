@@ -6,7 +6,7 @@
 {% set nextPostInOrder = collections.posts | getPreviousCollectionItem %}
 {% endif %}
 {% if previousPostInOrder or nextPostInOrder %}
-<div class="container mx-auto text-center max-w-md mt-12">
+<div class="container mx-auto text-center max-w-lg mt-12">
     <div class="btn-group grid grid-cols-2">
         {% set prevClass = "" %}
         {% set nextClass = "" %}

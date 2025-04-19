@@ -5,8 +5,8 @@
     {% set nextPostUrl = ((previousSegmentUrl + "/" + next_post + "/") | removeDuplicateForwardSlashes) %}
     <span>
     {{ 'This post is part of a series' | i18n }}.
-    {% if previous_post %} <a class="text-primary no-underline hover:bg-secondary " href="{{ previousPostUrl }}">{{ 'To the previous post' | i18n }}</a>.{% endif %}
-    {% if next_post %} <a class="text-primary no-underline hover:bg-secondary " href="{{ nextPostUrl }}">{{ 'To the next post' | i18n }}</a>.{% endif %}
+    {% if previous_post %} <a class="text-primary no-underline hover:bg-secondary/50" href="{{ previousPostUrl }}">{{ 'To the previous post' | i18n }}</a>.{% endif %}
+    {% if next_post %} <a class="text-primary no-underline hover:bg-secondary/50" href="{{ nextPostUrl }}">{{ 'To the next post' | i18n }}</a>.{% endif %}
     </span>
 </div>
 {% endif %}

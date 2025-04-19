@@ -1,13 +1,13 @@
 <div id="post-image-fullscreen-section" class="hidden">
     <span class="cursor-zoom-in md:cursor-zoom-in lg:cursor-zoom-in"></span>
-    <div class="fixed inset-0 z-40 backdrop-blur" aria-hidden="true"></div>
+    <div class="fixed inset-0 z-40 backdrop-blur-sm" aria-hidden="true"></div>
     <div class="fixed top-0 left-0 h-full w-screen flex items-center justify-center z-50">
         <div class="relative max-h-fit">
             <section x-on:click="closeFullscreenPostImage()" 
-                     class="mt-0 w-[85vw] max-h-[inherit] focus:outline-none max-w-7xl cursor-zoom-out clickable">
+                     class="mt-0 w-[85vw] max-h-[inherit] focus:outline-hidden max-w-7xl cursor-zoom-out clickable">
                 <img
                     id="post-image-fullscreen"
-                    class="block h-full w-full shadow-sm"
+                    class="block h-full w-full shadow-xs"
                     src=""
                     decoding="async"
                     loading="lazy"/>
