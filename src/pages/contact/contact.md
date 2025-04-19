@@ -1,5 +1,5 @@
 ---
-layout: "layouts/contact.njk"
+layout: "contact.njk"
 permalink: /contact/index.html
 title: Contact
 ---

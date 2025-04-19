@@ -1,5 +1,5 @@
 ---
-layout: "layouts/terms_of_use.njk"
+layout: "terms_of_use.njk"
 permalink: /terms-of-use/index.html
 title: Terms of Use
 ---

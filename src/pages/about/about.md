@@ -1,5 +1,5 @@
 ---
-layout: "layouts/about.njk"
+layout: "about.njk"
 permalink: /about/index.html
 title: About
 avatar: /assets/img/andrii-leonov-P5nZwlbTngI-unsplash.jpg

@@ -1,5 +1,5 @@
 ---
-layout: layouts/home.njk
+layout: "home.njk"
 permalink: /
 title: Home Page
 main_image: /assets/img/IMG_20161116_120615_4.jpg

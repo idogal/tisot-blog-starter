@@ -1,30 +1,36 @@
-const translations = require("./src/_data/translations");
-const siteConfig = require("./src/_data/site.json");
-const envConfig = require("./src/_data/env.js");
-const searchFilters = require("./src/assets/code/filters/search_filters.js");
+import translations from "./src/_data/translations/index.js" ;
+import siteConfig from "./src/_data/site.json" with { type: "json" };
+import envConfig from "./src/_data/env.js";
+import searchFilters from "./src/assets/code/filters/search_filters.js";
 
-const { EleventyI18nPlugin } = require("@11ty/eleventy");
-const i18n = require("eleventy-plugin-i18n");
-const pluginTOC = require('eleventy-plugin-toc')
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
-const { EleventyRenderPlugin } = require("@11ty/eleventy");
-const Image = require("@11ty/eleventy-img");
+import { EleventyRenderPlugin, EleventyI18nPlugin, EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import Image from "@11ty/eleventy-img";
+import i18n from "eleventy-plugin-i18n";
+import pluginTOC from "eleventy-plugin-toc";
 
-const markdownIt = require("markdown-it");
-const markdownItImgFigures = require("markdown-it-image-figures");
-const markdownItLinkAttrs = require('markdown-it-link-attributes');
-const htmlmin = require("html-minifier");
-const slugLimax = require("limax");
-const parseArgs = require('minimist');
+import markdownIt from "markdown-it";
+import markdownItImgFigures from "markdown-it-image-figures";
+import markdownItLinkAttrs from "markdown-it-link-attributes";
+import markdownItAnchor from "markdown-it-anchor";
 
-const logger = require("log4js").getLogger();
+import htmlmin from "html-minifier";
+import slugLimax from "limax";
+import parseArgs from "minimist";
+
+import log4js from "log4js";
+import photoCredit from "./src/_includes/components/photoCredit.js";
+import buildShareUrl from "./src/_includes/components/buildShareUrl.js";
+import photoCaption from "./src/_includes/components/photoCaption.js";
+import formattedDate2 from "./src/assets/code/filters/formattedDate2.js";
+import formattedDate from "./src/assets/code/filters/formattedDate.js";
+
+const logger = log4js.getLogger();
 
 logger.level = "debug";
 
-const sitePath =
-  !envConfig.customUrlMode || envConfig.devMode ? siteConfig.sitePath : "";
+const sitePath = !envConfig.customUrlMode || envConfig.devMode ? siteConfig.sitePath : "";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 
   let outputDir = "public";
   const argv = parseArgs(process.argv.slice(2));
@@ -34,7 +40,7 @@ module.exports = function (eleventyConfig) {
 
   logger.info("Output directory is ", outputDir);
 	
-  // let subdomain = process.env;
+  let subdomain;
   eleventyConfig.on("eleventy.before", async ({ dir, runMode, outputMode }) => {
 		subdomain = process.env;
 	});  
@@ -156,16 +162,17 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addShortcode(
     "photoCredit",
-    require("./src/_includes/components/photoCredit.js")
+    photoCredit
   );
+  
   eleventyConfig.addShortcode(
     "photoCaption",
-    require("./src/_includes/components/photoCaption.js")
+    photoCaption
   );
 
   eleventyConfig.addShortcode(
     "buildShareUrl",
-    require("./src/_includes/components/buildShareUrl.js")
+    buildShareUrl
   );
 
   // eleventyConfig.addNunjucksAsyncFilter('postcss', (cssCode, done) => {
@@ -179,12 +186,12 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter(
     "formattedDate",
-    require("./src/assets/code/filters/formattedDate")
+    formattedDate
   );
 
   eleventyConfig.addFilter(
     "formattedDate2",
-    require("./src/assets/code/filters/formattedDate2")
+    formattedDate2
   );
 
   eleventyConfig.addFilter("stringify", (v) => JSON.stringify(v));
@@ -318,7 +325,7 @@ module.exports = function (eleventyConfig) {
     markdownIt(markdownItProps)
     .use(markdownItImgFigures, markdownItImgFiguresProps)
     .use(markdownItLinkAttrs, { attrs: { target: "_blank", } })
-    .use(require('markdown-it-anchor'), {});
+    .use(markdownItAnchor, {});
 
   const defaultImageRender = mdLib.renderer.rules.image;
 
@@ -377,6 +384,8 @@ module.exports = function (eleventyConfig) {
       input: "src",
       output: outputDir,
       data: "_data",
+      includes: "_includes",
+      layouts: "_includes/layouts"
     },
   };
 };
