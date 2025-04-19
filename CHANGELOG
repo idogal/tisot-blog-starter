@@ -3,3 +3,8 @@
 Initial managed version.
 
 Stable code that is used for my production website successfully.
+
+## 1.5.0 (2025-04-19)
+
+ - Updated Daisy UI to Version 5
+ - Updated TailwindCSS to Version 4
