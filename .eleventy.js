@@ -273,14 +273,14 @@ module.exports = function (eleventyConfig) {
 
     let imgUrl = "./src" + src;
     if (sizes == undefined ) {
-      sizes = '(max-width: 768px) 592px, (min-width: 768px) and (max-width: 1024px) 348px, (min-width: 1024px) and (max-width: 1278px) 262px, (min-width: 1278px) and (max-width: 1536px) 348px, (min-width: 1536px) 432px, 640px';
+      sizes = '(max-width: 768px) 592px, (min-width: 768px) and (max-width: 1024px) 348px, (min-width: 1024px) and (max-width: 1278px) 262px, (min-width: 1278px) and (max-width: 1536px) 348px, (min-width: 1536px) 432px, 1344px';
     }
 
     let metadata = await Image(imgUrl, {
-      widths: [262, 348, 432, 592, 640],
-      formats: ["webp"],
-      outputDir: "./" + outputDir + "/assets/img/",
+      widths: [262, 348, 432, 592, 640, 1280, 1920, "auto"],
+      formats: ["webp", "jpeg"],
       urlPath: `/assets/img/`,
+      outputDir: "./" + outputDir + "/assets/img/",
       filenameFormat: function (id, imgUrl, width, format, options) {
         return `${id}-${width}.${format}`;
       },
