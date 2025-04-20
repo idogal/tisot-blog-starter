@@ -249,7 +249,7 @@ export default function (eleventyConfig) {
   async function headerImageShortcode(src, alt, sizes, cls) {
     let imgUrl = "./src" + src;
     if (sizes == undefined ) {
-      sizes = '(max-width: 768px) 592px, (min-width: 768px) and (max-width: 1024px) 720px, (min-width: 1024px) and (max-width: 1278px) 832px, (min-width: 1278px) and (max-width: 1536px) 1088px, (min-width: 1536px) 1344px, 100vw';
+      sizes = '(max-width: 768px) 592px, (max-width: 1024px) 720px, (max-width: 1278px) 832px, (max-width: 1536px) 1088px, (min-width: 1536px) 1344px, 100vw';
     }
 
     let metadata = await Image(imgUrl, {
@@ -280,7 +280,7 @@ export default function (eleventyConfig) {
 
     let imgUrl = "./src" + src;
     if (sizes == undefined ) {
-      sizes = '(max-width: 768px) 592px, (min-width: 768px) and (max-width: 1024px) 348px, (min-width: 1024px) and (max-width: 1278px) 262px, (min-width: 1278px) and (max-width: 1536px) 348px, (min-width: 1536px) 432px, 1344px';
+      sizes = '(max-width: 768px) 592px, (max-width: 1024px) 348px, (max-width: 1278px) 262px, (max-width: 1536px) 348px, (min-width: 1536px) 432px, 1344px';
     }
 
     let metadata = await Image(imgUrl, {

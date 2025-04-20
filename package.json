@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-img": "^5.0.0",
+    "@11ty/eleventy-img": "^6.0.2",
     "@tailwindcss/typography": "^0.5.16",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
@@ -42,7 +42,7 @@
     "test": "node ./src/test/test-main.js"
   },
   "name": "idog_blog_daisyui",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "main": ".eleventy.js",
   "repository": {
     "type": "git",
