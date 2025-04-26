@@ -15,6 +15,7 @@ const getPagesAsJsonDocs = function(pages) {
       subtitle: page.data.subtitle,
       trip_type: page.data.trip_type,
       tags: page.data.tags.join(' '),
+      keywords: page.data.keywords.join(' '),
       // content: page.templateContent
     };
 
