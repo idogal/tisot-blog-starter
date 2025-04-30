@@ -42,7 +42,7 @@
     "test": "node ./src/test/test-main.js"
   },
   "name": "idog_blog_daisyui",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "main": ".eleventy.js",
   "repository": {
     "type": "git",
