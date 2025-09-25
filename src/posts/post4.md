@@ -9,7 +9,9 @@ head_image: /assets/img/ref_img_3_bf65468-67cb-4aba-a4fb-907fcac9c273.jpg
 thumbnail: /assets/img/ref_img_3_bf65468-67cb-4aba-a4fb-907fcac9c273.jpg
 thumbnail_show_caption: false
 thumbnail_caption_text:
-tags: post
+tags: 
+    - usa
+    - special post
 isDraft: false
 ---
 

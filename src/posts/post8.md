@@ -9,7 +9,10 @@ head_image: /assets/img/ref_img_5_5b43a211-cf3e-4210-8f68-029643d97cd2.jpg
 thumbnail: /assets/img/ref_img_5_5b43a211-cf3e-4210-8f68-029643d97cd2.jpg
 thumbnail_show_caption: false
 thumbnail_caption_text:
-tags: post
+tags: 
+    - post
+    - long post 
+    - special post
 isDraft: false
 ---
 

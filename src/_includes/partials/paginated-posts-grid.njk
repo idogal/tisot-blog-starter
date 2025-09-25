@@ -1,0 +1,14 @@
+<div class="container mx-auto py-6 px-6 lg:px-24">
+    {% include "partials/posts-grid.njk" %}
+    <div class="container mx-auto text-center max-w-md mt-12">
+        <div class="btn-group grid grid-cols-2">
+            {% set prevToggleClass = "" %}
+            {% if not pagination.href.previous %}{% set prevToggleClass = "btn-disabled" %}{% endif %}
+            {% set nextToggleClass = "" %}
+            {% if not pagination.href.next %}{% set nextToggleClass = "btn-disabled" %}{% endif %}
+            
+            <a href="{{ pagination.href.previous }}" class="btn btn-outline {{ prevToggleClass }}">{{ 'Previous Page' | i18n }}</a>
+            <a href="{{ pagination.href.next }}" class="btn btn-outline {{ nextToggleClass }}">{{ 'Next Page' | i18n }}</a>        
+        </div>
+    </div>
+</div>

@@ -16,7 +16,7 @@ show_toc: true
 head_image: /assets/img/posts/IMG_20221209_103718.jpg
 tags: 
     - tips
-    - business
+    - special post
     - tag 1
     - my special tag
     - my very long tag

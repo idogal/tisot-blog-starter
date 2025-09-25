@@ -9,7 +9,9 @@ head_image: /assets/img/ref_img_2_0e24246a-c4b5-4c40-b313-6c42dd81d503.jpg
 thumbnail: /assets/img/ref_img_2_0e24246a-c4b5-4c40-b313-6c42dd81d503.jpg
 thumbnail_show_caption: false
 thumbnail_caption_text:
-tags: post
+tags: 
+    - europe
+    - special post
 isDraft: false
 ---
 

@@ -8,7 +8,9 @@ trip_date: 2022-08-06T13:07:04
 thumbnail: /assets/img/tangerine-chan-cjcD8rFvGHc-unsplash_resized.jpg
 thumbnail_show_caption: true
 thumbnail_caption_text:
-tags: post
+tags: 
+    - post a
+    - special post
 show_toc: true
 previous_post: post-2
 next_post: post-6

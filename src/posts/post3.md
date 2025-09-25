@@ -9,7 +9,10 @@ head_image: /assets/img/ref_img_1_72f4ce6a-c4ed-4546-a23c-0fb09d6852f2.jpg
 thumbnail: /assets/img/ref_img_1_72f4ce6a-c4ed-4546-a23c-0fb09d6852f2.jpg
 thumbnail_show_caption: false
 thumbnail_caption_text:
-tags: post
+tags: 
+    - america
+    - costa rica
+    - special post
 isDraft: false
 ---
 
