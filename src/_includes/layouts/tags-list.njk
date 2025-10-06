@@ -8,14 +8,13 @@ layout: "base.njk"
     </h1>
     <div class="container mx-auto py-6 px-6 lg:px-24">
         <div class="flex flex-wrap justify-center gap-4">
-            {% set allTags = collections.posts | getAllTags %}
-            {% for tag in allTags %}
+            {% for tag in collections.tags %}
                 {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-                {% set tagPosts = collections.posts | getPostsByTag(tag) %}
+                {% set blogPostsByTag = collections.posts | getPostsByTag(tag) %}
                 <a href="{{ tagUrl }}" class="badge badge-xl hover:badge-primary">
                     {{ tag }}
                     {# <span class="ml-2 opacity-75">{{ tagUrl }}</span> #}
-                    <span class="ml-2 opacity-75">({{ tagPosts.length }})</span>
+                    <span class="ml-2 opacity-75">({{ blogPostsByTag.length }})</span>
                 </a>
             {% endfor %}
         </div>

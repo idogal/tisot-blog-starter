@@ -80,23 +80,18 @@ export default function (eleventyConfig) {
     return getAllPostsForDisplay(collectionApi).sort(compareByPublishDateDesc);
   });
 
-  eleventyConfig.addCollection("social_icons", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/social/*.md");
-  });
-
-	// Return all the tags used in a collection
-	eleventyConfig.addFilter("getAllTags", collection => {
+  eleventyConfig.addCollection("tags", function (collectionApi) {
+    const posts = getAllPostsForDisplay(collectionApi);
 		let tagSet = new Set();
-		for(let item of collection) {
+		for (let item of posts) {
 			(item.data.tags || []).forEach(tag => tagSet.add(tag));
 		}
 		return Array.from(tagSet);
-	});
+  });
 
-	eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
-		return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
-	});
-
+  eleventyConfig.addCollection("social_icons", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("./src/social/*.md");
+  });
 
   eleventyConfig.addFilter("slugifyi18n", (val) => {
     if (siteConfig.defaultLang === "he") {
@@ -373,26 +368,15 @@ export default function (eleventyConfig) {
     return content;
   });
 
+	eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
+		return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+	});
   
 	eleventyConfig.addFilter("getPostsByTag", (posts, tag) => {
 		return posts.filter(post => {
 			return post.data.tags && post.data.tags.includes(tag);
 		});
 	});
-
-  eleventyConfig.addCollection("tagList", function(collection) {
-    const tagSet = new Set();
-    collection.getAll()
-      .filter(item => !item.data.isDraft)
-      .forEach(item => {
-        (item.data.tags || []).forEach(tag => {
-          if (["all", "nav", "post", "posts"].indexOf(tag) === -1) {
-            tagSet.add(tag);
-          }
-        });
-      });
-    return Array.from(tagSet).sort();
-  });
 
   return {
     passthroughFileCopy: true,
