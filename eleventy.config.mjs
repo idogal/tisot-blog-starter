@@ -373,6 +373,27 @@ export default function (eleventyConfig) {
     return content;
   });
 
+  
+	eleventyConfig.addFilter("getPostsByTag", (posts, tag) => {
+		return posts.filter(post => {
+			return post.data.tags && post.data.tags.includes(tag);
+		});
+	});
+
+  eleventyConfig.addCollection("tagList", function(collection) {
+    const tagSet = new Set();
+    collection.getAll()
+      .filter(item => !item.data.isDraft)
+      .forEach(item => {
+        (item.data.tags || []).forEach(tag => {
+          if (["all", "nav", "post", "posts"].indexOf(tag) === -1) {
+            tagSet.add(tag);
+          }
+        });
+      });
+    return Array.from(tagSet).sort();
+  });
+
   return {
     passthroughFileCopy: true,
     htmlTemplateEngine: "njk",
