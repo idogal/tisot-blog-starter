@@ -5,7 +5,7 @@ pagination:
   size: 1
   alias: tag
   addAllPagesToCollections: true
-permalink: /tags/{{ tag | i18n | slugify }}/
+permalink: /tags/{{ tag | i18n({}, 'en') | slugify }}/
 ---
 
 {% set blogPosts = collections.posts | getPostsByTag(tag) %}

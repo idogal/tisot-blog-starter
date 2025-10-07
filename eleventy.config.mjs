@@ -88,7 +88,7 @@ export default function (eleventyConfig) {
 			(item.data.tags || []).forEach(tag => tagSet.add(tag));
 		}
 
-    if (process.env.DEBUG_COLLECTIONS.trim() === "true") {
+    if (process.env.DEBUG_COLLECTIONS && process.env.DEBUG_COLLECTIONS.trim() === "true") {
       console.log('===== COLLECTION DEBUG =====');
       console.log(tagSet);
       console.log('===== TOTAL ITEMS:', tagSet.length, '=====');
@@ -96,7 +96,7 @@ export default function (eleventyConfig) {
       process.exit(0);
     }  
 
-		return Array.from(tagSet);
+		return Array.from(tagSet).sort();
   });
 
   eleventyConfig.addCollection("social_icons", function (collectionApi) {
