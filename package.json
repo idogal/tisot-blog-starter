@@ -39,7 +39,8 @@
     "debug": "set DEBUG=*blog-idog* && npx @11ty/eleventy --dryrun",
     "build-test-and-start": "npx @tailwindcss/cli -i ./src/assets/main.css -o ./build/output.css --postcss  && npx @11ty/eleventy --output=public/test-env --serve",
     "build-test": "npx @tailwindcss/cli -i ./src/assets/main.css -o ./build/output.css --postcss  && npx @11ty/eleventy --output=public/test-env",
-    "test": "node ./src/test/test-main.js"
+    "test": "node ./src/test/test-main.js",
+    "print:tags": "set DEBUG_COLLECTIONS=true && npx @11ty/eleventy"
   },
   "name": "idog_blog_daisyui",
   "version": "1.6.4",

@@ -87,6 +87,15 @@ export default function (eleventyConfig) {
 		for (let item of posts) {
 			(item.data.tags || []).forEach(tag => tagSet.add(tag));
 		}
+
+    if (process.env.DEBUG_COLLECTIONS.trim() === "true") {
+      console.log('===== COLLECTION DEBUG =====');
+      console.log(tagSet);
+      console.log('===== TOTAL ITEMS:', tagSet.length, '=====');
+      
+      process.exit(0);
+    }  
+
 		return Array.from(tagSet);
   });
 
