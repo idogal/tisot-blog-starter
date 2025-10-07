@@ -34,7 +34,10 @@
     </div>
     <div id="blog-post-heading-tags" class="pt-2 text-center">
         {% for tag in tags %}
-            <span class="badge">{{ tag }}</span>
+            {% set tagUrl = '/tags/' + tag | slugify %}
+            <a href="{{ tagUrl }}" class="no-underline" >
+                <span  class="badge hover:badge-primary">{{ tag }}</span>
+            </a>
         {% endfor %}
     </div>
 </span>
