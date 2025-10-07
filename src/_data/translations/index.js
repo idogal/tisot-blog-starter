@@ -197,6 +197,10 @@ module.exports = {
     he: "ענק",
     en: "2XL",
   },
+  "Posts tagged with" : {
+    he: "רשומות עם התגית",
+    en: "Posts tagged with",
+  },
   footer_built_by_i18n: {
     he: "נבנה על ידי עדוא גל, 2023",
     en: "Built by Ido Gal, 2023",

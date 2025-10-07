@@ -9,6 +9,12 @@ permalink: /tags/{{ tag | slugify }}/
 ---
 
 {% set blogPosts = collections.posts | getPostsByTag(tag) %}
-<div class="container mx-auto py-6 px-6 lg:px-24">
-  {% include "partials/posts-grid.njk" %}
+{% set title = tag %}
+<div class="container mx-auto ">
+  <h1 class="text-3xl font-bold leading-normal text-center">
+    {{ "Posts tagged with" | i18n }}: '{{ tag }}'
+  </h1>
+  <div class="container mx-auto py-6 px-6 lg:px-24">
+    {% include "partials/posts-grid.njk" %}
+  </div>
 </div>
