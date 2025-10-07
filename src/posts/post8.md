@@ -12,6 +12,7 @@ thumbnail_caption_text:
 tags: 
     - long post 
     - special post
+    - בדיקה
 isDraft: false
 ---
 

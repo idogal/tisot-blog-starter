@@ -1,4 +1,5 @@
 import translations from "./src/_data/translations/index.js" ;
+import tagsTranslations from "./src/_data/translations/tags.js" ;
 import siteConfig from "./src/_data/site.json" with { type: "json" };
 import envConfig from "./src/_data/env.js";
 import searchFilters from "./src/assets/code/filters/search_filters.js";
@@ -125,7 +126,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginTOC);
 
   eleventyConfig.addPlugin(i18n, {
-    translations,
+    translations: Object.assign({}, translations, tagsTranslations),
     fallbackLocales: {
       "*": siteConfig.defaultLang,
     },

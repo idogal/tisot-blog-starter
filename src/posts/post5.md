@@ -11,6 +11,7 @@ thumbnail_caption_text:
 tags: 
     - post a
     - special post
+    - בדיקה
 show_toc: true
 previous_post: post-2
 next_post: post-6

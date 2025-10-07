@@ -9,7 +9,7 @@ layout: "base.njk"
     <div class="container mx-auto py-6 px-6 lg:px-24">
         <div class="flex flex-wrap justify-center gap-4">
             {% for tag in collections.tags %}
-                {% set tagUrl = tag | slugify %}
+                {% set tagUrl = tag | i18n | slugify %}
                 {% set blogPostsByTag = collections.posts | getPostsByTag(tag) %}
                 <a href="{{ tagUrl }}" class="badge badge-xl hover:badge-primary">
                     {{ tag }}
