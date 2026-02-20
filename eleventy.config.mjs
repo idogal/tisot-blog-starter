@@ -136,13 +136,18 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPlugin(i18n, {
     translations: Object.assign({}, translations, tagsTranslations),
+    defaultLanguage: siteConfig.defaultLang,
+    defaultLocale: siteConfig.defaultLocale,
     fallbackLocales: {
-      "*": siteConfig.defaultLang,
+      "*": ["he"],
     },
   });
 
   eleventyConfig.addPlugin(EleventyI18nPlugin, {
     defaultLanguage: siteConfig.defaultLang,
+    fallbackLocales: {
+      "*": ["he"]
+    }    
   });
 
   eleventyConfig.addPlugin(EleventyRenderPlugin);

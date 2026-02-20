@@ -7,6 +7,7 @@
   "sitePath": "",
   "keywords": "",
   "defaultLang": "en",
+  "defaultLocale": "en-US",
   "productionMode": false,
   "posts": {
     "tocOpenAsDefault": false
