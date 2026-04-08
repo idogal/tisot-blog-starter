@@ -5,13 +5,13 @@ document.addEventListener("alpine:init", () => {
 
       init() {
       },
-  
+
       toggleTheme() {
-        this.themeName = (this.themeName === "dim" ? "corporate" : "dim") ;
+        this.themeName = (this.themeName === "dim" ? "corporate" : "dim");
       },
     };
   });
-    
+
   Alpine.data("textConfiguration", function () {
     return {
       textSizes: {},
@@ -20,12 +20,7 @@ document.addEventListener("alpine:init", () => {
       selectedSizeName: this.$persist("Large").as("text-size-name"),
 
       getSizesAsArray() {
-        const vals = [];
-        for (const size of Object.keys(this.textSizes)) {
-          vals.push(this.textSizes[size]["name"]);
-        }
-
-        return vals;
+        return Object.values(this.textSizes).map(size => size.name);
       },
 
       getFontClass() {
@@ -35,13 +30,7 @@ document.addEventListener("alpine:init", () => {
       setSizes(v) {
         this.textSizes = JSON.parse(v);
 
-        let isValidSize = false;
-        for (const size of Object.keys(this.textSizes)) {
-          if (this.textSizes[size]["name"] === this.selectedSizeName) {
-            isValidSize = true;
-            break;
-          }
-        }
+        let isValidSize = Object.values(this.textSizes).some(size => size.name === this.selectedSizeName);
 
         if (!isValidSize) {
           this.selectedSizeName = this.textSizes[2]["name"];
@@ -50,13 +39,10 @@ document.addEventListener("alpine:init", () => {
       },
 
       setSize(selectedBtnSize) {
-        const vals = [];
-        for (const size of Object.keys(this.textSizes)) {
-          if (selectedBtnSize === this.textSizes[size]["name"]) {
-            const selectedSizeContainer = this.textSizes[size];
-            this.selectedSize = selectedSizeContainer["prop"];
-            this.selectedSizeName = selectedSizeContainer["name"];
-          }
+        const selectedSizeContainer = Object.values(this.textSizes).find(size => size.name === selectedBtnSize);
+        if (selectedSizeContainer) {
+          this.selectedSize = selectedSizeContainer.prop;
+          this.selectedSizeName = selectedSizeContainer.name;
         }
       },
     };
@@ -65,8 +51,8 @@ document.addEventListener("alpine:init", () => {
 
 function closeFullscreenPostImage() {
   let postImageElement = document.getElementById("post-image-fullscreen-section");
-  postImageElement.classList = "hidden"
-  
+  postImageElement.classList.add("hidden");
+
   let postImageFs = document.getElementById("post-image-fullscreen");
   postImageFs.src = "";
 }
@@ -84,5 +70,5 @@ function handleNormalPostImageClick(element) {
   postImageFs.src = largestSrc;
 
   let postImageElement = document.getElementById("post-image-fullscreen-section");
-  postImageElement.classList = "";
+  postImageElement.classList.remove("hidden");
 }
