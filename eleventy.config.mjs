@@ -139,14 +139,14 @@ export default function (eleventyConfig) {
     defaultLanguage: siteConfig.defaultLang,
     defaultLocale: siteConfig.defaultLocale,
     fallbackLocales: {
-      "*": ["he"],
+      "*": [siteConfig.defaultLang],
     },
   });
 
   eleventyConfig.addPlugin(EleventyI18nPlugin, {
     defaultLanguage: siteConfig.defaultLang,
     fallbackLocales: {
-      "*": ["he"]
+      "*": [siteConfig.defaultLang]
     }    
   });
 
