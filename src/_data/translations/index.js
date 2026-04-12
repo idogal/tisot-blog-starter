@@ -249,4 +249,12 @@ module.exports = {
     he: "חזור לדף הבית",
     en: "get back to home page",
   },
+  no_search_results_i18n: {
+    he: "אין תוצאות מתאימות",
+    en: "No results found.",
+  },
+  search_unavailable_i18n: {
+    he: "החיפוש אינו זמין. אנא נסה שוב מאוחר יותר.",
+    en: "Search is unavailable. Please try again later.",
+  },
 };

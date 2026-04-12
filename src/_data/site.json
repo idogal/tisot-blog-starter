@@ -6,8 +6,8 @@
   "siteUrl": "https://demo.tisot.info",
   "sitePath": "",
   "keywords": "",
-  "defaultLang": "en",
-  "defaultLocale": "en-US",
+  "defaultLang": "he",
+  "defaultLocale": "he-IL",
   "productionMode": false,
   "posts": {
     "tocOpenAsDefault": false

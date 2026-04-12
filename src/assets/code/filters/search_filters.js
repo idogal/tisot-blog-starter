@@ -56,7 +56,7 @@ const searchData = function (pages) {
     docsMap.set(d.id, d);
   }
 
-  return JSON.stringify(Object.fromEntries(docsMap));
+  return Object.fromEntries(docsMap);
 };
 
 module.exports = {  
