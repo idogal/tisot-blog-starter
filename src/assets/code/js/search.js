@@ -41,6 +41,10 @@ function getItems(inputValue) {
   const ul = document.getElementById("search_results_ul");
   ul.replaceChildren();
 
+  if (!inputValue || inputValue.trim() === "") {
+    return;
+  }
+
   const searchResults = searchIndex.search(inputValue);
   if (!searchResults || searchResults.length === 0) {
     showNoResults(ul);
