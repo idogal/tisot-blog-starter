@@ -123,7 +123,7 @@ function toggleSearchLoadingState() {
     const searchInputLoadingSpinner = document.getElementById("searchInputLoadingSpinner");
 
     searchInputLoadingSpinner.classList.add("hidden");
-    searchInputTextBox.classList.remove("hidden");
+    searchInputTextBox.classList.remove("invisible");
   } else {
     console.debug("Search loading not finished");
   }
