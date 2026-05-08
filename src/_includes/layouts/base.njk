@@ -53,11 +53,9 @@
         {# <script defer type="module" src="/assets/js/blog_custom.js"></script> #}
     </head>
     {% set vall = "[" %}
-    {% set counter = 0 %}
     {% for textSize in navigation.textSizes %}
         {% set vall = vall + "{ \"name\": \"" + (textSize.name | i18n) + "\", \"prop\": \"" + (textSize.prop) + "\" }" %}
-        {% set counter = counter + 1 %}
-        {% if counter != navigation.textSizes.length %}{% set vall = vall + "," %}{% endif %}
+        {% if not loop.last %}{% set vall = vall + "," %}{% endif %}
     {% endfor %}
     {% set vall = vall + "]" %}
     <span x-data="textConfiguration" x-init="setSizes('{{ vall }}')">
