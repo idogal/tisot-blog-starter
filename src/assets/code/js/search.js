@@ -1,11 +1,14 @@
 const MIN_SEARCH_SCORE = 0.5;
 
+const searchScript = document.currentScript || document.querySelector('script[src*="search.js"]');
+const basePath = searchScript ? new URL(searchScript.src).pathname.replace(/\/assets\/js\/search\.js$/, '') : '';
+
 let searchIndex = null;
 let searchData = null;
 let isDataLoadingFinished = false;
 let isIndexLoadingFinished = false;
 
-fetch("../search-index.json")
+fetch(basePath + "/search-index.json")
   .then((response) => {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     return response.json();
@@ -21,7 +24,7 @@ fetch("../search-index.json")
     showSearchError();
   });
 
-fetch("../search-data.json")
+fetch(basePath + "/search-data.json")
   .then((response) => {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     return response.json();
@@ -64,7 +67,7 @@ function getItems(inputValue) {
     const subtitle = resultEntryData?.subtitle;
 
     const refElement = document.createElement("a");
-    refElement.setAttribute("href", ".." + searchResult.ref);
+    refElement.setAttribute("href", basePath + searchResult.ref);
 
     const titleSpan = document.createElement("span");
     titleSpan.appendChild(document.createTextNode(title));
