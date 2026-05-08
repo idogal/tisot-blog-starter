@@ -10,9 +10,11 @@ no_follow: true
     <div class="mt-12 grow ">
         <div>
             <div class="flex justify-center">
-                <div class="form-control w-full max-w-xs items-center">
-                    <input id="searchInputTextBox" type="text" placeholder="{{ "Enter search term" | i18n }}" x-on:input.keydown="getItems($event.target.value)" class="input input-lg hidden"/>
-                    <span id="searchInputLoadingSpinner" class="loading loading-spinner loading-lg"></span>
+                <div class="form-control w-full max-w-xs relative">
+                    <input id="searchInputTextBox" type="text" placeholder="{{ "Enter search term" | i18n }}" x-on:input.keydown="getItems($event.target.value)" class="input input-lg w-full invisible"/>
+                    <div id="searchInputLoadingSpinner" class="absolute inset-0 flex items-center justify-center z-10">
+                        <span class="loading loading-spinner loading-lg"></span>
+                    </div>
                 </div>
             </div>
             <div id="search_results" class="flex justify-center mt-6">

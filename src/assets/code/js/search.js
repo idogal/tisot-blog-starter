@@ -41,6 +41,10 @@ function getItems(inputValue) {
   const ul = document.getElementById("search_results_ul");
   ul.replaceChildren();
 
+  if (!inputValue || inputValue.trim() === "") {
+    return;
+  }
+
   const searchResults = searchIndex.search(inputValue);
   if (!searchResults || searchResults.length === 0) {
     showNoResults(ul);
@@ -119,7 +123,7 @@ function toggleSearchLoadingState() {
     const searchInputLoadingSpinner = document.getElementById("searchInputLoadingSpinner");
 
     searchInputLoadingSpinner.classList.add("hidden");
-    searchInputTextBox.classList.remove("hidden");
+    searchInputTextBox.classList.remove("invisible");
   } else {
     console.debug("Search loading not finished");
   }
