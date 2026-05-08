@@ -33,8 +33,11 @@ document.addEventListener("alpine:init", () => {
         let isValidSize = Object.values(this.textSizes).some(size => size.name === this.selectedSizeName);
 
         if (!isValidSize) {
-          this.selectedSizeName = this.textSizes[2]["name"];
-          this.selectedSize = this.textSizes[2]["prop"];
+          const fallbackSize = Object.values(this.textSizes)[0];
+          if (fallbackSize) {
+            this.selectedSizeName = fallbackSize.name;
+            this.selectedSize = fallbackSize.prop;
+          }
         }
       },
 
@@ -50,25 +53,28 @@ document.addEventListener("alpine:init", () => {
 });
 
 function closeFullscreenPostImage() {
-  let postImageElement = document.getElementById("post-image-fullscreen-section");
-  postImageElement.classList.add("hidden");
+  const postImageElement = document.getElementById("post-image-fullscreen-section");
+  const postImageFs = document.getElementById("post-image-fullscreen");
 
-  let postImageFs = document.getElementById("post-image-fullscreen");
-  postImageFs.src = "";
+  if (postImageElement) postImageElement.classList.add("hidden");
+  if (postImageFs) postImageFs.src = "";
 }
 
 function handleNormalPostImageClick(element) {
   const lgBreakpoint = window.matchMedia("(min-width: 1024px)");
-  if (!lgBreakpoint.matches) {
-    return;
+  if (!lgBreakpoint.matches) return;
+
+  let largestSrc = element.src;
+  if (element.srcset) {
+    const imgSrcSet = element.srcset.split(",");
+    largestSrc = imgSrcSet[imgSrcSet.length - 1].trim().split(" ")[0];
   }
 
-  const imgSrcSet = element.srcset.split(",");
-  const largestSrc = imgSrcSet[imgSrcSet.length - 1].trim().split(" ")[0];
+  const postImageFs = document.getElementById("post-image-fullscreen");
+  const postImageElement = document.getElementById("post-image-fullscreen-section");
 
-  let postImageFs = document.getElementById("post-image-fullscreen");
-  postImageFs.src = largestSrc;
-
-  let postImageElement = document.getElementById("post-image-fullscreen-section");
-  postImageElement.classList.remove("hidden");
+  if (postImageFs && postImageElement) {
+    postImageFs.src = largestSrc;
+    postImageElement.classList.remove("hidden");
+  }
 }
