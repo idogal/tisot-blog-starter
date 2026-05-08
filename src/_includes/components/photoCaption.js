@@ -1,31 +1,17 @@
 /**
  * @param {string} captionText 
- * @param {boolean} isLeftAlighed is the credit box alighed to the left or not
- * @param {string} dir direction - LTR or RTL
+ * @param {boolean} isStartAligned whether the credit box is aligned to the start (left in LTR, right in RTL)
  *
- * @returns
+ * @returns {string}
  */
-function photoCaption(captionText, isLeftAlighed, dir) {
-  const pClassesBase =
-    "text-xs absolute bottom-0 px-1 py-1 text-neutral-50 bg-slate-500 mix-blend-normal opacity-80";
+function photoCaption(captionText, isStartAligned = true) {
+  const baseClasses =
+    "text-xs absolute bottom-0 px-1 py-1 text-neutral-50 bg-slate-500 mix-blend-normal opacity-80 rounded-se rounded-es";
 
-  function formClassString() {
-    var leftAlignPart = "";
-    if (isLeftAlighed) {
-      if (dir == "rtl") {
-        leftAlignPart = " right-0";
-      } else {
-        leftAlignPart = " left-0";
-      }
-    }
-
-    return dir == "rtl"
-      ? pClassesBase.concat(" ", "rounded-tl rounded-br", leftAlignPart)
-      : pClassesBase.concat(" ", "rounded-tr rounded-bl", leftAlignPart);
-  }
+  const alignClass = isStartAligned ? "start-0" : "end-0";
 
   return `
-    <p class="${formClassString()}">
+    <p class="${baseClasses} ${alignClass}">
       ${captionText}
     </p>
   `;
