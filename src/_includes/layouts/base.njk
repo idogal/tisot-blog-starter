@@ -58,16 +58,14 @@
         {% if not loop.last %}{% set vall = vall + "," %}{% endif %}
     {% endfor %}
     {% set vall = vall + "]" %}
-    <span x-data="textConfiguration" x-init="setSizes('{{ vall }}')">
-    {% include "partials/site-header.njk" %}
-    <body class="text-base">
+    <body class="text-base" x-data="textConfiguration" x-init="setSizes('{{ vall }}')">
+        {% include "partials/site-header.njk" %}
         <main class="py-6 px-3 lg:px-0">
             {% block content %}
                 {{ content | safe }}
             {% endblock %}
         </main>
         {# <link href='https://fonts.googleapis.com/css2?family=Alef&display=swap' rel='stylesheet' type='text/css'> #}
+        {% include "partials/site-footer.njk" %}
     </body>
-    {% include "partials/site-footer.njk" %}
-    </span>
 </html>
