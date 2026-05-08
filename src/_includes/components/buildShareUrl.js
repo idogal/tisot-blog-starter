@@ -12,10 +12,13 @@ function buildShareUrl(urlString, pageUrl, pageName) {
     const pageUrlLiteralLength = 5;
 
     if (pageNameIx == -1 && pageUrlIx == -1) {
-        return urlString;1
+        return urlString;
     }
 
-    let firstIx = -1;
+    pageUrl = encodeURIComponent(pageUrl);
+    pageName = encodeURIComponent(pageName);
+
+    let firstIx = -1; 
     let firstLen = 0;
     let secondIx = -1;
     let secondLen = 0;
@@ -50,17 +53,19 @@ function buildShareUrl(urlString, pageUrl, pageName) {
     }
 
     let v = "";
-    v = v + urlString.substring(0, firstIx);
+    v = v + encodeURI(urlString.substring(0, firstIx));
     v = v + valA;
 
     if (secondIx > -1) {
         let v2 = "";
         v2 = urlString.substring(firstIx + firstLen, secondIx);
-        v2 = v2 + valB;
+        v2 = encodeURI(v2) + valB;
         v = v + v2;
+        v = v + encodeURI(urlString.substring(secondIx + secondLen));
+    } else {
+        v = v + encodeURI(urlString.substring(firstIx + firstLen));
     }
 
-    v = encodeURI(v);
     // console.log("Input:  " + urlString + ",\nOutput: "+ v + "\n");
     return v;
 }
