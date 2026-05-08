@@ -42,7 +42,7 @@
     "print:tags": "set DEBUG_COLLECTIONS=true && npx @11ty/eleventy"
   },
   "name": "idog_blog_daisyui",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "main": ".eleventy.js",
   "repository": {
     "type": "git",
