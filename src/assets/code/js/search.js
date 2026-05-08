@@ -42,13 +42,25 @@ fetch(basePath + "/search-data.json")
 
 function getItems(inputValue) {
   const ul = document.getElementById("search_results_ul");
+  if (!ul) {
+    return;
+  }
+  
   ul.replaceChildren();
 
   if (!inputValue || inputValue.trim() === "") {
     return;
   }
 
-  const searchResults = searchIndex.search(inputValue);
+  let searchResults;
+  try {
+    searchResults = searchIndex.search(inputValue);
+  } catch (e) {
+    console.debug("Lunr query parse error:", e);
+    showNoResults(ul);
+    return;
+  }
+
   if (!searchResults || searchResults.length === 0) {
     showNoResults(ul);
     return;
@@ -96,10 +108,7 @@ function showNoResults(ul) {
   const message = ul.dataset.noResults || "No results found.";
   const li = document.createElement("li");
   li.appendChild(document.createTextNode(message));
-  li.setAttribute("class", "text-base-content/60 italic");
-  if (document.documentElement.dir === "rtl") {
-    li.style.textAlign = "right";
-  }
+  li.setAttribute("class", "text-base-content/60 italic text-start");
   ul.appendChild(li);
 }
 
@@ -111,6 +120,7 @@ function showSearchError() {
 
   const searchResults = document.getElementById("search_results_ul");
   if (searchResults) {
+    searchResults.replaceChildren();
     const message = searchResults.dataset.searchError || "Search is unavailable. Please try again later.";
     const li = document.createElement("li");
     li.appendChild(document.createTextNode(message));
@@ -125,8 +135,10 @@ function toggleSearchLoadingState() {
     const searchInputTextBox = document.getElementById("searchInputTextBox");
     const searchInputLoadingSpinner = document.getElementById("searchInputLoadingSpinner");
 
-    searchInputLoadingSpinner.classList.add("hidden");
-    searchInputTextBox.classList.remove("invisible");
+    if (searchInputLoadingSpinner && searchInputTextBox) {
+      searchInputLoadingSpinner.classList.add("hidden");
+      searchInputTextBox.classList.remove("invisible");
+    }
   } else {
     console.debug("Search loading not finished");
   }
