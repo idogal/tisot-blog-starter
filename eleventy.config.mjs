@@ -354,18 +354,13 @@ export default function (eleventyConfig) {
   
     const v = Image(imgSrc, imgOpts);
     const metadata = Image.statsSync(imgSrc, imgOpts);
-    let generated = Image.generateHTML(metadata, {
+    return Image.generateHTML(metadata, {
       sizes: '(max-width: 960px) 100vw, 1280px',
       alt: imgAlt,
       loading: 'lazy',
       decoding: 'async',
       title: imgTitle,
     });
-
-    generated = 
-      generated.replace('<img', `<img onclick="handleNormalPostImageClick(this)"`);
-
-    return generated;
   };  
 
   eleventyConfig.setLibrary("md", mdLib);

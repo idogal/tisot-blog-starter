@@ -13,7 +13,8 @@ layout: "base.njk"
                     </header>
                     {% include "partials/blog_post/toc.njk" %}
                     {% include "partials/blog_post/series-ref.njk" %}
-                    <section class="leading-relaxed" id="content" :class="getFontClass()">
+                    <section class="leading-relaxed" id="content" :class="getFontClass()"
+                             x-on:click="if ($event.target.tagName === 'IMG') $dispatch('open-lightbox', { element: $event.target })">
                         {{ content | safe }}
                     </section>
                     {% include "partials/blog_post/back-to-top-button.njk" %}

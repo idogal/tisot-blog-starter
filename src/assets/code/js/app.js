@@ -50,31 +50,30 @@ document.addEventListener("alpine:init", () => {
       },
     };
   });
+
+  Alpine.data("imageLightbox", function () {
+    return {
+      isOpen: false,
+      src: "",
+
+      open(imgElement) {
+        const lgBreakpoint = window.matchMedia("(min-width: 1024px)");
+        if (!lgBreakpoint.matches) return;
+
+        let largestSrc = imgElement.src;
+        if (imgElement.srcset) {
+          const imgSrcSet = imgElement.srcset.split(",");
+          largestSrc = imgSrcSet[imgSrcSet.length - 1].trim().split(" ")[0];
+        }
+
+        this.src = largestSrc;
+        this.isOpen = true;
+      },
+
+      close() {
+        this.isOpen = false;
+        this.src = "";
+      }
+    };
+  });
 });
-
-function closeFullscreenPostImage() {
-  const postImageElement = document.getElementById("post-image-fullscreen-section");
-  const postImageFs = document.getElementById("post-image-fullscreen");
-
-  if (postImageElement) postImageElement.classList.add("hidden");
-  if (postImageFs) postImageFs.src = "";
-}
-
-function handleNormalPostImageClick(element) {
-  const lgBreakpoint = window.matchMedia("(min-width: 1024px)");
-  if (!lgBreakpoint.matches) return;
-
-  let largestSrc = element.src;
-  if (element.srcset) {
-    const imgSrcSet = element.srcset.split(",");
-    largestSrc = imgSrcSet[imgSrcSet.length - 1].trim().split(" ")[0];
-  }
-
-  const postImageFs = document.getElementById("post-image-fullscreen");
-  const postImageElement = document.getElementById("post-image-fullscreen-section");
-
-  if (postImageFs && postImageElement) {
-    postImageFs.src = largestSrc;
-    postImageElement.classList.remove("hidden");
-  }
-}
