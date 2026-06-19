@@ -31,7 +31,7 @@ module.exports = {
           css: {
             div: {},
             p: {
-              "text-align": "justify;",
+              "text-align": "justify",
             },
           },
         },

@@ -7,13 +7,13 @@
 {% endif %}
 {% if previousPostInOrder or nextPostInOrder %}
 <div class="container mx-auto text-center max-w-lg mt-12">
-    <div class="btn-group grid grid-cols-2">
+    <div class="join grid grid-cols-2">
         {% set prevClass = "" %}
         {% set nextClass = "" %}
         {% if not previousPostInOrder.url %}{% set prevClass = "invisible" %}{% endif %}
         {% if not nextPostInOrder.url %}{% set nextClass = "invisible" %}{% endif %}
-        <a id="olderPostButton" class="btn btn-outline {{ prevClass }}" href="{{ previousPostInOrder.url }}">{{ 'Previous Post' | i18n }}</a>
-        <a id="newerPostButton" class="btn btn-outline {{ nextClass }}" href="{{ nextPostInOrder.url }}">{{ 'Next Post' | i18n }}</a>
+        <a id="olderPostButton" class="join-item btn btn-outline {{ prevClass }}" href="{{ previousPostInOrder.url }}">{{ 'Previous Post' | i18n }}</a>
+        <a id="newerPostButton" class="join-item btn btn-outline {{ nextClass }}" href="{{ nextPostInOrder.url }}">{{ 'Next Post' | i18n }}</a>
     </div>
 </div>
 {% endif %}
