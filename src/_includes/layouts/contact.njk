@@ -9,41 +9,40 @@ layout: "base.njk"
         </h1>
         {% if site.contact.enableContactForm %}
             <div class="container mx-auto max-w-3xl px-6">
-                <form target="_blank" action="{{ site.contact.submitPostActionUrl }}" method="POST" class="grid justify-items-center grid-rows-5 grid-flow-col">
+                <form target="_blank" action="{{ site.contact.submitPostActionUrl }}" method="POST" class="flex flex-col gap-4 items-center w-full">
                     <div class="form-control w-full max-w-md">
-                        <label class="label">
+                        <label class="label" for="name">
                             <span class="label-text font-semibold">{{ site.contact.nameMessage | i18n }}</span>
                         </label>
-                        <input type="text" placeholder="{{ 'John Doe' | i18n }}" name="name" class="input input-bordered input-md w-full max-w-md rounded-sm bg-neutral-100" required/>
+                        <input id="name" type="text" placeholder="{{ 'John Doe' | i18n }}" name="name" class="input input-bordered input-md w-full max-w-md rounded-sm bg-neutral-100" required/>
                     </div>
                     <div class="form-control w-full max-w-md">
-                        <label class="label">
+                        <label class="label" for="email">
                             <span class="label-text font-semibold">{{ site.contact.emailMessage | i18n }}</span>
                         </label>
                         <input
+                            id="email"
                             dir="ltr"
-                            type="text"
+                            type="email"
                             placeholder="mail@mymail.com"
                             name="email"
                             class="input input-bordered input-md w-full max-w-md rounded-sm bg-neutral-100"
                             required/>
                     </div>
                     <div class="form-control w-full max-w-md">
-                        <label class="label">
+                        <label class="label" for="subject">
                             <span class="label-text font-semibold">{{ site.contact.subjectMessage | i18n }}</span>
                         </label>
-                        <input type="text" placeholder="{{ site.contact.subjectMessagePlaceholder | i18n }}" name="subject" class="input input-bordered input-md w-full max-w-md rounded-sm bg-neutral-100" required/>
+                        <input id="subject" type="text" placeholder="{{ site.contact.subjectMessagePlaceholder | i18n }}" name="subject" class="input input-bordered input-md w-full max-w-md rounded-sm bg-neutral-100" required/>
                     </div>
                     <div class="form-control w-full max-w-md">
-                        <label class="label">
+                        <label class="label" for="message">
                             <span class="label-text font-semibold">{{ site.contact.msgMessage | i18n }}</span>
                         </label>
-                        <textarea class="textarea textarea-bordered textarea-lg w-full max-w-md rounded-sm bg-neutral-100" name="message" placeholder="{{ site.contact.msgMessagePlaceholder | i18n }}"></textarea>
+                        <textarea id="message" class="textarea textarea-bordered textarea-lg w-full max-w-md rounded-sm bg-neutral-100" name="message" placeholder="{{ site.contact.msgMessagePlaceholder | i18n }}" required></textarea>
                     </div>
-                    <div class="container mx-auto max-w-md">
-                        <div class="float-left">
-                            <button class="btn mt-6 btn-outline" type="submit">{{ 'Submit' | i18n }}</button>
-                        </div>
+                    <div class="w-full max-w-md flex justify-start">
+                        <button class="btn mt-6 btn-outline" type="submit">{{ 'Submit' | i18n }}</button>
                     </div>
                 </form>
             </div>
@@ -51,11 +50,11 @@ layout: "base.njk"
             <div class="container mx-auto text-lg">
                 <div class="mb-8">{{ content  | safe }}</div>
                 <p class="text-xl inline">
-                    {{ 'e-mail address' | i18n }}: <div dir="ltr" class="select-none inline"> {{ site.contact.emailAddress }}</div>
+                    {{ 'e-mail address' | i18n }}: <span dir="ltr" class="select-none"> {{ site.contact.emailAddress }}</span>
                 </p>
                 <a
                     class="btn sm:btn-md md:btn-lg lg:btn-xl mt-4"
-                    href="mailto:{{ site.contact.emailAddress }}?subject={{ site.contact.subjectMessagePlaceholder | i18n }}&body={{ site.contact.msgMessagePlaceholder | i18n }}">
+                    href="mailto:{{ site.contact.emailAddress }}?subject={{ site.contact.subjectMessagePlaceholder | i18n | urlencode }}&body={{ site.contact.msgMessagePlaceholder | i18n | urlencode }}">
                     {{ 'Send Email' | i18n }}
                 </a>
             </div>
