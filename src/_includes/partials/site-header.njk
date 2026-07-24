@@ -2,12 +2,12 @@
     <div id="ts-navbar" class="navbar bg-base-300">
         <div class="navbar-start md:px-32 sm:px-2">
             <div class="dropdown">
-                <label tabindex="0" class="btn btn-ghost lg:hidden">
+                <div role="button" tabindex="0" class="btn btn-ghost lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"/>
                     </svg>
-                    <span class="hidden">Dropdown menu button</span>
-                </label>
+                    <span class="sr-only">Dropdown menu button</span>
+                </div>
                 <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow-sm bg-base-200 rounded-box w-52">
                     {% for item in navigation.items %}
                         <li>
@@ -31,7 +31,7 @@
             <div class="flex flex-auto flex-row justify-end gap-3">
                 <label class="swap swap-rotate stroke-1.5 hover:stroke-2.5">
                     <input
-                        class="invisible"
+                        class="sr-only"
                         type="checkbox"
                         id="checkbox"
                         x-on:click="toggleTheme()"
@@ -74,7 +74,7 @@
                     </svg>
                 </label>
                 <div class="dropdown dropdown-end">
-                    <label tabindex="0" class="btn btn-ghost btn-lg btn-circle">
+                    <div role="button" tabindex="0" class="btn btn-ghost btn-lg btn-circle">
                         <div class="indicator stroke-1.5 hover:stroke-2.5">
                             <svg
                                 stroke="currentColor"
@@ -102,7 +102,7 @@
                                 <polyline points="6 10 12 16 18 10"></polyline>
                             </svg>
                         </div>
-                    </label>
+                    </div>
                     <ul class="z-1 menu menu-compact dropdown-content p-2 shadow-sm bg-base-200 rounded-box w-28">
                         <template x-for="textSize in getSizesAsArray()">
                             <li>
