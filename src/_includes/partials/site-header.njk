@@ -21,7 +21,7 @@
         <nav id="ts-navbar-center" class="navbar-center hidden lg:flex">
             <ul id="ts-navbar-center-menu" class="menu menu-horizontal">
                 {% for item in navigation.items %}
-                    <li id="ts-navbar-center-menu-item-{{loop.index}} ">
+                    <li id="ts-navbar-center-menu-item-{{loop.index}}">
                         <a class="text-lg" href="{{ item.url }}">{{ item.text | i18n }}</a>
                     </li>
                 {% endfor %}
@@ -103,7 +103,7 @@
                             </svg>
                         </div>
                     </div>
-                    <ul class="z-1 menu menu-compact dropdown-content p-2 shadow-sm bg-base-200 rounded-box w-28">
+                    <ul class="z-10 menu menu-compact dropdown-content p-2 shadow-sm bg-base-200 rounded-box w-28">
                         <template x-for="textSize in getSizesAsArray()">
                             <li>
                                 <button
@@ -119,7 +119,7 @@
                 <div class="flex">
                     <span class="flex justify-center items-center lg:hidden">
                         {% for item in navigation.items %}
-                            {% if (item.text === 'Search' or item.text === 'search') %}
+                            {% if (item.text | lower) === 'search' %}
                                 <a href="{{ item.url }}">
                                     <svg
                                         class="h-6 w-6 stroke-1.5 hover:stroke-2.5"
