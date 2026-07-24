@@ -1,5 +1,5 @@
 const assert = require("assert");
-var log4js = require("log4js");
+const log4js = require("log4js");
 const { By } = require("selenium-webdriver");
 
 const logger = log4js.getLogger();
@@ -19,7 +19,7 @@ async function testHeader(driver) {
     assert.ok("Header contains a navbar menu.", tsHeader);
 
     const tsNavbarMenuItems = await tsNavbarMenu.findElements(By.css("li"));
-    assert.equal(tsNavbarMenuItems.length, 5);
+    assert.equal(tsNavbarMenuItems.length, 6);
     
     // let title = await driver.getTitle();
     // logger.debug(`Got title: "${title}"`);

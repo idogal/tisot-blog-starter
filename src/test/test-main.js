@@ -1,26 +1,26 @@
-const { By, Builder, Browser } = require("selenium-webdriver");
+const { Builder, Browser } = require("selenium-webdriver");
 const Chrome = require("selenium-webdriver/chrome");
 const assert = require("assert");
-var log4js = require("log4js");
+const log4js = require("log4js");
 
 const testHeader = require("./test-navbar.js");
 
 const logger = log4js.getLogger();
 logger.level = "debug";
 
-const MAIN_TEST_URL = "http://ido.g.gitlab.io/idog-blog-daisyui/";
+const MAIN_TEST_URL = process.env.TEST_URL || "https://demo.tisot.info";
 
 async function getDriver(browser) {
   const options = new Chrome.Options();
   logger.info("Trying to get driver of:", browser);
 
+  if (process.argv.includes("--headless") || process.env.HEADLESS === "true") {
+    options.addArguments("--headless");
+  }
+  options.addArguments("--no-sandbox").addArguments("--disable-gpu");
+
   const driver = await new Builder()
-    .setChromeOptions(
-      options
-        .addArguments("--headless")
-        .addArguments("--no-sandbox")
-        .addArguments("--disable-gpu")
-    )
+    .setChromeOptions(options)
     .forBrowser(browser)
     .build();
 
@@ -47,7 +47,8 @@ async function getDriver(browser) {
     await testHeader(driver);
 
   } catch (e) {
-    logger.error(e);
+    logger.error("Test Failed: ", e.message);
+    process.exitCode = 1;
   } finally {
     if (driver) {
       await driver.quit();
