@@ -1,9 +1,27 @@
 # The Docker image that will be used to build your app
 image: node:lts
+
+stages:
+  - test
+  - deploy
+
 # Functions that should be executed before the build script is run
 before_script:
   - npm install
+
+test:
+  stage: test
+  before_script:
+    - apt-get update && apt-get install -y chromium
+    - npm install
+  script:
+    - npm run build-test
+    - npx -y serve public/test-env -p 8080 &
+    - sleep 3
+    - TEST_URL=http://localhost:8080 npm run test-headless
+
 pages:
+  stage: deploy
   script:
     - npm run build
   artifacts:
