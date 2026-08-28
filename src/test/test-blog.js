@@ -11,15 +11,21 @@ async function testBlog(driver) {
     // Resize window first to ensure desktop menu is visible
     await driver.manage().window().setRect({ width: 1440, height: 900 });
 
-    // Now find the blog link in the desktop navbar
-    const blogLink = await driver.findElement(By.css('#ts-navbar-center-menu a[href*="/blog"]'));
-    
-    await driver.humanDelay(1000);
-    await blogLink.click();
+    // Find and click the "To all posts" button (#allPostsButton) on the main page
+    const allPostsButton = await driver.findElement(By.id("allPostsButton"));
+    assert.ok(allPostsButton, '"To all posts" (#allPostsButton) button should exist on main page');
 
-    logger.info("Clicked blog link, waiting for page load...");
+    await driver.humanDelay(1000);
+    await allPostsButton.click();
+
+    logger.info('Clicked "To all posts" button, waiting for blog page load...');
     
-    // Wait for the blog grid to load by waiting for at least one card
+    // Wait for navigation to /blog and for the blog grid to load
+    await driver.wait(until.urlContains("/blog"), 5000);
+    const blogUrl = await driver.getCurrentUrl();
+    logger.info(`Navigated to blog page via "To all posts" button: ${blogUrl}`);
+    assert.ok(blogUrl.includes("/blog"), 'URL should contain "/blog" after clicking "To all posts" button');
+
     await driver.wait(until.elementLocated(By.css('.card')), 5000);
     
     await driver.humanDelay(1500);
