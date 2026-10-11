@@ -16,9 +16,9 @@ test:
     - npm install
   script:
     - npm run build-test
-    - npx -y serve public/test-env -p 8080 &
-    - sleep 3
-    - TEST_URL=http://localhost:8080 npm run test-headless
+    - npx serve -l tcp://127.0.0.1:8080 public/test-env &
+    - npx wait-on http://127.0.0.1:8080 -t 30000
+    - TEST_URL=http://127.0.0.1:8080 npm run test-headless
 
 pages:
   stage: deploy
