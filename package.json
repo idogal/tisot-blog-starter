@@ -11,7 +11,7 @@
     "markdown-it-image-figures": "^2.1.1",
     "markdown-it-link-attributes": "^4.0.1",
     "minimist": "^1.2.8",
-    "theme-change": "^2.5.0"
+    "theme-change": "^3.0.4"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
